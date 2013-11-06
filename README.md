@@ -25,18 +25,31 @@ ARBOL DE DIRECTORIOS
 ============================
 
 ├── ctn
+
 │   ├── BBDD
+
 │   ├── ctn
+
 │   │   ├── __init__.py
+
 │   │   ├── settings.py
+
 │   │   ├── urls.py
+
 │   │   └── wsgi.py
+
 │   ├── manage.py
+
 │   └── usuario
+
 │       ├── __init__.py
+
 │       ├── models.py
+
 │       ├── tests.py
+
 │       └── views.py
+
 └── README.md
 
 
