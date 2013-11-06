@@ -1,7 +1,7 @@
 SISTEMAS Y TECNOLOGÍAS WEB
 ============================
 
-Versión 1.1
+Versión 1.2
 
 GRUPO
 ============================
