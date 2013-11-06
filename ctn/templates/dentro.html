@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+    {% block titulo %}Registro{% endblock %}
+    {% block link %}
+        <link media="screen" href="/static/css/pagina_registro.css" type="text/css" rel="stylesheet" >
+    {% endblock %} 
+
+    {% block encabezado %} <h1> REGISTRO </h1> {% endblock %}
+
+    {% block contenido %}
+        <h2>Estoy registrado yuju</h2>
+        <a href="/logout/">Disconnect</a>
+
+        
+    {% endblock %}
+    <!--<a href="{% url 'socialauth_disconnect' 'google-oauth2' %}">Disconnect</a>-->

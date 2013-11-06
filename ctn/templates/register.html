@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+    {% block titulo %}Registro{% endblock %}
+    {% block link %}
+        <link media="screen" href="/static/css/pagina_registro.css" type="text/css" rel="stylesheet" >
+    {% endblock %} 
+
+    {% block encabezado %} <h1> REGISTRO </h1> {% endblock %}
+
+    {% block contenido %}
+        {% url 'socialauth_begin' 'google-oauth2' %}
+        <a href="{% url 'socialauth_begin' 'google-oauth2' %}">Login with Google</a>
+       
+    {% endblock %}
