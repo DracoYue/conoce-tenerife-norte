@@ -23,7 +23,8 @@ COMENTARIOS
 - 06/10/2013 - Definición de usuarios
     - pip install django-social-auth
 - 06/10/2013 - Definición BBDD
-
+- 08/10/2013 - Foto Perfil
+- 08/10/2013 - Rellenar BBDD
 
 
 ###Chicas al poder! =)
