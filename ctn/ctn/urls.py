@@ -22,4 +22,5 @@ urlpatterns = patterns('',
     url(r'^private/',  TemplateView.as_view(template_name="dentro.html")),
     url(r'^login/$', TemplateView.as_view(template_name="register.html")),
     url(r'^logout/$','usuario.views.logout'),
+    url(r'^$', TemplateView.as_view(template_name="ctn/index.html")),
 )
