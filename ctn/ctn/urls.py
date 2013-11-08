@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('social_auth.urls')),
+    #url(r'^private/',  'usuario.views.mostrar_perfil'),
     url(r'^private/',  TemplateView.as_view(template_name="dentro.html")),
     url(r'^login/$', TemplateView.as_view(template_name="register.html")),
     url(r'^logout/$','usuario.views.logout'),
