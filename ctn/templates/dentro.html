@@ -12,7 +12,7 @@
         <p><b> Email :</b> {{ user.email }}</p>
         <p><b> ID :</b> {{ user.id }}</p>
         {% load gravatar %}
-        <img src="{% gravatar_url user.email %}">
+        <img src="{% gravatar_url user.email 60 %}">
 
         <a href="/logout/">Disconnect</a>
 

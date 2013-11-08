@@ -14,8 +14,8 @@ MANAGERS = ADMINS
 DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
-GRAVATAR_DEFAULT_URL = "http://montalban.cuatrineros.es/images/senderista.jpg"
-GRAVATAR_SECURE = False
+GRAVATAR_DEFAULT_URL = "http://banot.etsii.ull.es/alu4079/STYW/CTN/senderista.jpg"
+GRAVATAR_SECURE = True
 
 DATABASES = {
     'default': {
