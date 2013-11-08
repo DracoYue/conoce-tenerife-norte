@@ -8,6 +8,10 @@
 
     {% block contenido %}
         <h2>Estoy registrado yuju</h2>
+        <p><b> Nombre :</b> {{ user.username }}</p>
+        <p><b> Email :</b> {{ user.email }}</p>
+        <p><b> ID :</b> {{ user.id }}</p>
+
         <a href="/logout/">Disconnect</a>
 
         

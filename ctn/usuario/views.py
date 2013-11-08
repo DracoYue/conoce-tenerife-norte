@@ -9,7 +9,9 @@ from django.shortcuts import render_to_response, redirect
 from django.contrib.messages.api import get_messages
 
 from social_auth import __version__ as version
+from usuario.models import *
 
+from social_auth.backends.google import GoogleOAuth2Backend
 
 def logout(request):
     """Logs out user"""
