@@ -60,7 +60,7 @@ class LugaresInteres(models.Model):
 class Actividades(models.Model):
     Nombre = models.CharField(max_length = 70)
     Lugar = models.CharField(max_length = 70)
-    Fecha = models.DataTimeField(auto_now_add = True)
+   # Fecha = models.DataTimeField(auto_now_add = True)
     Coste = models.IntegerField(max_length = 3)
     INFANTIL = 'IN'
     ADULTO = 'AD'
@@ -75,8 +75,8 @@ class Actividades(models.Model):
                                 default = TODOS)
     MuNom = models.ForeignKey(Municipio, related_name="actividad_municipio")
     
-    class Meta:
-        ordering = ['-fecha']
+   # class Meta:
+    #    ordering = ['-fecha']
         
     def __unicode__(self):
         return self.Nombre
