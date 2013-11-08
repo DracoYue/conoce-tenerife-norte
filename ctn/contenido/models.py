@@ -7,16 +7,16 @@ import datetime
 
 class Municipio(models.Model):
     Nombre = models.CharField(max_length = 70)
-    Latitud = models.BigIntegerField(max_length =  15)
-    Longitud = models.BigIntegerField(max_length = 15)
+    Latitud = models.FloatField(max_length =  15)
+    Longitud = models.FloatField(max_length = 15)
     TlfA = models.IntegerField(max_length = 9)
     def __unicode__(self):
         return self.Nombre
     
 class Senderos(models.Model):
     Nombre = models.CharField(max_length = 70)
-    Latitud = models.BigIntegerField(max_length =  15)
-    Longitud = models.BigIntegerField(max_length = 15)
+    Latitud = models.FloatField(max_length =  15)
+    Longitud = models.FloatField(max_length = 15)
     MuNom = models.ForeignKey(Municipio, related_name="sendero_municipio")
     MUYBIEN = 'MB'
     BIEN = 'B'
