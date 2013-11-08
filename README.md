@@ -24,7 +24,7 @@ COMENTARIOS
     - pip install django-social-auth
 - 06/10/2013 - Definición BBDD
 - 08/10/2013 - Foto Perfil
-    - pip install django-gravatar2
+    - pip install django-simple-gravatar
 - 08/10/2013 - Rellenar BBDD
 
 
