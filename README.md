@@ -20,11 +20,11 @@ COMENTARIOS
 
 - 02/10/2013 - Prototipo
 - 05/10/2013 - Empezando Proyecto
-- 06/10/2013 - Definición de usuarios 1.0
+- 06/10/2013 - Definición de usuarios
     - pip install django-social-auth
-- 06/10/2013 - Definición BBDD 1.0
+- 06/10/2013 - Definición BBDD
 
 
-Chicas al poder! =)
 
+###Chicas al poder! =)
 
