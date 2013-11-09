@@ -30,6 +30,8 @@
 	<script type="text/javascript" src="../static/js/jquery.min.js"></script>
 	<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../static/js/scripts.js"></script>
+	{% block css %}
+	{% endblock css %}
 </head>
 
 <body>
@@ -58,17 +60,8 @@
 					</ul>
 				</div>
 			</nav>
-			<div class="jumbotron" >
-				<center>
-					<img alt="140x140" src="http://banot.etsii.ull.es/alu4103/STW/logo.png" class="img-circle" />
-					<h1>Conoce Tenerife Norte</h1>
-				</center>
-			</div>
-			<blockquote>
-				<p>
-					Nuestro proyecto de Sistemas y Tecnologías Webs.
-				</p>
-			</blockquote>
+			{% block header %}
+			{% endblock header %}
 			<ul class="breadcrumb">
 				<li>
 					{% block ruta %}
@@ -79,16 +72,9 @@
 			{% endblock contenido %}
 	    </div>
 	</div>
-	<footer>
-		<div class="breadcrumb">
-			<h4>Desarrolladores: </h2>
-			<ul>
-				<li>Ángela Hdez</li>
-				<li>Madelaine Martín</li>
-				<li>Jéssica A. Ramos</li>
-			</ul>
-		</div>
-	</footer>	
+	{% block footer %}
+	{% endblock footer%}
+	
 </div>
 </body>
 </html>

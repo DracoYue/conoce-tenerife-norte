@@ -4,7 +4,21 @@
 	{% endblock %}
 	{% block ruta %}
 		<a href="/" class="active">Home</a> <span class="divider">/</span>
-	{% endblock ruta %}
+	{% endblock %}
+	{% block header %}
+		<div class="jumbotron" >
+				<center>
+					<img alt="140x140" src="http://banot.etsii.ull.es/alu4103/STW/logo.png" class="img-circle" />
+					<h1>Conoce Tenerife Norte</h1>
+				</center>
+			</div>
+			<blockquote>
+				<p>
+					Nuestro proyecto de Sistemas y Tecnologías Webs.
+				</p>
+			</blockquote>
+		</div>
+	{% endblock %}
 	{% block contenido %}
 		<div class="carousel slide" id="carousel-16362">
 			<ol class="carousel-indicators">
@@ -74,6 +88,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="col-md-4">
 					<div class="thumbnail">
 						<img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/actividades.jpg">
@@ -85,4 +100,15 @@
 					</div>
 				</div>
 	{% endblock contenido %}
-	
+	{% block footer %}
+		<footer>
+			<div class="breadcrumb">
+				<h4>Desarrolladores: </h2>
+				<ul>
+					<li>Ángela Hdez</li>
+					<li>Madelaine Martín</li>
+					<li>Jéssica A. Ramos</li>
+				</ul>
+			</div>
+		</footer>	
+	{% endblock footer %}
