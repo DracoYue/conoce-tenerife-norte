@@ -2,3 +2,8 @@ Fotos
 
 http://www.allcaravan.es/images/stories/fotodweb2013/tererife/actividiarias/senderismo%20teide.jpg
 http://www.suertesdelmarques.com/img/bodega4.jpg
+
+Generar HTML
+
+http://www.plugolabs.com/twitter-bootstrap-button-generator/
+http://www.layoutit.com/
