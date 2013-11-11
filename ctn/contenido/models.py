@@ -56,6 +56,8 @@ class LugaresInteres(models.Model):
     Direccion = models.CharField(max_length = 70)
     MuNom = models.ForeignKey(Municipio, related_name="lugar_municipio")
     Tlf = models.IntegerField(max_length = 9)
+    def __unicode__(self):
+        return self.Nombre
     
 class Actividades(models.Model):
     Nombre = models.CharField(max_length = 70)
