@@ -26,6 +26,10 @@ COMENTARIOS
 - 08/10/2013 - Foto Perfil
     - pip install django-simple-gravatar
 - 08/10/2013 - Rellenar BBDD
+- 11/10/2013 - Añadiendo Páginas Estáticas
+    - about us
+    - contact
+    - help
 
 
 ###Chicas al poder! =)
