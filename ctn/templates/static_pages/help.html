@@ -6,6 +6,11 @@
         <link rel="stylesheet" type="text/css" href="/static/css/help.css">
     {% endblock %}
 
+    {% block ruta %}
+      <a href="/" class="active">Home</a> <span class="divider">/</span>
+      <a href="/help/" class="active">Help</a> <span class="divider">/</span>
+    {% endblock ruta %}
+
     {% block contenido %}
     <div class="span9">
      <h1>HELP</h1>

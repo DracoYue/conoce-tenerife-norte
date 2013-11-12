@@ -1,8 +1,13 @@
-{% extends "ctn/base1.html" %}
+{% extends "static_pages/base1.html" %}
 
     {% block link %}
         <a href="/logout/">Logout / Sing in</a>
     {% endblock %}
+
+    {% block ruta %}
+        <a href="/" class="active">Home</a> <span class="divider">/</span>
+        <a href="/login/" class="active">Login</a> <span class="divider">/</span>
+    {% endblock ruta %}
 
     {% block contenido %}
 
