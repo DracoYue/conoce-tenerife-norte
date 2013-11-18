@@ -1,0 +1,59 @@
+{% extends "static_pages/base1.html" %}
+
+    {% block titulo %} Senderos {% endblock %}
+    {% block encabezado %}Senderos {% endblock %}
+    {% block link %}
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    {% endblock %}
+    {% block ruta %}
+        <a href="/" class="active">Home</a> <span class="divider">/</span>
+        <a href="/senderos/" class="active">Senderos</a> <span class="divider">/</span>
+    {% endblock %}
+
+    {% block contenido %}
+    <div class="span9">
+        <h1>Senderos</h1>
+            <center>
+                <iframe src="https://mapsengine.google.com/map/embed?mid=zxblyZTPeOJw.koaL8Mn_YLug" width="640" height="480"></iframe>
+            </center>
+                <div class="container">
+            	    <div class="row clearfix">
+                		<div class="col-md-12 column">
+                			<nav class="navbar navbar-default" role="navigation">
+                				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                					<ul class="nav navbar-nav">
+                						<li>
+                							<a href="/sauzal/">El Sauzal</a>
+                						</li>
+                						<li>
+                							<a href="#">La Matanza</a>
+                						</li>
+                						<li>
+                							<a href="#">La Orotava</a>
+                						</li>
+                						<li>
+                							<a href="#">La Victoria</a>
+                						</li>
+                						<li>
+                							<a href="#">Los Realejos</a>
+                						</li>
+                						<li>
+                							<a href="#">Puerto de la Cruz</a>
+                						</li>
+                						<li>
+                							<a href="#">Santa Úrsula</a>
+                						</li>
+                						<li>
+                							<a href="#">Tacoronte</a>
+                						</li>
+                					</ul>
+                				</div>
+                			</nav>
+                		</div>
+            	</div>
+        </div>
+    </div>
+    <div id="espacio">
+    </div>
+    
+    {% endblock %}
