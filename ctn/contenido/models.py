@@ -12,6 +12,7 @@ class Municipio(models.Model):
     TlfA = models.IntegerField(max_length = 9)
     def __unicode__(self):
         return self.Nombre
+   
     
 class Senderos(models.Model):
     Nombre = models.CharField(max_length = 70)
