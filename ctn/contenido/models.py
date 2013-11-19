@@ -18,7 +18,7 @@ class Senderos(models.Model):
     Nombre = models.CharField(max_length = 70)
     Latitud = models.FloatField(max_length =  15)
     Longitud = models.FloatField(max_length = 15)
-    MuNom = models.ForeignKey(Municipio, related_name="sendero_municipio")
+    MuNom = models.ForeignKey(Municipio, related_name="MuNom")
     MUYBIEN = 'MB'
     BIEN = 'B'
     REGULAR = 'R'
