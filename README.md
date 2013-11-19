@@ -3,7 +3,7 @@
 SISTEMAS Y TECNOLOGÍAS WEB
 ============================
 
-Versión 1.2
+Versión 1.3
 
 GRUPO
 ============================
@@ -30,7 +30,15 @@ COMENTARIOS
     - about us
     - contact
     - help
-
+- 18/11/2013 - Añadida Página Senderos
+    - El Sauzal --> Sendero 1
+    - La Matanza
+    - La Victoria
+    - La Orotava
+    - Los Realejos
+    - Santa Úrsula
+    - Tacoronte
+- 18/11/2013 - Añadido mapa personalizado --> Página Senderos
 
 ###Chicas al poder! =)
 

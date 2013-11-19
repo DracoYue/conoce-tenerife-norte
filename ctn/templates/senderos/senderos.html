@@ -1,0 +1,48 @@
+{% extends "static_pages/base1.html" %}
+
+    {% block titulo %} Senderos {% endblock %}
+    {% block encabezado %}Senderos {% endblock %}
+    {% block link %}
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    {% endblock %}
+    {% block ruta %}
+        <a href="/" class="active">Home</a> <span class="divider">/</span>
+        <a href="/senderos/" class="active">Senderos</a> <span class="divider">/</span>
+    {% endblock %}
+
+    {% block contenido %}
+        <div class="span9">
+            <h1>SENDEROS</h1>
+            <center>
+                <iframe src="https://mapsengine.google.com/map/embed?mid=zxblyZTPeOJw.koaL8Mn_YLug" width="640" height="480"></iframe>
+            </center>
+            </br>
+            <div class="container">
+            	<div class="row clearfix">
+            		<div class="col-md-12 column">
+            			<nav class="navbar navbar-default" role="navigation">
+            				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            					<ul class="nav navbar-nav">
+            					    {% for i in municipio %}
+                					    <li class="dropdown">
+                					        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ i }}<strong class="caret"></strong></a>
+                					    </li>
+                					 {% endfor %}
+                						<!--<ul class="dropdown-menu">
+                						    <li>
+                									<a href="/brena/">Las Breñas y Paseo Litoral Costa Acentejo</a>
+                								</li>
+                								<li>
+                									<a href="#">La Ladera</a>
+                								</li>
+                							</ul>-->
+            					</ul>
+            				</div>
+            			</nav>
+            		</div>
+            	</div>
+            </div>
+        </div>
+        <div id="espacio">
+        </div>
+    {% endblock %}
