@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
 from django.views.generic import *
+from django.conf.urls.defaults import *
 
 
 # Uncomment the next two lines to enable the admin:
@@ -26,7 +27,11 @@ urlpatterns = patterns('',
     url(r'^contact/', TemplateView.as_view(template_name="static_pages/contact.html")),
     url(r'^about/', TemplateView.as_view(template_name="static_pages/about.html")),
     url(r'^help/', TemplateView.as_view(template_name="static_pages/help.html")),
-    url(r'^senderos/', 'contenido.views.listar_municipio'),
+    #url(r'^senderos/', 'contenido.views.listar_municipio'),
+    url(r'^rutas/(\d+)/','contenido.views.listar_sendero'),
     #Senderos
     url(r'^brena/', TemplateView.as_view(template_name="senderos/brena.html")),
+    url(r'', include('gmapi.urls.media')),
+    url(r'^mapa/', 'contenido.views.mapa'),
+    url(r'^senderos/', 'contenido.views.senderos'),
 )

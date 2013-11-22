@@ -34,6 +34,8 @@ class Senderos(models.Model):
                                 default = MUYBIEN)
     Comentarios = models.CharField(max_length = 140)
     #Foto = models.ImafeField()
+    def __unicode__(self):
+        return self.Nombre
 
 class LugaresInteres(models.Model):
     Nombre = models.CharField(max_length = 70)

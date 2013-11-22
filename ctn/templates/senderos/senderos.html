@@ -1,9 +1,10 @@
 {% extends "static_pages/base1.html" %}
 
     {% block titulo %} Senderos {% endblock %}
-    {% block encabezado %}Senderos {% endblock %}
+    {% block encabezado %} Senderos {% endblock %}
     {% block link %}
         <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     {% endblock %}
     {% block ruta %}
         <a href="/" class="active">Home</a> <span class="divider">/</span>
@@ -12,36 +13,31 @@
 
     {% block contenido %}
         <div class="span9">
-            <h1>SENDEROS</h1>
-            <center>
-                <iframe src="https://mapsengine.google.com/map/embed?mid=zxblyZTPeOJw.koaL8Mn_YLug" width="640" height="480"></iframe>
-            </center>
-            </br>
+            <h1> SENDEROS </h1>
+                    <script type="text/javascript">
+                        window.myobj = {
+                            markerOver: function() { this.openInfoWindow(); },
+                            markerOut: function() { this.closeInfoWindow(); }
+                        };
+                    </script>
+                    {{ form.map }}
+                    {{ form.media.js }}
             <div class="container">
-            	<div class="row clearfix">
-            		<div class="col-md-12 column">
-            			<nav class="navbar navbar-default" role="navigation">
-            				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            					<ul class="nav navbar-nav">
-            					    {% for i in municipio %}
-                					    <li class="dropdown">
-                					        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ i }}<strong class="caret"></strong></a>
-                					    </li>
-                					 {% endfor %}
-                						<ul class="dropdown-menu">
-                						    {% for i in senderos %}
-                        					    <li class="dropdown">
-                        					        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ senderos.get(i) }}<strong class="caret"></strong></a>
-                        					    </li>
-                					        {% endfor %}
-                						</ul>
-            					</ul>
-            				</div>
-            			</nav>
-            		</div>
-            	</div>
+                <div class="row clearfix">
+                    <div class="col-md-12 column">
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    {% for i in municipio %}
+                                        <li class="dropdown">
+                                            <a href="../rutas/{{ i.id }}/" class="dropdown-toggle" data-toggle="dropdown">{{ i.Nombre }}<strong class="caret"></strong></a>
+                                        </li>
+                                     {% endfor %}
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div id="espacio">
-        </div>
+       </div>
     {% endblock %}
