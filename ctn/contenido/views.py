@@ -3,8 +3,7 @@ from contenido.models import *
 from django.shortcuts import render_to_response
 from django import forms
 from django.shortcuts import render_to_response
-from gmapi import maps
-from gmapi.forms.widgets import GoogleMap
+
 def listar_sendero(request, numero):
     bbdd = Municipio.objects.all()
     municipio = []
@@ -26,53 +25,10 @@ def listar_sendero(request, numero):
     
     return render_to_response('senderos/rutas.html',{'senderos':senderos, 'municipio':municipio})   
 
-class MapForm(forms.Form):
-    map = forms.Field(widget=GoogleMap(attrs={'width':510, 'height':510}))
 
 
-def mapa(request):
-    gmap = maps.Map(opts = {
-        'center': maps.LatLng(28.333395, -16.50238),
-        'mapTypeId': maps.MapTypeId.ROADMAP,
-        'zoom': 9,
-        'mapTypeControlOptions': {
-             'style': maps.MapTypeControlStyle.DROPDOWN_MENU
-        },
-    })
-    marker = maps.Marker(opts = {
-        'map': gmap,
-        'position': maps.LatLng(28.333395, -16.50238),
-    })
-    maps.event.addListener(marker, 'mouseover', 'myobj.markerOver')
-    maps.event.addListener(marker, 'mouseout', 'myobj.markerOut')
-    info = maps.InfoWindow({
-        'content': 'Hello!',
-        'disableAutoPan': True
-    })
-    info.open(gmap, marker)
-    context = {'form': MapForm(initial={'map': gmap})}
-    return render_to_response('senderos/mapa.html', context)
-
-def senderos(request):
-    gmap = maps.Map(opts = {
-        'center': maps.LatLng(28.333395, -16.50238),
-        'mapTypeId': maps.MapTypeId.ROADMAP,
-        'zoom': 9,
-        'mapTypeControlOptions': {
-             'style': maps.MapTypeControlStyle.DROPDOWN_MENU
-        },
-    })
-    marker = maps.Marker(opts = {
-        'map': gmap,
-        'position': maps.LatLng(28.333395, -16.50238),
-    })
-    maps.event.addListener(marker, 'mouseover', 'myobj.markerOver')
-    maps.event.addListener(marker, 'mouseout', 'myobj.markerOut')
-    info = maps.InfoWindow({
-        'content': 'Hello!',
-        'disableAutoPan': True
-    })
-    info.open(gmap, marker)
+def municipio(request):
+   
 
     bbdd = Municipio.objects.all()
     municipio = []
@@ -80,6 +36,6 @@ def senderos(request):
         municipio.append(i)
     municipio.sort()
 
-    context = {'form': MapForm(initial={'map': gmap}), 'municipio':municipio}
+    context = {'municipio':municipio}
     return render_to_response('senderos/senderos.html', context)
     

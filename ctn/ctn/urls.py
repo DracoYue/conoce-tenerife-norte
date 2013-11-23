@@ -31,7 +31,7 @@ urlpatterns = patterns('',
     url(r'^rutas/(\d+)/','contenido.views.listar_sendero'),
     #Senderos
     url(r'^brena/', TemplateView.as_view(template_name="senderos/brena.html")),
-    url(r'', include('gmapi.urls.media')),
-    url(r'^mapa/', 'contenido.views.mapa'),
-    url(r'^senderos/', 'contenido.views.senderos'),
+  
+    url(r'^senderos/', 'contenido.views.municipio'),
+    url(r'^mapa/', TemplateView.as_view(template_name="pepe.html")),
 )
