@@ -27,9 +27,6 @@ urlpatterns = patterns('',
     url(r'^contact/', TemplateView.as_view(template_name="static_pages/contact.html")),
     url(r'^about/', TemplateView.as_view(template_name="static_pages/about.html")),
     url(r'^help/', TemplateView.as_view(template_name="static_pages/help.html")),
-    #url(r'^senderos/', 'contenido.views.listar_municipio'),
-    url(r'^rutas/(\d+)/','contenido.views.listar_sendero'),
-    #Senderos
     url(r'^brena/', TemplateView.as_view(template_name="senderos/brena.html")),
   
     url(r'^senderos/', 'contenido.views.municipio'),
