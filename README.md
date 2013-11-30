@@ -31,14 +31,17 @@ COMENTARIOS
     - contact
     - help
 - 18/11/2013 - Añadida Página Senderos
-    - El Sauzal --> Sendero 1
-    - La Matanza
-    - La Victoria
-    - La Orotava
-    - Los Realejos
+    - El Sauzal --> Sendero 1 --> Sendero 2 --> Sendero 3
+    - La Matanza --> Sendero 1 --> Sendero 2
+    - La Victoria --> Sendero 1
+    - La Orotava --> Sendero 1
+    - Los Realejos --> Sendero 1 --> Sendero 2
     - Santa Úrsula
-    - Tacoronte
-- 18/11/2013 - Añadido mapa personalizado --> Página Senderos
+    - Tacoronte --> Sendero 1 --> Sendero 2
+    - Puerto de la Cruz --> Sendero 1 --> Sendero 2
+- 18/11/2013 - Añadido mapa personalizado => Página Mapa
+- 23/11/2013 - Añadiendo mapas de cada sendero.
+- 30/11/2013 - Terminando BBDD
 
 ###Chicas al poder! =)
 
