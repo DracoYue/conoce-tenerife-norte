@@ -30,6 +30,5 @@ urlpatterns = patterns('',
     #url(r'^rutas/', 'contenido.views.municipio'),
   
     url(r'^senderos/', 'contenido.views.municipio'),
-    url(r'^mapa/', TemplateView.as_view(template_name="mapa.html")),
     #url(r'^caldera/', TemplateView.as_view(template_name="senderos/caldera.html")),
 )
