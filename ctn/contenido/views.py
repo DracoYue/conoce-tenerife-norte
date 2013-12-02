@@ -26,7 +26,9 @@ def senderos(request, n_sendero):
     longitud = sendero.Longitud
     municipio = sendero.MuNom
     puntos = sendero.Puntuacion
+    latitudD = sendero.LatitudD
+    longitudD = sendero.LongitudD
     
-    context = {'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos}
+    context = {'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'latitudD':latitudD, 'longitudD':longitudD}
     
     return render_to_response('senderos/senderos_info.html', context)

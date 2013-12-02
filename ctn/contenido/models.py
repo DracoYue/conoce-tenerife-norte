@@ -32,12 +32,21 @@ class Senderos(models.Model):
                                 choices = Calificacion,
                                 default = MUYBIEN)
     Comentarios = models.CharField(max_length = 140)
-    LongitudD = models.FloatField(max_length = 15)
-    LatitudD = models.FloatField(max_length =  15)
+    Coordenadas = models.CharField(max_length = 6000)
+    #LatitudD = models.CharField(max_length =  6000)
     
     #Foto = models.ImafeField()
     def __unicode__(self):
         return self.Nombre
+
+"""
+class Coordenadas(models.Model):
+    Latitud = models.FloatField(max_length =  15)
+    Longitud = models.FloatField(max_length = 15)
+    Sendero = models.ForeignKey(Senderos, related_name="MuSen")
+    Municipio = models.ForeignKey(Municipio, related_name="MuNom2")
+"""    
+
 
 class LugaresInteres(models.Model):
     Nombre = models.CharField(max_length = 70)

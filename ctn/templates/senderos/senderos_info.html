@@ -20,37 +20,28 @@
         var nombre = "{{ nombre }}";
         var latitud = {{ latitud }};
         var longitud = {{ longitud }};
-        alert(latitud);
-            alert(longitud);
+        var latitudD = {{ latitudD }};
+        var longitudD = {{ longitudD }};
       
      
         map = new GMaps({
             div: '#mimapa',
-            lat: 28.466277,
-            lng: -16.554444,
-            zoom: 11,
+            lat: 28.470099,
+            lng: -16.453599,
+            zoom: 16,
         });
 
-        map.addMarker({
 
-            lat: latitud,
-            lng: longitud,
-            title: nombre,
-            /*icon: "http://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/64px-Wikimedia-logo.svg.png",*/
-            infoWindow: {
-                content: '<p>{{nombre}}</p>'
-            }
-         });
 
-        /*map.drawRoute({
-          origin: [-12.044012922866312, -77.02470665341184],
-          destination: [-12.090814532191756, -77.02271108990476],
-          travelMode: 'walking',
+        path = [[28.472605,-16.448966], [28.472688,-16.44917], [28.472794,-16.449436], [28.472124,-16.450147], [28.471311,-16.450603], [28.471382,-16.451641], [28.47124,-16.451807], [28.471228,-16.452215], [28.47041,-16.452601], [28.470368,-16.452998], [28.470099,-16.453599], [28.469976,-16.453647], [28.469849,-16.453864], [28.469333,-16.454148], [28.468991,-16.455101], [28.469061,-16.455382], [28.468896,-16.455323], [28.468597,-16.45564], [28.468406,-16.456098], [28.467661,-16.456037]];
+
+        map.drawPolyline({
+          path: path,
           strokeColor: '#131540',
           strokeOpacity: 0.6,
           strokeWeight: 6
-        });*/
-     
+        });
+
     
 });
 </script>
