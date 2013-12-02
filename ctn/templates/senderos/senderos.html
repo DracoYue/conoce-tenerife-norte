@@ -115,7 +115,7 @@
                                              <h3>Senderos: </h3>
                                             {% for j in senderos %}
                                                 {% if i.id == j.MuNom_id %}
-                                                   <li>{{ j.Nombre }}</li>
+                                                   <li><a href="/senderos/{{ j.id }}">{{ j.Nombre }}</a></li>
                                                 {% endif %}
                                             {% endfor %}
 
