@@ -32,6 +32,9 @@ class Senderos(models.Model):
                                 choices = Calificacion,
                                 default = MUYBIEN)
     Comentarios = models.CharField(max_length = 140)
+    LongitudD = models.FloatField(max_length = 15)
+    LatitudD = models.FloatField(max_length =  15)
+    
     #Foto = models.ImafeField()
     def __unicode__(self):
         return self.Nombre

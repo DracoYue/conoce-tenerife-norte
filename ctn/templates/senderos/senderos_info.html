@@ -17,6 +17,13 @@
 
     var map;
     $(document).ready(function(){
+        var nombre = "{{ nombre }}";
+        var latitud = {{ latitud }};
+        var longitud = {{ longitud }};
+        alert(latitud);
+            alert(longitud);
+      
+     
         map = new GMaps({
             div: '#mimapa',
             lat: 28.466277,
@@ -26,13 +33,16 @@
 
         map.addMarker({
 
-            lat: 28.475255,
-            lng: -16.434137,
-            title: 'El Sauzal',
-            
+            lat: latitud,
+            lng: longitud,
+            title: nombre,
+            /*icon: "http://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/64px-Wikimedia-logo.svg.png",*/
+            infoWindow: {
+                content: '<p>{{nombre}}</p>'
+            }
          });
-     
-     /*map.drawRoute({
+
+        /*map.drawRoute({
           origin: [-12.044012922866312, -77.02470665341184],
           destination: [-12.090814532191756, -77.02271108990476],
           travelMode: 'walking',
@@ -40,6 +50,7 @@
           strokeOpacity: 0.6,
           strokeWeight: 6
         });*/
+     
     
 });
 </script>
