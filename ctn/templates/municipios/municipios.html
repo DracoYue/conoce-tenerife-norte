@@ -1,0 +1,35 @@
+{% extends "static_pages/base1.html" %}
+
+    {% block titulo %} Senderos {% endblock %}
+    {% block encabezado %} Senderos {% endblock %}
+    {% block link %}
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <a href="/login/">Login / Sing in</a>
+
+    {% endblock %}
+    {% block ruta %}
+        <a href="/" class="active">Home</a> <span class="divider">/</span>
+        <a href="/municipios/" class="active">Municipios</a> <span class="divider">/</span>
+    {% endblock %}
+
+    {% block contenido %}
+        <div class="span9">
+            <h1> MUNICIPIOS </h1>
+            <div class="container">
+                <div class="row clearfix">
+	            	<div class="col-md-12 column">
+			            <div class="row clearfix">
+				            <div class="col-md-6 column">
+                                {% for i in municipio2 %}
+                                    <h3><a href="/municipios/{{ i.id }}">{{ i.Nombre }}</a></h3>
+                                {% endfor %}
+                            </div>
+                            <div class="col-md-6 column">
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/Municipios_14cm.jpg" alt="Tenerife Municipios">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    {% endblock %}
