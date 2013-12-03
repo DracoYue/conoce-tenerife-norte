@@ -11,19 +11,23 @@
 
     var map;
     $(document).ready(function(){
+           
         map = new GMaps({
             div: '#mimapa',
             lat: 28.466277,
             lng: -16.554444,
             zoom: 11,
         });
+       
+        
 
         map.addMarker({
            lat:28.392004,
            lng:-16.523537,
            title: 'La Orotava',
+           
            infoWindow: {
-                content: '<p>La Orotava</p><img src="http://www.lovetenerife.net/wp-content/uploads/2011/12/La-Orotava.jpg"> '
+                content: '<p>La Orotava</p><img src="http://www.lovetenerife.net/wp-content/uploads/2011/12/La-Orotava.jpg" width="90px", height="90px"> '
            }
         });
         map.addMarker({
@@ -31,7 +35,7 @@
             lng: -16.494948,
             title: 'Santa Úrsula',
             infoWindow: {
-                content: '<p>Santa Úrsula</p><img src="http://upload.wikimedia.org/wikipedia/commons/6/6a/Ayuntamiento_de_Santa_%C3%9Arsula_(sin_banderas).jpg" > '
+                content: '<p>Santa Úrsula</p><img src="http://upload.wikimedia.org/wikipedia/commons/6/6a/Ayuntamiento_de_Santa_%C3%9Arsula_(sin_banderas).jpg" width="90px", height="90px"> '
             }
          });
         map.addMarker({
@@ -39,7 +43,7 @@
             lng: -16.544823,
             title: 'El Puerto de La Cruz',
             infoWindow: {
-                content: '<p>El Puerto de La Cruz</p><img src="http://www.viajejet.com/wp-content/viajes/puerto-de-la-cruz-tenerife.jpg" > '
+                content: '<p>El Puerto de La Cruz</p><img src="http://www.viajejet.com/wp-content/viajes/puerto-de-la-cruz-tenerife.jpg" width="90px", height="90px"> '
             }
          });
         map.addMarker({
@@ -47,7 +51,7 @@
             lng: -16.58379,
             title: 'Los Realejos',
             infoWindow: {
-                content: '<p>Los Realejos</p><img src="http://www.ayto-realejos.es/export/sites/default/comun/galerias/galeriaImagenes/realejos/prensa/Ayuntamiento_de_Los_Realejos.jpg_1054497554.jpg" > '
+                content: '<p>Los Realejos</p><img src="http://www.ayto-realejos.es/export/sites/default/comun/galerias/galeriaImagenes/realejos/prensa/Ayuntamiento_de_Los_Realejos.jpg_1054497554.jpg" width="90px", height="90px"> '
             }
          });
         map.addMarker({
@@ -55,7 +59,7 @@
             lng:  -16.458134,
             title: 'La Matanza',
             infoWindow: {
-                content: '<p>La Matanza</p><img src="http://3.bp.blogspot.com/_DQJPos1oSiQ/TEBXIRqfgJI/AAAAAAAAAA4/nqnUzNgDSyg/s1600/La+Matanza+de+Acentejo.jpg" > '
+                content: '<p>La Matanza</p><img src="http://3.bp.blogspot.com/_DQJPos1oSiQ/TEBXIRqfgJI/AAAAAAAAAA4/nqnUzNgDSyg/s1600/La+Matanza+de+Acentejo.jpg" width="90px", height="90px" > '
             }
          });
         map.addMarker({
@@ -63,7 +67,7 @@
             lng:  -16.470322,
             title: 'La Victoria',
             infoWindow: {
-                content: '<p>La victoria</p><img src="http://www.lavictoriadeacentejo.es/galeria/12.jpg" > '
+                content: '<p>La victoria</p><img src="http://www.lavictoriadeacentejo.es/galeria/12.jpg" width="90px", height="90px"> '
             }
          });
         map.addMarker({
@@ -71,7 +75,7 @@
             lng:  -16.413191,
             title: 'Tacoronte',
             infoWindow: {
-                content: '<p>Tacoronte</p><img src="http://www.diariodeavisos.com/wp-content/uploads/2013/06/ROMERIA-TACORONTE-2013-2-600x373.jpg">'
+                content: '<p>Tacoronte</p><img src="http://www.diariodeavisos.com/wp-content/uploads/2013/06/ROMERIA-TACORONTE-2013-2-600x373.jpg" width="90px", height="90px">'
             }
          });
         map.addMarker({
@@ -80,13 +84,14 @@
             title: 'El Sauzal',
             /*icon: "http://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/64px-Wikimedia-logo.svg.png",*/
             infoWindow: {
-                content: '<p>El Sauzal</p><img src="http://www.fotopaises.com/Fotos-Paises/t/2006/2/5/1853_1139227018.jpg" > '
+                content: '<p>El Sauzal</p><img src="http://www.fotopaises.com/Fotos-Paises/t/2006/2/5/1853_1139227018.jpg" width="90px", height="90px"> '
             }
          });
+
      
-    
 });
 </script>
+
     {% endblock %}
     {% block ruta %}
         <a href="/" class="active">Home</a> <span class="divider">/</span>
