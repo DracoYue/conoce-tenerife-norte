@@ -22,6 +22,7 @@ def municipio(request):
 def senderos(request, n_sendero):
     
     sendero = Senderos.objects.get(id=n_sendero)
+    nid = n_sendero
     nombre = sendero.Nombre
     latitud = sendero.Latitud
     longitud = sendero.Longitud
@@ -34,6 +35,6 @@ def senderos(request, n_sendero):
     print len(coordenadas)
     
 
-    context = {'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
+    context = {'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
     
     return render_to_response('senderos/senderos_info.html', context)

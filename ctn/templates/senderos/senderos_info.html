@@ -69,6 +69,7 @@
     {% block ruta %}
         <a href="/" class="active">Home</a> <span class="divider">/</span>
         <a href="/senderos/" class="active">Senderos</a> <span class="divider">/</span>
+        <a href="/senderos/{{ nid }}" class="active">{{ nombre }}</a> <span class="divider">/</span>
     {% endblock %}
 
     {% block contenido %}
