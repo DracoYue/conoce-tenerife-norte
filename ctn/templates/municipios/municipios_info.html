@@ -25,38 +25,61 @@
             	<div class="col-md-12 column">
 		            <div class="row clearfix">
 			            <div class="col-md-6 column">
-                            <p><h3>{{ nombre }}</h3>
-                            <h3>Localización:</h3> {{ latitud }}, {{ longitud }}
-                            <h3>Teléfono:</h3> {{ tlfa }}</p>
-                            {% if nombre == 'La Orotava' %}   
-                                <h3>Historia: </h3><p>La Orotava es un municipio perteneciente a la provincia de Santa Cruz de Tenerife (Canarias, España). Está situado en el norte de la isla de Tenerife. Ocupa buena parte del Valle de La Orotava, en las faldas del Teide. En este valle también se encuentran los municipios del Puerto de la Cruz y de Los Realejos.
-Tiene una extensión de 207,31 km² (siendo el mayor de los municipios tinerfeños) y una población de 41.427 habitantes (INE, 2010). La altitud del principal centro de población es de 390 metros, aunque la del municipio va desde el nivel del mar hasta los 3.718 metros de la cima del Teide (símbolo geológico de la isla y de Canarias), situada dentro del término municipal que, por tanto, lo convierte en el municipio que alcanza mayor altura de España. Gran parte del Parque Nacional del Teide pertenece a este municipio.</p>
-                            {% endif %}
-                            {% if nombre == 'Santa Ursula' %}   
-                                <h3>Historia: </h3><p>Santa Úrsula es un municipio español perteneciente a la provincia de Santa Cruz de Tenerife (Canarias). Con una superficie de 22,59 km² y una población de 14.143 habitantes, se sitúa en la vertiente norte de la isla de Tenerife.</p>
-                            {% endif %}
-                            {% if nombre == 'Puerto de la Cruz' %}   
-                                <h3>Historia: </h3><p>Puerto de la Cruz es una ciudad y municipio español perteneciente a la provincia de Santa Cruz de Tenerife, en Canarias. Se sitúa en el norte de la isla de Tenerife, en el valle de La Orotava, junto a los municipios de Los Realejos y de La Orotava.
-Tiene una extensión de 8,73 km², es el municipio más pequeño de las Islas Canarias, y una población de 32.571 habitantes. Lo que convierte al Puerto de la Cruz en el segundo municipio con mayor densidad de población de Canarias, con más de 3.500 hab./km². Además es uno de los municipios más poblados de la isla en general.</p>
-                            {% endif %}
-                            {% if nombre == 'Tacoronte' %}   
-                                <h3>Historia: </h3><p>Tacoronte es un municipio canario y ciudad perteneciente a la provincia de Santa Cruz de Tenerife. Está situado en el norte de la isla de Tenerife (España).
-Tiene una extensión de 30,09 km² y una población de 23.718 habitantes. En 1911 el Rey Alfonso XIII le otorga el título de Ciudad a raíz de un viaje que realizó el monarca a las islas y visitó Tacoronte. Este municipio forma parte de el Área metropolitana de Santa Cruz de Tenerife-La Laguna.</p>
-                            {% endif %}
-                            {% if nombre == 'Los Realejos' %}   
-                                <h3>Historia: </h3><p>Los Realejos es un municipio español perteneciente a la provincia de Santa Cruz de Tenerife (Canarias). Está situado en el norte de la isla de Tenerife. Se sitúa en el Valle de La Orotava, a las faldas del Teide. A pocos kilómetros de La Orotava y del Puerto de la Cruz. Los Realejos está a 42 km de la capital Santa Cruz de Tenerife.
-Tiene una extensión de 57,09 km² y una población de 38.015 habitantes. Su altitud en la cabecera es de 420 metros sobre el nivel del mar.</p>
-                            {% endif %}
-                            {% if nombre == 'El Sauzal' %}   
-                                <h3>Historia: </h3><p>El Sauzal es un municipio español perteneciente a la provincia de Santa Cruz de Tenerife (Canarias). Está situado en el norte de la isla de Tenerife, ocupando una superficie de 18,31 km² y estando su capital emplazada a una altitud de 300 msnm. El origen del nombre del municipio se debe a la gran cantidad de sauces (Salix Canariensis) que existían en la zona, antiguamente conocida por el nombre de El Sauzalejo. Fiel testigo de aquellos tiempos, aún hoy se consevan algunos ejemplares en el parque de Los Lavaderos o en el cauce de algunos barrancos.</p>
-                            {% endif %}
-                            {% if nombre == 'La Matanza de Acentejo' %}   
-                                <h3>Historia: </h3><p>La Matanza de Acentejo es un municipio Canario perteneciente a la provincia de Santa Cruz de Tenerife (Canarias). Está situado en el norte de la isla de Tenerife.
-La Mantanza se encuentra en la comarca de Acentejo, donde se producen unos vinos bien considerados. Como no podía ser menos, la vid acapara la mayor extensión de tierras, que se comparten con cultivos de secano y frutales. No obstante, el paisaje de La Matanza comparte con otros municipios limítrofes el mismo relieve irregular que da lugar a acusadas pendientes.</p>
-                            {% endif %}
-                            {% if nombre == 'La Victoria de Acentejo' %}   
-                                <h3>Historia: </h3><p>La Victoria de Acentejo es un municipio español perteneciente a la provincia de Santa Cruz de Tenerife (Canarias). Está situado en el norte de la isla de Tenerife y tiene una extensión de 18,2 km.1 Por el este limita con La Matanza de Acentejo, por el oeste con Santa Úrsula, al sur limita con Candelaria y con Arafo; y al norte el océano Atlántico. Su inclinación es del 10% al 30%. Sus fiestas se realizan del 19 al 31 de agosto y son las principales fiestas de la Comarca de Acentejo, junto con las de Tacoronte.</p>
-                            {% endif %}
+			                <table class="table table-striped">
+			                    <thead>
+			                        <tr>
+			                            <th>
+                                            <p>
+                                                <h3>{{ nombre }}</h3>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h3>Localización:</h3> {{ latitud }}, {{ longitud }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3>Teléfono:</h3> {{ tlfa }}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            {% if nombre == 'La Orotava' %}   
+                                                <h3>Historia: </h3><p>La Orotava es un municipio perteneciente a la provincia de Santa Cruz de Tenerife (Canarias, España). Está situado en el norte de la isla de Tenerife. Ocupa buena parte del Valle de La Orotava, en las faldas del Teide. En este valle también se encuentran los municipios del Puerto de la Cruz y de Los Realejos.
+                Tiene una extensión de 207,31 km² (siendo el mayor de los municipios tinerfeños) y una población de 41.427 habitantes (INE, 2010). La altitud del principal centro de población es de 390 metros, aunque la del municipio va desde el nivel del mar hasta los 3.718 metros de la cima del Teide (símbolo geológico de la isla y de Canarias), situada dentro del término municipal que, por tanto, lo convierte en el municipio que alcanza mayor altura de España. Gran parte del Parque Nacional del Teide pertenece a este municipio.</p>
+                                            {% endif %}
+                                            {% if nombre == 'Santa Ursula' %}   
+                                                <h3>Historia: </h3><p>Santa Úrsula es un municipio español perteneciente a la provincia de Santa Cruz de Tenerife (Canarias). Con una superficie de 22,59 km² y una población de 14.143 habitantes, se sitúa en la vertiente norte de la isla de Tenerife.</p>
+                                            {% endif %}
+                                            {% if nombre == 'Puerto de la Cruz' %}   
+                                                <h3>Historia: </h3><p>Puerto de la Cruz es una ciudad y municipio español perteneciente a la provincia de Santa Cruz de Tenerife, en Canarias. Se sitúa en el norte de la isla de Tenerife, en el valle de La Orotava, junto a los municipios de Los Realejos y de La Orotava.
+                Tiene una extensión de 8,73 km², es el municipio más pequeño de las Islas Canarias, y una población de 32.571 habitantes. Lo que convierte al Puerto de la Cruz en el segundo municipio con mayor densidad de población de Canarias, con más de 3.500 hab./km². Además es uno de los municipios más poblados de la isla en general.</p>
+                                            {% endif %}
+                                            {% if nombre == 'Tacoronte' %}   
+                                                <h3>Historia: </h3><p>Tacoronte es un municipio canario y ciudad perteneciente a la provincia de Santa Cruz de Tenerife. Está situado en el norte de la isla de Tenerife (España).
+                Tiene una extensión de 30,09 km² y una población de 23.718 habitantes. En 1911 el Rey Alfonso XIII le otorga el título de Ciudad a raíz de un viaje que realizó el monarca a las islas y visitó Tacoronte. Este municipio forma parte de el Área metropolitana de Santa Cruz de Tenerife-La Laguna.</p>
+                                            {% endif %}
+                                            {% if nombre == 'Los Realejos' %}   
+                                                <h3>Historia: </h3><p>Los Realejos es un municipio español perteneciente a la provincia de Santa Cruz de Tenerife (Canarias). Está situado en el norte de la isla de Tenerife. Se sitúa en el Valle de La Orotava, a las faldas del Teide. A pocos kilómetros de La Orotava y del Puerto de la Cruz. Los Realejos está a 42 km de la capital Santa Cruz de Tenerife.
+                Tiene una extensión de 57,09 km² y una población de 38.015 habitantes. Su altitud en la cabecera es de 420 metros sobre el nivel del mar.</p>
+                                            {% endif %}
+                                            {% if nombre == 'El Sauzal' %}   
+                                                <h3>Historia: </h3><p>El Sauzal es un municipio español perteneciente a la provincia de Santa Cruz de Tenerife (Canarias). Está situado en el norte de la isla de Tenerife, ocupando una superficie de 18,31 km² y estando su capital emplazada a una altitud de 300 msnm. El origen del nombre del municipio se debe a la gran cantidad de sauces (Salix Canariensis) que existían en la zona, antiguamente conocida por el nombre de El Sauzalejo. Fiel testigo de aquellos tiempos, aún hoy se consevan algunos ejemplares en el parque de Los Lavaderos o en el cauce de algunos barrancos.</p>
+                                            {% endif %}
+                                            {% if nombre == 'La Matanza de Acentejo' %}   
+                                                <h3>Historia: </h3><p>La Matanza de Acentejo es un municipio Canario perteneciente a la provincia de Santa Cruz de Tenerife (Canarias). Está situado en el norte de la isla de Tenerife.
+                La Mantanza se encuentra en la comarca de Acentejo, donde se producen unos vinos bien considerados. Como no podía ser menos, la vid acapara la mayor extensión de tierras, que se comparten con cultivos de secano y frutales. No obstante, el paisaje de La Matanza comparte con otros municipios limítrofes el mismo relieve irregular que da lugar a acusadas pendientes.</p>
+                                            {% endif %}
+                                            {% if nombre == 'La Victoria de Acentejo' %}   
+                                                <h3>Historia: </h3><p>La Victoria de Acentejo es un municipio español perteneciente a la provincia de Santa Cruz de Tenerife (Canarias). Está situado en el norte de la isla de Tenerife y tiene una extensión de 18,2 km.1 Por el este limita con La Matanza de Acentejo, por el oeste con Santa Úrsula, al sur limita con Candelaria y con Arafo; y al norte el océano Atlántico. Su inclinación es del 10% al 30%. Sus fiestas se realizan del 19 al 31 de agosto y son las principales fiestas de la Comarca de Acentejo, junto con las de Tacoronte.</p>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="col-md-6 column">
                             {% if nombre == 'La Orotava' %}   
@@ -75,7 +98,7 @@ La Mantanza se encuentra en la comarca de Acentejo, donde se producen unos vinos
                                 <img src="http://banot.etsii.ull.es/alu4103/STW/playas-en-los-realejos.jpg" alt"Los Realejos">
                             {% endif %}
                             {% if nombre == 'El Sauzal' %}   
-                                <img src="http://banot.etsii.ull.es/alu4103/STW/imagenes_Auditorio_Panoramica_Entrada_ff87de55.jpg" alt"El Sauzal">
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/sauzal.jpg" alt"El Sauzal">
                             {% endif %}
                             {% if nombre == 'La Matanza de Acentejo' %}   
                                 <img src="http://banot.etsii.ull.es/alu4103/STW/matanza.jpg" alt"La Matanza de Acentejo">
