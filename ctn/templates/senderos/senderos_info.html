@@ -61,6 +61,30 @@
           strokeWeight: 6
         });
 
+    //clican en la estrella
+    $("li.star a").click(function(event){  
+        // Recojo el valor de la estrella      
+        valor_actual=$(this).attr("title");
+
+        alert(valor_actual);
+        $("li.star a").css({
+            img {
+            border: 5px solid #ccc;
+            float: left;
+            margin: 15px;
+            -webkit-transition: margin 0.5s ease-out;
+            -moz-transition: margin 0.5s ease-out;
+            -ms-transition: margin 0.5s ease-out;
+            transition: margin 0.5s ease-out;
+            }
+            .ex1 img:hover {
+            margin-top: 2px;
+            }
+        });
+        //pasarlo a una vista y guardar la puntuación
+        // /votos/(\d+)
+    });
+
     
 });
 </script>
@@ -94,7 +118,19 @@
                             {{ puntos }}
                                             
                         </div>
-                    </div>     
+                    </div> 
+                    <form name="frm_rating" method="post" action="">
+                        <ul class='star-rating'>
+                            
+                            <li style="display:inline;" class="star"><a href='#' title='1' class='one-star'><img src="../../static/img/sendero.jpg"></a></li>
+                            <li style="display:inline;" class="star"><a href='#' title='2' class='two-stars'><img src="../../static/img/sendero.jpg"></a></li>
+                            <li style="display:inline;" class="star"><a href='#' title='3' class='three-stars'><img src="../../static/img/sendero.jpg"></a></li>
+                            <li style="display:inline;" class="star"><a href='#' title='4' class='four-stars'><img src="../../static/img/sendero.jpg"></a></li>
+                          
+                        </ul>
+                        <input type="hidden" name="my_vote" value="0" id="my_vote" />
+                        <input type="submit" name="submit" value="Votar" />
+                    </form>    
                 </div>
             </div>
        </div>
