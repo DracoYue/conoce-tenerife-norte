@@ -61,3 +61,33 @@ def senderos(request, n_sendero):
     context = {'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
     
     return render_to_response('senderos/senderos_info.html', context)
+
+def municipio4(request):
+    bbdd = Municipio.objects.all()
+    bbdd2 = Actividades.objects.all()
+    actividades = []
+    municipio4 = []
+
+    for i in bbdd:
+        municipio4.append(i)
+
+    for i in bbdd2:
+        actividades.append(i)
+
+    context = {'municipio4':municipio4, 'actividades':actividades}
+    return render_to_response('actividades/actividades.html', context)
+
+
+def actividades2(request, n_actividades):
+    
+    actividades = Actividades.objects.get(id=n_actividades)
+    nid = n_actividades
+    nombre = actividades.Nombre
+    lugar = actividades.Lugar
+    coste = actividades.Coste
+    eleccion = actividades.Eleccion
+    munnom = actividades.MuNom
+
+    context = {'nid':nid,'nombre':nombre, 'lugar':lugar, 'coste':coste, 'eleccion':eleccion,}
+    
+    return render_to_response('actividades/actividades_info.html', context)

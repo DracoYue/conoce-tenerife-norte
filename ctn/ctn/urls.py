@@ -33,5 +33,7 @@ urlpatterns = patterns('',
     url(r'^senderos/(\d+)/$', 'contenido.views.senderos'),
     url(r'^municipios/$', 'contenido.views.municipio2'),
     url(r'^municipios/(\d+)/$', 'contenido.views.municipio3'),
+    url(r'^actividades/$', 'contenido.views.municipio4'),
+    url(r'^actividades/(\d+)/$', 'contenido.views.actividades2'),
     #url(r'^caldera/', TemplateView.as_view(template_name="senderos/caldera.html")),
 )

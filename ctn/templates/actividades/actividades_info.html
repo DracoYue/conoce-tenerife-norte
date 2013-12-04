@@ -1,0 +1,113 @@
+{% extends "static_pages/base1.html" %}
+
+    {% block titulo %} Actividades {% endblock %}
+    {% block encabezado %} Actividades {% endblock %}
+    {% block link %}
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <a href="/login/">Login / Sing in</a>
+        <script type="text/javascript" src="../../static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../static/js/scripts.js"></script>
+        <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../static/css/style.css" rel="stylesheet">
+
+    {% endblock %}
+    {% block ruta %}
+        <a href="/" class="active">Home</a> <span class="divider">/</span>
+        <a href="/actividades/" class="active">Actividades</a> <span class="divider">/</span>
+        <a href="/actividades/{{ nid }}" class="active">{{ nombre }}</a> <span class="divider">/</span>
+    {% endblock %}
+
+    {% block contenido %}
+        <div class="span9">
+            <h1> ACTIVIDADES </h1>
+            <div class="container">
+            <div class="row clearfix">
+            	<div class="col-md-12 column">
+		            <div class="row clearfix">
+			            <div class="col-md-6 column">
+			                <table class="table table-striped">
+			                    <thead>
+			                        <tr>
+			                            <th>
+                                            <p>
+                                                <h3>{{ nombre }}</h3>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h3>LUGAR</h3> {{ lugar }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3>COSTE</h3> {{ coste }}€
+                                        </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            {% if eleccion == 'TO' %}
+                                                <p><h3>TIPO </h3>Todos los publicos</p>
+                                            {% endif %}
+                                            {% if eleccion == 'AD' %}
+                                                <p><h3>TIPO </h3>Adultos</p>
+                                            {% endif %}
+                                            {% if eleccion == 'IN' %}
+                                                <p><h3>TIPO </h3>Infantil</p>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                <thead>
+                            </table>
+                        </div>
+                        <div class="col-md-6 column">
+                            {% if nombre == 'Romeria de San Isidro Labrador' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/romeriasanisidro.gif" alt"Romeria San Isidro">
+                            {% endif %}
+                            {% if nombre == 'El Corpus Christi' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/Corpus_Christi_en_La_Orotava%20.jpg" alt"Corpus Christi">
+                            {% endif %}
+                            {% if nombre == 'Baile de Magos' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/Romeria-La-Orotava-Balcones.jpg" alt"Baile Magos">
+                            {% endif %}
+                            {% if nombre == 'Las Alfombras' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/lasalfombras.jpg" alt"Las Alfombras">
+                            {% endif %}
+                            {% if nombre == 'Rally' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/rallysantaursula.jpg" alt"Rally">
+                            {% endif %}
+                            {% if nombre == 'La Sortija' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/lasortija.png" alt"La Sortija">
+                            {% endif %}
+                            {% if nombre == 'Lago Martianez' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/lagomartianez.jpg" alt"Lago Martianez">
+                            {% endif %}
+                            {% if nombre == 'Loro Parque' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/Loro-Parque-Tenerife3.jpg" alt"Loro Parque">
+                            {% endif %}
+                            {% if nombre == 'II Encuentro Intermunicipal de Senderismo' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/senderismo_canarias.jpg" alt"Senderismo">
+                            {% endif %}
+                            {% if nombre == 'Radiografia de la cultura' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/radiografia-de-la-cultura.jpg" alt"Cultura">
+                            {% endif %}
+                            {% if nombre == 'Bodegas Monje' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/bodegasmonje.JPG" alt"Bodegas Monje">
+                            {% endif %}
+                            {% if nombre == 'Cruces de Mayo' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/crucesmayo.JPG" alt"Cruz Mayo">
+                            {% endif %}
+                            {% if nombre == 'Baile del Niño' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/baileniño.jpg" alt"Baile Niño">
+                            {% endif %}
+                            {% if nombre == 'Nuestra Señora de la Encarnacion' %}
+                                <img src="http://banot.etsii.ull.es/alu4103/STW/Cartel_Fiestas_2011.jpg" alt"Baile Niño">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    {% endblock %}
