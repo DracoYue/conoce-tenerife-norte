@@ -18,6 +18,29 @@ def municipio(request):
 
     context = {'municipio':municipio, 'senderos':senderos}
     return render_to_response('senderos/senderos.html', context)
+
+def municipio2(request):
+    bbdd = Municipio.objects.all()
+    municipio2 = []
+
+    for i in bbdd:
+        municipio2.append(i)
+
+    context = {'municipio2':municipio2,}
+    return render_to_response('municipios/municipios.html', context)
+
+def municipio3(request, n_municipio):
+    
+    municipio = Municipio.objects.get(id=n_municipio)
+    nid = n_municipio
+    nombre = municipio.Nombre
+    latitud = municipio.Latitud
+    longitud = municipio.Longitud
+    telefono = municipio.TlfA
+
+    context = {'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'tlfa':telefono,}
+    
+    return render_to_response('municipios/municipios_info.html', context)
     
 def senderos(request, n_sendero):
     
