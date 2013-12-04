@@ -1,0 +1,111 @@
+{% extends "static_pages/base1.html" %}
+
+    {% block titulo %} Senderos {% endblock %}
+    {% block encabezado %} Senderos {% endblock %}
+    {% block link %}
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <a href="/login/">Login / Sing in</a>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="../../static/js/gmaps.js"></script>
+        <script type="text/javascript" src="../../static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="../../static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../static/js/scripts.js"></script>
+        <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../static/css/style.css" rel="stylesheet">
+        <link href="../../static/css/estrella.css" rel="stylesheet">
+        
+        <script type="text/javascript">
+
+    var map;
+    $(document).ready(function(){
+        var nombre = "{{ nombre }}";
+        var latitud = {{ latitud }};
+        var longitud = {{ longitud }};
+        //var coordenadas = new Array();
+        var coordenadas = {{ coordenadas }};
+        var a =[];
+        var b =[];
+
+        for (var i = 0; i < coordenadas.length ; i++) {
+            a.push(coordenadas[i]);
+            a.push(coordenadas[i+1]);
+            i+=1;
+            b.push(a);
+            a=[];
+        }
+        
+        map = new GMaps({
+            div: '#mimapa',
+            lat: 28.470099,
+            lng: -16.453599,
+            zoom: 16,
+        });
+
+        map.addMarker({
+           lat:latitud,
+           lng:longitud,
+           title: 'Inicio',
+           
+        });
+
+
+        map.addMarker({
+           lat: b[b.length-1][0],
+           lng: b[b.length-1][1],
+           title: 'Final',
+        });
+
+        map.drawPolyline({
+          path: b,
+          strokeColor: '#131540',
+          strokeOpacity: 0.6,
+          strokeWeight: 6
+        });
+    
+});
+</script>
+
+    {% endblock %}
+    {% block ruta %}
+        <a href="/" class="active">Home</a> <span class="divider">/</span>
+        <a href="/senderos/" class="active">Senderos</a> <span class="divider">/</span>
+        <a href="/senderos/{{ nid }}" class="active">{{ nombre }}</a> <span class="divider">/</span>
+    {% endblock %}
+
+    {% block contenido %}
+        <div class="span9">
+            <h1> SENDEROS </h1>
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-md-4 column">
+                        <div id="mimapa" style="width:600px;height:600px;"></div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-3">
+                        <div class="panel-group" id="panel-386779">
+                        
+                            <h3>Nombre: {{ nombre }}</h3>
+                            </br>
+                            <h3>Latiud: {{ latitud }}</h3>
+                            </br>
+                            <h3>Longitud: {{ longitud }}</h3>
+                            </br>
+                            <h3>Municipio: {{ municipio }}</h3>
+                            </br>
+                            <h3>Puntuación: {{ puntos }}</h3>
+                            
+                            <h3>Califica </h3>
+                            <ul class='star-rating'>
+                        
+                                <li style="display:inline;" class="star"><a href='/votos/1' title='No Recomendable' class='one-star'><img  class="hov" src="../../static/img/sendero.jpg" ></a></li>
+                                <li style="display:inline;" class="star"><a href='/votos/2' title='Regular' class='two-stars'><img  class="hov" src="../../static/img/sendero.jpg"></a></li>
+                                <li style="display:inline;" class="star"><a href='/votos/3' title='Bien' class='three-stars'><img class="hov" src="../../static/img/sendero.jpg"></a></li>
+                                <li style="display:inline;" class="star"><a href='/votos/4' title='MuyBien' class='four-stars'><img class="hov" src="../../static/img/sendero.jpg"></a></li>
+                            </ul>            
+                        </div>
+                    </div> 
+                </div>
+            </div>
+       </div>
+    {% endblock %}
+
+    

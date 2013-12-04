@@ -29,6 +29,9 @@ urlpatterns = patterns('',
     url(r'^help/', TemplateView.as_view(template_name="static_pages/help.html")),
     #url(r'^rutas/', 'contenido.views.municipio'),
   
-    url(r'^senderos/', 'contenido.views.municipio'),
+    url(r'^senderos/$', 'contenido.views.municipio'),
+    url(r'^senderos/(\d+)/$', 'contenido.views.senderos'),
+    url(r'^municipios/$', 'contenido.views.municipio2'),
+    url(r'^municipios/(\d+)/$', 'contenido.views.municipio3'),
     #url(r'^caldera/', TemplateView.as_view(template_name="senderos/caldera.html")),
 )
