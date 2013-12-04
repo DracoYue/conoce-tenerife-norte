@@ -12,6 +12,7 @@
         <script type="text/javascript" src="../../static/js/scripts.js"></script>
         <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
         <link href="../../static/css/style.css" rel="stylesheet">
+        <link href="../../static/css/estrella.css" rel="stylesheet">
         
         <script type="text/javascript">
 
@@ -60,7 +61,6 @@
           strokeOpacity: 0.6,
           strokeWeight: 6
         });
-
     
 });
 </script>
@@ -92,9 +92,17 @@
                             <h3>Municipio: {{ municipio }}</h3>
                             </br>
                             <h3>Puntuación: {{ puntos }}</h3>
-                                            
+                            
+                            <h3>Califica </h3>
+                            <ul class='star-rating'>
+                        
+                                <li style="display:inline;" class="star"><a href='/votos/1' title='No Recomendable' class='one-star'><img  class="hov" src="../../static/img/sendero.jpg" ></a></li>
+                                <li style="display:inline;" class="star"><a href='/votos/2' title='Regular' class='two-stars'><img  class="hov" src="../../static/img/sendero.jpg"></a></li>
+                                <li style="display:inline;" class="star"><a href='/votos/3' title='Bien' class='three-stars'><img class="hov" src="../../static/img/sendero.jpg"></a></li>
+                                <li style="display:inline;" class="star"><a href='/votos/4' title='MuyBien' class='four-stars'><img class="hov" src="../../static/img/sendero.jpg"></a></li>
+                            </ul>            
                         </div>
-                    </div>     
+                    </div> 
                 </div>
             </div>
        </div>
