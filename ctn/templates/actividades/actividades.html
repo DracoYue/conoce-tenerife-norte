@@ -1,0 +1,48 @@
+{% extends "static_pages/base1.html" %}
+
+    {% block titulo %} Senderos {% endblock %}
+    {% block encabezado %} Senderos {% endblock %}
+    {% block link %}
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <a href="/login/">Login / Sing in</a>
+
+    {% endblock %}
+    {% block ruta %}
+        <a href="/" class="active">Home</a> <span class="divider">/</span>
+        <a href="/actividades/" class="active">Actividades</a> <span class="divider">/</span>
+    {% endblock %}
+
+    {% block contenido %}
+        <div class="span9">
+            <h1> ACTIVIDADES </h1>
+            <center>
+                <img src="http://banot.etsii.ull.es/alu4103/STW/teide.jpeg" alt"Norte">
+            </center>
+             </br>
+            <div class="container">
+                <div class="row clearfix">
+                        <div class="panel-group" id="panel-386779">
+                            {% for i in municipio4 %}
+                            <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-386779" href="#panel-element-{{ i.id }}">{{ i.Nombre }}</a>
+                                    </div>
+                                    <div id="panel-element-{{ i.id }}" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <h3>Municipio:</h3><h5>{{ i.Nombre }}</h5>
+                                             <h3>Actividades: </h3>
+                                            {% for j in actividades %}
+                                                {% if i.id == j.MuNom_id %}
+                                                   <li><a href="/actividades/{{ j.id }}">{{ j.Nombre }}</a></li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                </div>
+            </div>
+       </div>
+    {% endblock %}
+
