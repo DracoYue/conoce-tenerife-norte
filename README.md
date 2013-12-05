@@ -46,6 +46,7 @@ COMENTARIOS
 - 30/11/2013 - Terminando BBDD
 - 3/12/2013 - Añadiendo rutas a los senderos y añadiendo página Municipios
 - 4/12/2013 - Añadiendo puntucuación, actividades y municipios.
+- 5/12/2013 - Añadiendo comentarios, fotos carrusel
 
 ###Chicas al poder! =)
 
