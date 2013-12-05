@@ -109,12 +109,7 @@
                                 <li style="display:inline;" class="star"><a href='/votos/4/{{ nid }}' title='MuyBien' class='four-stars'><img id="foto" class="hov" src="../../static/img/sendero.jpg"></a></li>
                             </ul> 
 
-                            <h3> Comenta </h3>
-                            <form name="form" action="/comentarios/" method="POST" class="form-signin">
-                                {% csrf_token %}
-                                {{ comentario.as_p }}
-                                <input id="boton" type="submit" class="btn btn-inverse" value="POST" />
-                            </form>
+                
 
                         </div>
                     </div> 
