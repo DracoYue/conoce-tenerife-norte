@@ -3,6 +3,8 @@ from contenido.models import *
 from django.shortcuts import render_to_response
 from django import forms
 from django.http import HttpResponseRedirect, HttpResponse
+
+
 def municipio(request):
     bbdd = Municipio.objects.all()
     bbdd2 = Senderos.objects.all()
@@ -90,6 +92,15 @@ def votos(request, voto, sid):
     sendero.save()
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+"""
+def comentarios(request, sid):
+    if request.method == 'POST':
+        sendero = Senderos.objects.get(id=sid)
+        comentario = sendero.Comentarios
+        return render_to_response( "senderos/senderos_info.html", { "comentario":comentario, }, context_instance=RequestContext(request))
+    else:
+    """
+
 
 def municipio4(request):
     bbdd = Municipio.objects.all()
