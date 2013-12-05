@@ -25,7 +25,6 @@ urlpatterns = patterns('',
     url(r'^actividades/$', 'contenido.views.municipio4'),
     url(r'^actividades/(\d+)/$', 'contenido.views.actividades2'),
     url(r'^votos/(\d+)/(\d+)/$','contenido.views.votos'),
-    
     url(r'^login/$', 'contenido.views.login'),
     
     url(r'^comentarios/(\d+)/$', 'contenido.views.comentarios'),
