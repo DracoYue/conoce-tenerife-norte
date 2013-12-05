@@ -17,3 +17,4 @@ def logout(request):
     """Logs out user"""
     auth_logout(request)
     return HttpResponseRedirect('/')
+

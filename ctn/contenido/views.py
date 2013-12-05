@@ -57,8 +57,6 @@ def senderos(request, n_sendero):
     print len(coordenadas)
     
     usu_autenticado = request.user.is_authenticated()
-    print "autenticado ?????????????"
-    print usu_autenticado
     if request.user.is_authenticated():
         mensaje = 'Aun no han calificado este sendero'
         sendero = Senderos.objects.get(id=nid)
