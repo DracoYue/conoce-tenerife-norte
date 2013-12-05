@@ -115,35 +115,47 @@
                                         </td>
                                     <tr>
                                         <td>
-                                            <h3>Nuestra Opinión</h3> {{ puntos }}
+                                            {% if puntos == 'MB' %}
+                                                <h3>Nuestra Opinión</h3> Muy Bien
+                                            {% endif %}
+                                            {% if puntos == 'B' %}
+                                                <h3>Nuestra Opinión</h3>Bien
+                                            {% endif %}
+                                            {% if puntos == 'R' %}
+                                                <h3>Nuestra Opinión</h3> Regular
+                                            {% endif %}
+                                            {% if puntos == 'NR' %}
+                                                <h3>Nuestra Opinión</h3> No Recomendable
+                                            {% endif %}
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <h3> Puntuación Usuarios </h3>{{ mensaje }}
+                                            <h3> Puntuación Usuarios </h3>
+                                            {% if usu_autenticado == True %}
+                                                <h3>Califica </h3>
+                                                <h2>{{ mensaje }}</h2>
+                                                <ul class='star-rating'>
+                                                    <li style="display:inline;" class="star"><a href='/votos/1/{{ nid }}' title='No Recomendable' class='one-star'><img id="foto" class="hov" src="../../static/img/senderista2.png" ></a></li>
+                                                    <li style="display:inline;" class="star"><a href='/votos/2/{{ nid }}' title='Regular' class='two-stars'><img id="foto" class="hov" src="../../static/img/senderista2.png"></a></li>
+                                                    <li style="display:inline;" class="star"><a href='/votos/3/{{ nid }}' title='Bien' class='three-stars'><img id="foto" class="hov" src="../../static/img/senderista2.png"></a></li>
+                                                    <li style="display:inline;" class="star"><a href='/votos/4/{{ nid }}' title='MuyBien' class='four-stars'><img id="foto" class="hov" src="../../static/img/senderista2.png"></a></li>
+                                                </ul> 
+                                    </tr>
+                                        </td>
                                     <tr>
                                         <td>
-                                    {% if usu_autenticado == True %}
-                                    
-                                        <h3>Califica </h3>
-                                        <h2>{{ mensaje }}</h2>
-                                        <ul class='star-rating'>
-                                            <li style="display:inline;" class="star"><a href='/votos/1/{{ nid }}' title='No Recomendable' class='one-star'><img id="foto" class="hov" src="../../static/img/sendero.jpg" ></a></li>
-                                            <li style="display:inline;" class="star"><a href='/votos/2/{{ nid }}' title='Regular' class='two-stars'><img id="foto" class="hov" src="../../static/img/sendero.jpg"></a></li>
-                                            <li style="display:inline;" class="star"><a href='/votos/3/{{ nid }}' title='Bien' class='three-stars'><img id="foto" class="hov" src="../../static/img/sendero.jpg"></a></li>
-                                            <li style="display:inline;" class="star"><a href='/votos/4/{{ nid }}' title='MuyBien' class='four-stars'><img id="foto" class="hov" src="../../static/img/sendero.jpg"></a></li>
-                                        </ul> 
-
-                                        <h3>Comenta</h3>
-                                        <form action="/comentarios/{{ nid }}/" method="POST" class="form-signin">
-                                            {% csrf_token %}
-                                            {{ form_comen.as_p }}
-                                            <button id="boton" type="submit" class="btn btn-inverse" value="POST" />
-                                        </form>
-                                    
-                                    {% else %}
-                                        <h2>{{ mensaje }}</h2>
-                                    {% endif %}
+                                            <h3>Comenta</h3>
+                                            <form action="/comentarios/{{ nid }}/" method="POST" class="form-signin">
+                                                {% csrf_token %}
+                                                {{ form_comen.as_p }}
+                                                <button id="boton" type="submit" class="btn btn-inverse" value="POST" />
+                                            </form>
+                                    </tr>
+                                        </td>
+                                        {% else %}
+                                            <h5>{{ mensaje }}</h5>
+                                        {% endif %}
                                 </tbody>
                         </div>
                     </div> 
