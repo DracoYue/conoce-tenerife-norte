@@ -1,8 +1,11 @@
 {% extends "static_pages/base1.html" %}
 
+
     {% block titulo %} Senderos {% endblock %}
     {% block encabezado %} Senderos {% endblock %}
-    {% block link %}
+    {% block css%}
+
+
         <link rel="stylesheet" type="text/css" href="../static/css/style.css">
         <a href="/login/">Login / Sing in</a>
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -70,6 +73,15 @@
 </script>
 
     {% endblock %}
+    {% block link %}
+        {% if usu_autenticado == True %}
+            <a href="/logout/">Logout</a>
+        {% else %}
+            <a href="/login/">Login</a>
+        {% endif %}
+    {% endblock %}
+  
+       
     {% block ruta %}
         <a href="/" class="active">Home</a> <span class="divider">/</span>
         <a href="/senderos/" class="active">Senderos</a> <span class="divider">/</span>
@@ -97,6 +109,7 @@
                             </br>
                             <h3>Puntuación: {{ puntos }}</h3>
                             
+                            {% if usu_autenticado == True %}
                             <h3> Calificacion de los usuarios </h3>
                             <h2>{{ mensaje }}</h2>
 
@@ -108,6 +121,9 @@
                                 <li style="display:inline;" class="star"><a href='/votos/3/{{ nid }}' title='Bien' class='three-stars'><img id="foto" class="hov" src="../../static/img/sendero.jpg"></a></li>
                                 <li style="display:inline;" class="star"><a href='/votos/4/{{ nid }}' title='MuyBien' class='four-stars'><img id="foto" class="hov" src="../../static/img/sendero.jpg"></a></li>
                             </ul> 
+                            {% else %}
+                                <h2>{{ mensaje }}</h2>
+                            {% endif %}
                                  
                         </div>
                     </div> 

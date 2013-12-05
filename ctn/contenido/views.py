@@ -42,7 +42,7 @@ def municipio3(request, n_municipio):
     return render_to_response('municipios/municipios_info.html', context)
     
 def senderos(request, n_sendero):
-    
+   
     sendero = Senderos.objects.get(id=n_sendero)
     nid = n_sendero
     nombre = sendero.Nombre
@@ -56,40 +56,51 @@ def senderos(request, n_sendero):
         coordenadas.append(float(i))
     print len(coordenadas)
     
-    mensaje = 'Aun no han calificado este sendero'
-    sendero = Senderos.objects.get(id=nid)
-    if (sendero.NVotos > 0):
-        resultado = sendero.puntos/sendero.NVotos 
-        print resultado
-        if resultado == 1:
-            mensaje = 'No Recomendado'
-        elif resultado == 2:
-            mensaje = 'Regular'
-        elif resultado == 3:
-            mensaje = 'Bien'
-        else :
-            mensaje = 'Muy Bien' 
+    usu_autenticado = request.user.is_authenticated()
+    print "autenticado ?????????????"
+    print usu_autenticado
+    if request.user.is_authenticated():
+        mensaje = 'Aun no han calificado este sendero'
+        sendero = Senderos.objects.get(id=nid)
+        if (sendero.NVotos > 0):
+            resultado = sendero.puntos/sendero.NVotos 
+            print resultado
+            if resultado == 1:
+                mensaje = 'No Recomendado'
+            elif resultado == 2:
+                mensaje = 'Regular'
+            elif resultado == 3:
+                mensaje = 'Bien'
+            else :
+                mensaje = 'Muy Bien'
+    else:
+        mensaje = 'Si deseas ver la opinion de los demas y dejar la tuya Registrate'
 
 
 
-    context = {'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
+    context = { 'usu_autenticado': usu_autenticado,'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
     
     return render_to_response('senderos/senderos_info.html', context)
 
 
 def votos(request, voto, sid):
-        
-    voto = int(voto)
-    sendero = Senderos.objects.get(id=sid)
-    sendero.puntos = voto+sendero.puntos
-    sendero.NVotos = 1 + sendero.NVotos
     
+    if request.user.is_authenticated():
+        voto = int(voto)
+        sendero = Senderos.objects.get(id=sid)
+        sendero.puntos = voto+sendero.puntos
+        sendero.NVotos = 1 + sendero.NVotos
+        
 
-    print sendero.puntos
-    print sendero.NVotos
-    sendero.save()
+        print sendero.puntos
+        print sendero.NVotos
+        sendero.save()
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        print "ERROR autentiquese"
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    
 
 def municipio4(request):
     bbdd = Municipio.objects.all()
