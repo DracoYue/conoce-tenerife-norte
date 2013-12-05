@@ -56,17 +56,19 @@ def senderos(request, n_sendero):
         coordenadas.append(float(i))
     print len(coordenadas)
     
+    mensaje = 'Aun no han calificado este sendero'
     sendero = Senderos.objects.get(id=nid)
-    resultado = sendero.puntos/sendero.NVotos
-    print resultado
-    if resultado == 1:
-        mensaje = 'No Recomendado'
-    elif resultado == 2:
-        mensaje = 'Regular'
-    elif resultado == 3:
-        mensaje = 'Bien'
-    else :
-        mensaje = 'Muy Bien' 
+    if (sendero.NVotos > 0):
+        resultado = sendero.puntos/sendero.NVotos 
+        print resultado
+        if resultado == 1:
+            mensaje = 'No Recomendado'
+        elif resultado == 2:
+            mensaje = 'Regular'
+        elif resultado == 3:
+            mensaje = 'Bien'
+        else :
+            mensaje = 'Muy Bien' 
 
 
 
