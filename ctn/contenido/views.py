@@ -3,6 +3,12 @@ from contenido.models import *
 from django.shortcuts import render_to_response
 from django import forms
 from django.http import HttpResponseRedirect, HttpResponse
+from contenido.forms import *
+from django.core.context_processors import csrf
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+
+
 def municipio(request):
     bbdd = Municipio.objects.all()
     bbdd2 = Senderos.objects.all()
@@ -74,9 +80,10 @@ def senderos(request, n_sendero):
     else:
         mensaje = 'Si deseas ver la opinion de los demas y dejar la tuya Registrate'
 
+    form_comen = Coment(request.POST)
 
+    context = {'form_comen': form_comen, 'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
 
-    context = { 'usu_autenticado': usu_autenticado,'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
     
     return render_to_response('senderos/senderos_info.html', context)
 
@@ -99,6 +106,18 @@ def votos(request, voto, sid):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
     
+
+
+def comentarios(request, sid):
+    print "hola"
+    if request.method == 'POST':
+        form_comen = Coment(request.POST)
+        if form_comen.is_valid():
+            print "Valido"
+        else:
+            print "caca"
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))       
+
 
 def municipio4(request):
     bbdd = Municipio.objects.all()

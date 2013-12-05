@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib import admin
 from django.forms import ModelForm
 import datetime
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -33,7 +34,6 @@ class Senderos(models.Model):
     Puntuacion = models.CharField(max_length = 2,
                                 choices = Calificacion,
                                 default = MUYBIEN)
-    Comentarios = models.CharField(max_length = 140)
     Coordenadas = models.CharField(max_length = 6000)
     #LatitudD = models.CharField(max_length =  6000)
     
@@ -41,7 +41,17 @@ class Senderos(models.Model):
     def __unicode__(self):
         return self.Nombre
    
+class Comentarios(models.Model):
+    coment = models.CharField(max_length = 200)
+    usuario = models.ForeignKey(User, related_name = "usuario", unique=True)
+    sendero = models.ForeignKey(Senderos, related_name = "sende", unique=True)
+    fecha = models.DateTimeField(auto_now_add = True)
 
+    class Meta:
+        ordering = ['-fecha']
+
+    def __unicode__(self):
+        return "%s: %s" %(self.usuario, self.coment)
 
 class LugaresInteres(models.Model):
     Nombre = models.CharField(max_length = 70)
