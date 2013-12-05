@@ -16,4 +16,4 @@ from social_auth.backends.google import GoogleOAuth2Backend
 def logout(request):
     """Logs out user"""
     auth_logout(request)
-    return HttpResponseRedirect('/login/')
+    return HttpResponseRedirect('/')
