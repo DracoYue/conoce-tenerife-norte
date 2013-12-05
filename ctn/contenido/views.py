@@ -3,6 +3,10 @@ from contenido.models import *
 from django.shortcuts import render_to_response
 from django import forms
 from django.http import HttpResponseRedirect, HttpResponse
+from contenido.forms import *
+from django.core.context_processors import csrf
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 
 def municipio(request):
@@ -72,9 +76,9 @@ def senderos(request, n_sendero):
         else :
             mensaje = 'Muy Bien' 
 
+    form_comen = Coment(request.POST)
 
-
-    context = {'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
+    context = {'form_comen': form_comen, 'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
     
     return render_to_response('senderos/senderos_info.html', context)
 
@@ -92,14 +96,17 @@ def votos(request, voto, sid):
     sendero.save()
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-"""
+
+
 def comentarios(request, sid):
+    print "hola"
     if request.method == 'POST':
-        sendero = Senderos.objects.get(id=sid)
-        comentario = sendero.Comentarios
-        return render_to_response( "senderos/senderos_info.html", { "comentario":comentario, }, context_instance=RequestContext(request))
-    else:
-    """
+        form_comen = Coment(request.POST)
+        if form_comen.is_valid():
+            print "Valido"
+        else:
+            print "caca"
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))       
 
 
 def municipio4(request):

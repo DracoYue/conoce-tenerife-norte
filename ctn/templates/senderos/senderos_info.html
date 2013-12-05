@@ -122,6 +122,13 @@
                                         <li style="display:inline;" class="star"><a href='/votos/3/{{ nid }}' title='Bien' class='three-stars'><img id="foto" class="hov" src="../../static/img/sendero.jpg"></a></li>
                                         <li style="display:inline;" class="star"><a href='/votos/4/{{ nid }}' title='MuyBien' class='four-stars'><img id="foto" class="hov" src="../../static/img/sendero.jpg"></a></li>
                                     </ul> 
+
+                                    <h3>Comenta</h3>
+                                    <form action="/comentarios/{{ nid }}/" method="POST" class="form-signin">
+                                        {% csrf_token %}
+                                        {{ form_comen.as_p }}
+                                        <button id="boton" type="submit" class="btn btn-inverse" value="POST" />
+                                    </form>
                                 </tbody>
                         </div>
                     </div> 

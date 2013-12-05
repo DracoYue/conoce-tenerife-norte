@@ -42,7 +42,7 @@ class Senderos(models.Model):
         return self.Nombre
    
 class Comentarios(models.Model):
-    coment = models.TextField(max_length = 200)
+    coment = models.CharField(max_length = 200)
     usuario = models.ForeignKey(User, related_name = "usuario", unique=True)
     sendero = models.ForeignKey(Senderos, related_name = "sende", unique=True)
     fecha = models.DateTimeField(auto_now_add = True)
