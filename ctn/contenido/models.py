@@ -17,6 +17,8 @@ class Senderos(models.Model):
     Nombre = models.CharField(max_length = 70)
     Latitud = models.FloatField(max_length =  15)
     Longitud = models.FloatField(max_length = 15)
+    NVotos = models.FloatField(max_length=15)
+    puntos = models.FloatField(max_length=15)
     MuNom = models.ForeignKey(Municipio, related_name="MuNom")
     MUYBIEN = 'MB'
     BIEN = 'B'
@@ -38,14 +40,7 @@ class Senderos(models.Model):
     #Foto = models.ImafeField()
     def __unicode__(self):
         return self.Nombre
-
-"""
-class Coordenadas(models.Model):
-    Latitud = models.FloatField(max_length =  15)
-    Longitud = models.FloatField(max_length = 15)
-    Sendero = models.ForeignKey(Senderos, related_name="MuSen")
-    Municipio = models.ForeignKey(Municipio, related_name="MuNom2")
-"""    
+   
 
 
 class LugaresInteres(models.Model):
