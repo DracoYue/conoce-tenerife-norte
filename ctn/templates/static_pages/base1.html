@@ -44,11 +44,8 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right ">
 						<li class="active">
-							{% if usu_autenticado == True %}
-					            <a href="/logout/">Logout</a>
-					        {% else %}
-					            <a href="/login/">Login</a>
-					        {% endif %}
+							{% block link %}
+							{% endblock link %}
 						</li>
 					</ul>
 				</div>

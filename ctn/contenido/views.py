@@ -14,6 +14,7 @@ def municipio(request):
     bbdd2 = Senderos.objects.all()
     senderos = []
     municipio = []
+    usu_autenticado = request.user.is_authenticated()
 
     for i in bbdd:
         municipio.append(i)
@@ -21,29 +22,30 @@ def municipio(request):
     for i in bbdd2:
         senderos.append(i)
 
-    context = {'municipio':municipio, 'senderos':senderos}
+    context = {'municipio':municipio, 'senderos':senderos, 'usu_autenticado':usu_autenticado}
     return render_to_response('senderos/senderos.html', context)
 
 def municipio2(request):
     bbdd = Municipio.objects.all()
     municipio2 = []
-
+    usu_autenticado = request.user.is_authenticated()
     for i in bbdd:
         municipio2.append(i)
 
-    context = {'municipio2':municipio2,}
+    context = {'municipio2':municipio2,'usu_autenticado':usu_autenticado}
     return render_to_response('municipios/municipios.html', context)
 
 def municipio3(request, n_municipio):
     
     municipio = Municipio.objects.get(id=n_municipio)
+    usu_autenticado = request.user.is_authenticated()
     nid = n_municipio
     nombre = municipio.Nombre
     latitud = municipio.Latitud
     longitud = municipio.Longitud
     telefono = municipio.TlfA
 
-    context = {'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'tlfa':telefono,}
+    context = {'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'tlfa':telefono,'usu_autenticado':usu_autenticado}
     
     return render_to_response('municipios/municipios_info.html', context)
     
@@ -82,7 +84,8 @@ def senderos(request, n_sendero):
 
     form_comen = Coment(request.POST)
 
-    context = {'form_comen': form_comen, 'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
+
+    context = {'usu_autenticado':usu_autenticado,'form_comen': form_comen, 'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
 
     
     return render_to_response('senderos/senderos_info.html', context)
@@ -124,14 +127,15 @@ def municipio4(request):
     bbdd2 = Actividades.objects.all()
     actividades = []
     municipio4 = []
-
+    usu_autenticado = request.user.is_authenticated()
+    
     for i in bbdd:
         municipio4.append(i)
 
     for i in bbdd2:
         actividades.append(i)
 
-    context = {'municipio4':municipio4, 'actividades':actividades}
+    context = {'municipio4':municipio4, 'actividades':actividades, 'usu_autenticado':usu_autenticado}
     return render_to_response('actividades/actividades.html', context)
 
 
@@ -144,8 +148,24 @@ def actividades2(request, n_actividades):
     coste = actividades.Coste
     eleccion = actividades.Eleccion
     munnom = actividades.MuNom
+    usu_autenticado = request.user.is_authenticated()
 
-    context = {'nid':nid,'nombre':nombre, 'lugar':lugar, 'coste':coste, 'eleccion':eleccion,}
+    context = {'nid':nid,'nombre':nombre, 'lugar':lugar, 'coste':coste, 'eleccion':eleccion,'usu_autenticado':usu_autenticado}
     
     return render_to_response('actividades/actividades_info.html', context)
 
+def index(request):
+    usu_autenticado = request.user.is_authenticated()
+    return render_to_response('static_pages/index.html', {'usu_autenticado':usu_autenticado})
+
+def contact(request):
+    usu_autenticado = request.user.is_authenticated()
+    return render_to_response('static_pages/contact.html', {'usu_autenticado':usu_autenticado})
+
+def about(request):
+    usu_autenticado = request.user.is_authenticated()
+    return render_to_response('static_pages/about.html', {'usu_autenticado':usu_autenticado})
+
+def help(request):
+    usu_autenticado = request.user.is_authenticated()
+    return render_to_response('static_pages/help.html', {'usu_autenticado':usu_autenticado})

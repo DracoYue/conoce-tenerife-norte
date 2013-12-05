@@ -5,6 +5,14 @@
         <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     {% endblock %}
 
+    {% block link %}
+      {% if usu_autenticado == True %}
+          <a href="/logout/">Logout</a>
+      {% else %}
+          <a href="/login/">Login</a>
+      {% endif %}
+    {% endblock %}
+
     {% block ruta %}
       <a href="/" class="active">Inicio</a> <span class="divider">/</span>
       <a href="/help/" class="active">Ayuda</a> <span class="divider">/</span>

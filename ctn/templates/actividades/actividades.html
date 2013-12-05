@@ -2,10 +2,15 @@
 
     {% block titulo %} Senderos {% endblock %}
     {% block encabezado %} Senderos {% endblock %}
-    {% block link %}
+    {% block css %}
         <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-        <a href="/login/">Login / Sing in</a>
-
+    {% endblock %}
+    {% block link %}
+        {% if usu_autenticado == True %}
+            <a href="/logout/">Logout</a>
+        {% else %}
+            <a href="/login/">Login</a>
+        {% endif %}
     {% endblock %}
     {% block ruta %}
         <a href="/" class="active">Inicio</a> <span class="divider">/</span>
