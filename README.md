@@ -22,9 +22,11 @@ COMENTARIOS
 - 05/10/2013 - Empezando Proyecto
 - 06/10/2013 - Definición de usuarios
     - pip install django-social-auth
+    - cloud9: easy_install django-social-auth
 - 06/10/2013 - Definición BBDD
 - 08/10/2013 - Foto Perfil
     - pip install django-simple-gravatar
+    - cloud9: easy_install django-simple-gravatar
 - 08/10/2013 - Rellenar BBDD
 - 11/10/2013 - Añadiendo Páginas Estáticas
     - about us
@@ -42,6 +44,8 @@ COMENTARIOS
 - 18/11/2013 - Añadido mapa personalizado => Página Mapa
 - 23/11/2013 - Añadiendo mapas de cada sendero.
 - 30/11/2013 - Terminando BBDD
+- 3/12/2013 - Añadiendo rutas a los senderos y añadiendo página Municipios
+- 4/12/2013 - Añadiendo puntucuación, actividades y municipios.
 
 ###Chicas al poder! =)
 
