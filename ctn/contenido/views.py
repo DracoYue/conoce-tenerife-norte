@@ -2,8 +2,7 @@
 from contenido.models import *
 from django.shortcuts import render_to_response
 from django import forms
-from django.shortcuts import render_to_response
-
+from django.http import HttpResponseRedirect, HttpResponse
 def municipio(request):
     bbdd = Municipio.objects.all()
     bbdd2 = Senderos.objects.all()
@@ -57,7 +56,35 @@ def senderos(request, n_sendero):
         coordenadas.append(float(i))
     print len(coordenadas)
     
+    sendero = Senderos.objects.get(id=nid)
+    resultado = sendero.puntos/sendero.NVotos
+    print resultado
+    if resultado == 1:
+        mensaje = 'No Recomendado'
+    elif resultado == 2:
+        mensaje = 'Regular'
+    elif resultado == 3:
+        mensaje = 'Bien'
+    else :
+        mensaje = 'Muy Bien' 
 
-    context = {'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
+
+
+    context = {'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
     
     return render_to_response('senderos/senderos_info.html', context)
+
+
+def votos(request, voto, sid):
+        
+    voto = int(voto)
+    sendero = Senderos.objects.get(id=sid)
+    sendero.puntos = voto+sendero.puntos
+    sendero.NVotos = 1 + sendero.NVotos
+    
+
+    print sendero.puntos
+    print sendero.NVotos
+    sendero.save()
+
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
