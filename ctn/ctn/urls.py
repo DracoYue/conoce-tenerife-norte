@@ -26,8 +26,7 @@ urlpatterns = patterns('',
     url(r'^actividades/(\d+)/$', 'contenido.views.actividades2'),
     url(r'^votos/(\d+)/(\d+)/$','contenido.views.votos'),
     
-    url(r'^login/$', TemplateView.as_view(template_name="register.html")),
-    
+    url(r'^login/$', 'contenido.views.login'),
     
     url(r'^comentarios/(\d+)/$', 'contenido.views.comentarios'),
 

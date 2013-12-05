@@ -169,3 +169,7 @@ def about(request):
 def help(request):
     usu_autenticado = request.user.is_authenticated()
     return render_to_response('static_pages/help.html', {'usu_autenticado':usu_autenticado})
+
+def login(request):
+    usu_autenticado = request.user.is_authenticated()
+    return render_to_response('register.html', {'usu_autenticado':usu_autenticado})
