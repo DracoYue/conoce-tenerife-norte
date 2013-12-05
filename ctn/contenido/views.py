@@ -80,7 +80,7 @@ def senderos(request, n_sendero):
             else :
                 mensaje = 'Muy Bien'
     else:
-        mensaje = 'Si deseas ver la opinion de los demas y dejar la tuya Registrate'
+        mensaje = 'Si deseas opinar, Registrate!'
 
     form_comen = Coment(request.POST)
 
