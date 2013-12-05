@@ -3,19 +3,18 @@
 SISTEMAS Y TECNOLOGÍAS WEB
 ============================
 
-Versión 1.3
+Versión 1.8
 
-GRUPO
+![](http://banot.etsii.ull.es/alu4103/STW/informacion.png)
 ============================
+| GRUPO                         | EMAIL                     |
+| -------------                 | -------------             |
+| Ángela Hernández Delgago      | alu0100537130@ull.edu.es  |
+| Madelaine Martín Pazó         | alu0100@ull.edu.es  |
+| Jessica A. Ramos Villarreal   | alu0100537338@ull.edu.es  |
 
-    Angela Hernadez Delgado
 
-    Madelaine Martín Pazó
-
-    Jessica A. Ramos Villarreal
-
-
-COMENTARIOS
+![](http://banot.etsii.ull.es/alu4103/STW/comentarios.png)
 ============================
 
 - 02/10/2013 - Prototipo
