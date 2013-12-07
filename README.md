@@ -43,9 +43,10 @@ Versión 1.8
 - 18/11/2013 - Añadido mapa personalizado => Página Mapa
 - 23/11/2013 - Añadiendo mapas de cada sendero.
 - 30/11/2013 - Terminando BBDD
-- 3/12/2013 - Añadiendo rutas a los senderos y añadiendo página Municipios
-- 4/12/2013 - Añadiendo puntucuación, actividades y municipios.
-- 5/12/2013 - Añadiendo comentarios, fotos carrusel
+- 03/12/2013 - Añadiendo rutas a los senderos y añadiendo página Municipios
+- 04/12/2013 - Añadiendo puntucuación, actividades y municipios.
+- 05/12/2013 - Añadiendo comentarios, fotos carrusel
+- 07/12/2013 - Añadiendo rutas a la BBDD
 
 ###Chicas al poder! =)
 
