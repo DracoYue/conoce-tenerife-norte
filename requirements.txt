@@ -1,5 +1,4 @@
 Cython==0.14.1
-DenyHosts==2.6
 Django==1.5
 Extractor==0.6
 M2Crypto==0.20.2
