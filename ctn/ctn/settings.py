@@ -228,26 +228,9 @@ LOGIN_URL          = '/login/'
 LOGIN_REDIRECT_URL = '/private/'
 LOGIN_ERROR_URL    = '/login-error/'
 
-#SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/another-login-url/'
 
-#SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/new-users-redirect-url/'
 
-#SOCIAL_AUTH_NEW_ASSOCIATION_REDIRECT_URL = '/new-association-redirect-url/'
-
-#SOCIAL_AUTH_DISCONNECT_REDIRECT_URL = '/login/'
-
-#SOCIAL_AUTH_BACKEND_ERROR_URL = '/new-error-url/'
-
-SOCIAL_AUTH_ENABLED_BACKENDS = ('google')
-
-SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
-
-SOCIAL_AUTH_SLUGIFY_USERNAMES = True
-
-SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
-
-SOCIAL_AUTH_FORCE_POST_DISCONNECT = True
-
+SOCIAL_AUTH_FORCE_POST_DISCONNECT = False
 SOCIAL_AUTH_PROTECTED_USER_FIELDS = ['email',]
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -265,3 +248,5 @@ SOCIAL_AUTH_PIPELINE = (
 'social_auth.backends.pipeline.user.update_user_details',
 #'auth_pipelines.pipelines.get_user_avatar',
 )
+
+SOCIAL_AUTH_FORCE_POST_DISCONNECT = True

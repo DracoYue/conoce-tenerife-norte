@@ -3,10 +3,8 @@ from contenido.models import *
 from django import forms
 from django.http import HttpResponseRedirect, HttpResponse
 from contenido.forms import *
-from django.core.context_processors import csrf
 from django.shortcuts import render_to_response, render
 from django.template import RequestContext
-from django.views.decorators.csrf import csrf_protect
 
 
 def municipio(request):
@@ -108,18 +106,20 @@ def votos(request, voto, sid):
         print "ERROR autentiquese"
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-    
-@csrf_protect
+
 def comentarios(request, sid):
     print "hola"
     if request.method == 'POST':
         form_comen = Coment(request.POST)
-        if form.is_valid():
+        if form_comen.is_valid():
             print "formulario valido"
             return HttpResponseRedirect("/")
         else:
             form_comen = Coment()
-    return render(request, 'senderos_info.html', {'form_comen':form_comen})
+            return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
+    else:
+        print "esto no funca"
+        return HttpResponseRedirect('/')
     
 def municipio4(request):
     bbdd = Municipio.objects.all()
