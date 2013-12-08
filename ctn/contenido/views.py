@@ -114,7 +114,14 @@ def comentarios(request, sid):
         form_comen = Coment(request.POST)
         if form_comen.is_valid():
             print "formulario valido"
-            return HttpResponseRedirect("/")
+            comentario = Comentarios()
+            print "error"
+            comentario.coment = form_comen.cleaned_data['comentario']
+            print "comentario"
+            comentario.sendero_id = sid
+            comentario.usuario_id = request.user.id
+            comentario.save()
+            return HttpResponseRedirect('/')
         else:
             form_comen = Coment()
             return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
