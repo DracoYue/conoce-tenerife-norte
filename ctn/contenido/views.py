@@ -116,11 +116,14 @@ def comentarios(request, sid):
             print "formulario valido"
             comentario = Comentarios()
             print "error"
-            comentario.coment = form_comen.cleaned_data['comentario']
+            comentario.coment = form_comen.cleaned_data['Coment']
             print "comentario"
             comentario.sendero_id = sid
+            print "id"
             comentario.usuario_id = request.user.id
+            print "usuario"
             comentario.save()
+            print "error guardar"
             return HttpResponseRedirect('/')
         else:
             form_comen = Coment()
