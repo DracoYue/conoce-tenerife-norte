@@ -121,6 +121,20 @@ def comentarios(request, sid):
     else:
         print "esto no funca"
         return HttpResponseRedirect('/')
+
+
+def ver_comentarios(request):
+    if request.user.is_authenticated():
+        if request.method == 'POST':
+            form_comen = Coment(request.POST)
+            if form_comen.is_valid():
+                return HttpResponseRedirect('/comentarios/')
+        else:
+            return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
+    else:
+        print "Error de autenticacion"
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER')) 
+
     
 def municipio4(request):
     bbdd = Municipio.objects.all()
