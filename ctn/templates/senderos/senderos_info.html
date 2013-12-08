@@ -155,6 +155,17 @@
                                             </form>
                                     </tr>
                                         </td>
+
+                                    <tr>
+                                        <td>
+                                            <h3>Sube tu imagen</h3>
+                                            <form action="/fotos/{{ nid }}/" method="POST" class="form-signin">
+                                                {% csrf_token %}
+                                                {{ form_foto.as_p }}
+                                                <button id="boton" type="submit" class="btn btn-inverse" value="POST" />
+                                            </form>
+                                    </tr>
+                                        </td>
                                 </tbody>
                         </div>
                     </div> 
