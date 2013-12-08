@@ -190,14 +190,30 @@ def login(request):
 
 
 def fotos(request, sid):
-    if request.method == 'POST':
+     if request.method == 'POST':
         form_foto = Foto(request.POST, request.FILES)
 
         if form_foto.is_valid():
             print "formulario valido"
-            #Nueva_Receta.imagen = form.cleaned_data['imagen']
-            return HttpResponseRedirect("/")
+            
+            imagen = Fotos()
+            imagen.Imagen = form_foto.cleaned_data['imagen']
+            print imagen.Imagen
+            nombre = str(imagen.Imagen)
+            imagen.sendero_id = sid
+            imagen.usuario_id = request.user.id
+            if (Fotos.objects.filter(Imagen = 'static/img/subidas/' + nombre)):
+                print "ya se ha subido una imagen con ese nombre "
+            else:
+                imagen.save()
+
+            print request.META.get('HTTP_REFERER')
+            return HttpResponseRedirect('/')
         else:
             print "esto se va "
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     
+def borrar_fotos(request,foto_id):
+    foto = Fotos.objects.get(id = foto_id)
+    foto.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
