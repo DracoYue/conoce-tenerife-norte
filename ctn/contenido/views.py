@@ -86,7 +86,7 @@ def senderos(request, n_sendero):
     context = {'usu_autenticado':usu_autenticado,'form_comen': form_comen, 'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
 
     
-    return render_to_response('senderos/senderos_info.html', context)
+    return render_to_response('senderos/senderos_info.html', context, RequestContext(request))
 
 
 def votos(request, voto, sid):
