@@ -159,7 +159,7 @@
                                     <tr>
                                         <td>
                                             <h3>Sube tu imagen</h3>
-                                            <form action="/fotos/{{ nid }}/" method="POST" class="form-signin">
+                                            <form action="/fotos/{{ nid }}/" method="POST" class="form-signin" enctype="multipart/form-data">
                                                 {% csrf_token %}
                                                 {{ form_foto.as_p }}
                                                 <button id="boton" type="submit" class="btn btn-inverse" value="POST" />

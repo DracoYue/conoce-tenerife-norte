@@ -55,7 +55,7 @@ class Comentarios(models.Model):
 
 
 class Fotos(models.Model):
-    Imagen = models.ImageField(upload_to = 'img/subidas/')
+    Imagen = models.ImageField(upload_to = 'static/img/subidas/')
     usuario = models.ForeignKey(User, related_name = "usuariof", unique=True)
     sendero = models.ForeignKey(Senderos, related_name = "sendef", unique=True)
     fecha = models.DateTimeField(auto_now_add = True)
