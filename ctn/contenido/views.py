@@ -81,9 +81,10 @@ def senderos(request, n_sendero):
         mensaje = 'Si deseas opinar, Registrate!'
 
     form_comen = Coment(request.POST)
+    form_foto = Foto(request.POST, request.FILES)
 
 
-    context = {'usu_autenticado':usu_autenticado,'form_comen': form_comen, 'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
+    context = {'usu_autenticado':usu_autenticado,'form_foto': form_foto,'form_comen': form_comen, 'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
 
     
     return render_to_response('senderos/senderos_info.html', context, RequestContext(request))
@@ -172,3 +173,17 @@ def help(request):
 def login(request):
     usu_autenticado = request.user.is_authenticated()
     return render_to_response('register.html', {'usu_autenticado':usu_autenticado})
+
+
+def fotos(request, sid):
+    if request.method == 'POST':
+        form_foto = Foto(request.POST, request.FILES)
+
+        if form_foto.is_valid():
+            print "formulario valido"
+            #Nueva_Receta.imagen = form.cleaned_data['imagen']
+            return HttpResponseRedirect("/")
+        else:
+            print "esto se va "
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    

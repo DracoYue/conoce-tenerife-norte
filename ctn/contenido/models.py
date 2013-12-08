@@ -37,7 +37,7 @@ class Senderos(models.Model):
     Coordenadas = models.CharField(max_length = 6000)
     #LatitudD = models.CharField(max_length =  6000)
     
-    #Foto = models.ImafeField()
+    
     def __unicode__(self):
         return self.Nombre
    
@@ -53,6 +53,21 @@ class Comentarios(models.Model):
     def __unicode__(self):
         return "%s: %s" %(self.usuario, self.coment)
 
+
+class Fotos(models.Model):
+    Imagen = models.ImageField(upload_to = 'img/subidas/')
+    usuario = models.ForeignKey(User, related_name = "usuariof", unique=True)
+    sendero = models.ForeignKey(Senderos, related_name = "sendef", unique=True)
+    fecha = models.DateTimeField(auto_now_add = True)
+
+    class Meta:
+        ordering = ['-fecha']
+
+    def __unicode__(self):
+        return "%s: %s" %(self.usuario, self.Imagen)
+
+
+    
 class LugaresInteres(models.Model):
     Nombre = models.CharField(max_length = 70)
     MUSEO = 'MU'
