@@ -114,13 +114,37 @@ def comentarios(request, sid):
         form_comen = Coment(request.POST)
         if form_comen.is_valid():
             print "formulario valido"
-            return HttpResponseRedirect("/")
+            comentario = Comentarios()
+            print "error"
+            comentario.coment = form_comen.cleaned_data['Coment']
+            print "comentario"
+            comentario.sendero_id = sid
+            print "id"
+            comentario.usuario_id = request.user.id
+            print "usuario"
+            comentario.save()
+            print "error guardar"
+            return HttpResponseRedirect('/')
         else:
             form_comen = Coment()
             return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
     else:
         print "esto no funca"
         return HttpResponseRedirect('/')
+
+
+def ver_comentarios(request):
+    if request.user.is_authenticated():
+        if request.method == 'POST':
+            form_comen = Coment(request.POST)
+            if form_comen.is_valid():
+                return HttpResponseRedirect('/comentarios/')
+        else:
+            return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
+    else:
+        print "Error de autenticacion"
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER')) 
+
     
 def municipio4(request):
     bbdd = Municipio.objects.all()
@@ -173,6 +197,10 @@ def help(request):
 def login(request):
     usu_autenticado = request.user.is_authenticated()
     return render_to_response('register.html', {'usu_autenticado':usu_autenticado})
+
+def perfil(request):
+    usu_autenticado = request.user.is_authenticated()
+    return render_to_response('perfil.html', {'usu_autenticado':usu_autenticado})
 
 
 def fotos(request, sid):
