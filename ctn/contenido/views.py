@@ -109,11 +109,10 @@ def votos(request, voto, sid):
 
 
 def comentarios(request, sid):
-    print "hola"
     if request.method == 'POST':
         form_comen = Coment(request.POST)
         if form_comen.is_valid():
-            print "formulario valido"
+            print "Formulario Valido"
             comentario = Comentarios()
             print "error"
             comentario.coment = form_comen.cleaned_data['Coment']
@@ -129,7 +128,7 @@ def comentarios(request, sid):
             form_comen = Coment()
             return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
     else:
-        print "esto no funca"
+        print "No funciona"
         return HttpResponseRedirect('/')
 
 
@@ -226,6 +225,7 @@ def fotos(request, sid):
         else:
             print "esto se va "
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
     
 def borrar_fotos(request,foto_id):
     foto = Fotos.objects.get(id = foto_id)
