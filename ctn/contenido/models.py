@@ -43,8 +43,8 @@ class Senderos(models.Model):
    
 class Comentarios(models.Model):
     coment = models.CharField(max_length = 200)
-    usuario = models.ForeignKey(User, related_name = "usuario", unique=True)
-    sendero = models.ForeignKey(Senderos, related_name = "sende", unique=True)
+    usuario = models.ForeignKey(User, related_name = "usuario")
+    sendero = models.ForeignKey(Senderos, related_name = "sende")
     fecha = models.DateTimeField(auto_now_add = True)
 
     class Meta:
@@ -55,9 +55,9 @@ class Comentarios(models.Model):
 
 
 class Fotos(models.Model):
-    Imagen = models.ImageField(upload_to = 'img/subidas/')
-    usuario = models.ForeignKey(User, related_name = "usuariof", unique=True)
-    sendero = models.ForeignKey(Senderos, related_name = "sendef", unique=True)
+    Imagen = models.ImageField(upload_to = 'static/img/subidas/')
+    usuario = models.ForeignKey(User, related_name = "usuariof")
+    sendero = models.ForeignKey(Senderos, related_name = "sendef")
     fecha = models.DateTimeField(auto_now_add = True)
 
     class Meta:

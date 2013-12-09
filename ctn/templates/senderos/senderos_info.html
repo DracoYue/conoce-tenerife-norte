@@ -43,15 +43,18 @@
         
         map = new GMaps({
             div: '#mimapa',
-            lat: 28.470099,
-            lng: -16.453599,
-            zoom: 16,
+            lat: latitud,
+            lng: longitud,
+            zoom: 17,
         });
 
         map.addMarker({
            lat:latitud,
            lng:longitud,
            title: 'Inicio',
+           infoWindow: {
+                content: '<h5>Inicio</h5> '
+           }
            
         });
 
@@ -60,6 +63,9 @@
            lat: b[b.length-1][0],
            lng: b[b.length-1][1],
            title: 'Final',
+           infoWindow: {
+                content: '<h5>Final</h5> '
+           }
         });
 
         map.drawPolyline({
@@ -159,7 +165,7 @@
                                     <tr>
                                         <td>
                                             <h3>Sube tu imagen</h3>
-                                            <form action="/fotos/{{ nid }}/" method="POST" class="form-signin">
+                                            <form action="/fotos/{{ nid }}/" method="POST" class="form-signin" enctype="multipart/form-data">
                                                 {% csrf_token %}
                                                 {{ form_foto.as_p }}
                                                 <button id="boton" type="submit" class="btn btn-inverse" value="POST" />

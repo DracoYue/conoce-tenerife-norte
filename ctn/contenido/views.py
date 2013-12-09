@@ -114,13 +114,37 @@ def comentarios(request, sid):
         form_comen = Coment(request.POST)
         if form_comen.is_valid():
             print "formulario valido"
-            return HttpResponseRedirect("/")
+            comentario = Comentarios()
+            print "error"
+            comentario.coment = form_comen.cleaned_data['Coment']
+            print "comentario"
+            comentario.sendero_id = sid
+            print "id"
+            comentario.usuario_id = request.user.id
+            print "usuario"
+            comentario.save()
+            print "error guardar"
+            return HttpResponseRedirect('/')
         else:
             form_comen = Coment()
             return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
     else:
         print "esto no funca"
         return HttpResponseRedirect('/')
+
+
+def ver_comentarios(request):
+    if request.user.is_authenticated():
+        if request.method == 'POST':
+            form_comen = Coment(request.POST)
+            if form_comen.is_valid():
+                return HttpResponseRedirect('/comentarios/')
+        else:
+            return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
+    else:
+        print "Error de autenticacion"
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER')) 
+
     
 def municipio4(request):
     bbdd = Municipio.objects.all()
@@ -176,14 +200,30 @@ def login(request):
 
 
 def fotos(request, sid):
-    if request.method == 'POST':
+     if request.method == 'POST':
         form_foto = Foto(request.POST, request.FILES)
 
         if form_foto.is_valid():
             print "formulario valido"
-            #Nueva_Receta.imagen = form.cleaned_data['imagen']
-            return HttpResponseRedirect("/")
+            
+            imagen = Fotos()
+            imagen.Imagen = form_foto.cleaned_data['imagen']
+            print imagen.Imagen
+            nombre = str(imagen.Imagen)
+            imagen.sendero_id = sid
+            imagen.usuario_id = request.user.id
+            if (Fotos.objects.filter(Imagen = 'static/img/subidas/' + nombre)):
+                print "ya se ha subido una imagen con ese nombre "
+            else:
+                imagen.save()
+
+            print request.META.get('HTTP_REFERER')
+            return HttpResponseRedirect('/')
         else:
             print "esto se va "
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     
+def borrar_fotos(request,foto_id):
+    foto = Fotos.objects.get(id = foto_id)
+    foto.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
