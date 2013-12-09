@@ -1,1 +1,1 @@
-web: gunicorn ctn/ctn.wsgi
+web: gunicorn ctn.wsgi -b 0.0.0.0:$PORT
