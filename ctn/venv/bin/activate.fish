@@ -32,7 +32,11 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 set -gx VIRTUAL_ENV "/home/angela/Escritorio/conoce-tenerife/conoce-tenerife-norte/ctn/venv"
+=======
+set -gx VIRTUAL_ENV "/var/lib/stickshift/529e9572e0b8cd11040000be/app-root/data/700750/ctn/venv"
+>>>>>>> a815f2c71553e4b6d835f07f9a077dd7bf7360e7
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
