@@ -1,1 +1,1 @@
-web: gunicorn ctn.wsgi
+web: gunicorn ctn/ctn.wsgi
