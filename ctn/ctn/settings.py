@@ -2,6 +2,7 @@
 import os
 import django
 
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
