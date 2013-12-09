@@ -198,6 +198,10 @@ def login(request):
     usu_autenticado = request.user.is_authenticated()
     return render_to_response('register.html', {'usu_autenticado':usu_autenticado})
 
+def perfil(request):
+    usu_autenticado = request.user.is_authenticated()
+    return render_to_response('perfil.html', {'usu_autenticado':usu_autenticado})
+
 
 def fotos(request, sid):
      if request.method == 'POST':
