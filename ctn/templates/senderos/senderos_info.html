@@ -157,7 +157,7 @@
                                             <form action="/comentarios/{{ nid }}/" method="POST" class="form-signin">
                                                 {% csrf_token %}
                                                 {{ form_comen.as_p }}
-                                                <button id="boton" type="submit" class="btn btn-inverse" value="POST" />
+                                                <button id="boton" type="submit" class="btn btn-inverse" value="POST">Enviar</button>
                                             </form>
                                     </tr>
                                         </td>
@@ -168,7 +168,7 @@
                                             <form action="/fotos/{{ nid }}/" method="POST" class="form-signin" enctype="multipart/form-data">
                                                 {% csrf_token %}
                                                 {{ form_foto.as_p }}
-                                                <button id="boton" type="submit" class="btn btn-inverse" value="POST" />
+                                                <button id="boton" type="submit" class="btn btn-inverse" value="POST">Enviar</button>
                                             </form>
                                     </tr>
                                         </td>
