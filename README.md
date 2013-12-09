@@ -48,24 +48,24 @@ Versión 1.8
 - 04/12/2013 - Añadiendo puntucuación.
 - 
              - Añadiendo Actividades.
-             - 
+             
              - Añadiendo Municipios.
-             - 
+             
 - 05/12/2013 - Añadiendo comentarios
 - 
              - Fotos carrusel
-             - 
+             
 - 07/12/2013 - Añadiendo rutas a la BBDD
 - 08/12/2013 - Añadiendo rutas a la BBDD
 - 
              - Subir fotos
-             - 
+              
              - Borrar fotos. 
-             - 
+             
 - 09/12/2013 - Primer intento despliegue Heroku. 
 - 
              - Modificando el diseño. 
-             - 
+             
              - Terminado Comentarios
 
 
