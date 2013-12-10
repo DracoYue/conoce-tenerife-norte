@@ -51,7 +51,7 @@ class Comentarios(models.Model):
         ordering = ['-fecha']
 
     def __unicode__(self):
-        return "%s: %s" %(self.usuario, self.coment)
+        return self.coment
 
 
 class Fotos(models.Model):
@@ -64,7 +64,7 @@ class Fotos(models.Model):
         ordering = ['-fecha']
 
     def __unicode__(self):
-        return "%s: %s" %(self.usuario, self.Imagen)
+        return self.usuario
 
 
     

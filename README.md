@@ -57,6 +57,7 @@ Versión 1.8
 - 09/12/2013 - Primer intento despliegue Heroku. 
              - Modificando el diseño. 
              - Terminado Comentarios
+-10/12/2013 - Modificando perfil
 
 
 ###Chicas al poder! =)

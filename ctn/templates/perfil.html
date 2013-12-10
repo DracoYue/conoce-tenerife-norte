@@ -2,6 +2,28 @@
 
     {% block link %}
         <a href="/logout/">Logout</a>
+
+    {% endblock %}
+
+    {% block css %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <!-- bxSlider Javascript file -->
+        <script src="../static/js/jquery.bxslider.min.js"></script>
+        <script src="../static/js/jquery.bxslider.js"></script>
+        <!-- bxSlider CSS file -->
+        <link href="../static/css/jquery.bxslider.css" rel="stylesheet" />
+        <link href="../static/css/carouse.css" rel="stylesheet" />
+        <script>
+        $(document).ready(function(){
+            $('.bxslider').bxSlider({
+                adaptiveHeight: true,
+                mode: 'fade',
+                auto: true,
+                autoControls: true,
+
+            });
+        });
+        </script>
     {% endblock %}
     
     {% block ruta %}
@@ -18,54 +40,85 @@
                     <img src="{% gravatar_url user.email 100 %}"
                         alt="" class="img-rounded img-responsive"/>
                 </div>
-                <div class="col-sm-4 col-md-4">
+                <div class="col-md-4">
                     <blockquote>
                         <h3>Hola, {{ user.username }}!</h3> 
                     </blockquote>
                         <p> <i class="glyphicon glyphicon-envelope"></i> {{ user.email }}</p>
                 </div>
             </div>
-        </div>
-        <div class="container">
             <div class="row clearfix">
-            	<div class="col-md-12 column">
-		            <div class="row clearfix">
-			            <div class="col-md-6 column">
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <h4>FOTOS </h4>
-                            <div class="carousel slide" id="carousel-955673">
-        						<ol class="carousel-indicators">
-        							<li class="active" data-slide-to="0" data-target="#carousel-955673">
-        							</li>
-        							<li data-slide-to="1" data-target="#carousel-955673">
-        							</li>
-        							<li data-slide-to="2" data-target="#carousel-955673">
-        							</li>
-        						</ol>
-        						<div class="carousel-inner">
-        							<div class="item active">
-        								<img alt="" src="http://lorempixel.com/1600/500/sports/1" />
-        							</div>
-        							<div class="item">
-        								<img alt="" src="http://lorempixel.com/1600/500/sports/2" />
-        							</div>
-        							<div class="item">
-        								<img alt="" src="http://lorempixel.com/1600/500/sports/3" />
-        							</div>
-        						</div> <a class="left carousel-control" href="#carousel-955673" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-955673" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-        					</div>
+                <div class="col-md-6 column">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h4>FOTOS </h4>
+
+
+                    <div class="row-fluid">
+                        <div class="span9">
+                            <ul class="bxslider">
+                              {%for i in rutas %}
+                                  <li><img {{ i }} height="80%" width="80%"/></li>
+                              {% endfor %}
+                            </ul>
                         </div>
-                            <div class="col-md-6 column">
-                                <h2>COMENTARIOS</h2>
-    				        </div>
+                    </div>  
+
+                    {% for i in fotos %}
+                        <h4><b>Sendero: </b>{{ i.sendero }}</h4> 
+                        <h4><b>Foto: </b></h4><h5>{{ i.Imagen }}</h5>  
+                        <a  class="btn btn-default" href="/foto_borrar/{{ i.id }}/">Borrar Foto</a>
+                    {% endfor %}
+
+                </div>
+
+                
+                <div class="col-md-6 column">
+                    <h2>COMENTARIOS</h2>
+                    {% for i in comentarios %} 
+                        <div class="container-fluid well span6"> 
+                            <h4><b>Sendero: </b></h4><h5>{{ i.sendero }}</h5>  
+                            <h4><b>Comentario: </b></h4><h5>{{ i }}</h5>
+                            <a  class="btn btn-default" href="/comentarios_borrar/{{ i.id }}/">Borrar Comentario</a>
+                        </div>
+                    {% endfor %}
+                    <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/municipio.jpg">
+                        <div class="caption">
+                            <h3>
+                                <a href="/municipios/">Municipios</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/senderismo%20teide.jpg">
+                        <div class="caption">
+                            <h3>
+                            <a href="/senderos/">Senderos</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/actividades.jpg">
+                        <div class="caption">
+                            <h3>
+                                <a href="/actividades/">Actividades</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+    		    </div>
             </div>
         </div>
+      
     {% endblock %}
