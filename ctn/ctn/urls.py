@@ -13,7 +13,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('social_auth.urls')),
     url(r'^$', 'contenido.views.index'),
-    url(r'^private/',  TemplateView.as_view(template_name="perfil.html")),
+    url(r'^private/', 'contenido.views.perfil'),
     url(r'^logout/$','usuario.views.logout'),
     url(r'^contact/', 'contenido.views.contact'),
     url(r'^about/', 'contenido.views.about'),
@@ -26,8 +26,10 @@ urlpatterns = patterns('',
     url(r'^actividades/(\d+)/$', 'contenido.views.actividades2'),
     url(r'^votos/(\d+)/(\d+)/$','contenido.views.votos'),
     url(r'^login/$', 'contenido.views.login'),
-
     url(r'^fotos/(\d+)/$','contenido.views.fotos'),
+    url(r'^foto_borrar/(\d+)/$','contenido.views.borrar_fotos'),
     url(r'^comentarios/(\d+)/$', 'contenido.views.comentarios'),
+    url(r'^comentarios_borrar/(\d+)/$', 'contenido.views.borrar_comentarios'),
+
 
 )

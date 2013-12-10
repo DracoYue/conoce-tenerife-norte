@@ -109,7 +109,6 @@ def votos(request, voto, sid):
 
 
 def comentarios(request, sid):
-    print "hola"
     if request.method == 'POST':
         form_comen = Coment(request.POST)
         if form_comen.is_valid():
@@ -123,7 +122,7 @@ def comentarios(request, sid):
             form_comen = Coment()
             return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
     else:
-        print "esto no funca"
+        print "No funciona"
         return HttpResponseRedirect('/')
 
 
@@ -138,6 +137,11 @@ def ver_comentarios(request):
     else:
         print "Error de autenticacion"
         return HttpResponseRedirect(request.META.get('HTTP_REFERER')) 
+
+def borrar_comentarios(request, comentario_id):
+    comen = Comentarios.objects.get(id = comentario_id)
+    comen.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
     
 def municipio4(request):
@@ -192,6 +196,27 @@ def login(request):
     usu_autenticado = request.user.is_authenticated()
     return render_to_response('register.html', {'usu_autenticado':usu_autenticado})
 
+def perfil(request):
+    usu_autenticado = request.user.is_authenticated()
+    user = User.objects.get(id = request.user.id)
+    
+    bbdd = Fotos.objects.all()
+    bbdd2 = Comentarios.objects.all()
+    fotos = []
+    comentarios = []
+    rutas = []
+
+    for i in bbdd:
+        fotos.append(i)
+
+    for i in bbdd2:
+        comentarios.append(i)
+
+    for i in fotos:
+        rutas.append('src=../%s' %i.Imagen)
+
+    return render_to_response('perfil.html', {'rutas':rutas, 'usu_autenticado':usu_autenticado, 'user':user, 'fotos':fotos, 'comentarios':comentarios})
+
 
 def fotos(request, sid):
      if request.method == 'POST':
@@ -216,8 +241,10 @@ def fotos(request, sid):
         else:
             print "esto se va "
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
     
 def borrar_fotos(request,foto_id):
     foto = Fotos.objects.get(id = foto_id)
     foto.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+

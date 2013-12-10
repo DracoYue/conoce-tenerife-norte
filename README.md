@@ -43,11 +43,21 @@ Versión 1.8
 - 18/11/2013 - Añadido mapa personalizado => Página Mapa
 - 23/11/2013 - Añadiendo mapas de cada sendero.
 - 30/11/2013 - Terminando BBDD
-- 03/12/2013 - Añadiendo rutas a los senderos y añadiendo página Municipios
-- 04/12/2013 - Añadiendo puntucuación, actividades y municipios.
-- 05/12/2013 - Añadiendo comentarios, fotos carrusel
+- 03/12/2013 - Añadiendo rutas a los senderos.
+             - Añadiendo página Municipios
+- 04/12/2013 - Añadiendo puntucuación.
+             - Añadiendo Actividades
+             - Añadiendo Municipios.
+- 05/12/2013 - Añadiendo comentarios
+             - Fotos carrusel
 - 07/12/2013 - Añadiendo rutas a la BBDD
-- 08/12/2013 - Añadiendo rutas a la BBDD, vista de subida de fotos, y borrado. 
+- 08/12/2013 - Añadiendo rutas a la BBDD
+             - Subir fotos
+             - Borrar fotos. 
+- 09/12/2013 - Primer intento despliegue Heroku. 
+             - Modificando el diseño. 
+             - Terminado Comentarios
+-10/12/2013 - Modificando perfil
 
 
 ###Chicas al poder! =)

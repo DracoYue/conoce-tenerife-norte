@@ -1,33 +1,124 @@
 {% extends "static_pages/base1.html" %}
 
-    
     {% block link %}
         <a href="/logout/">Logout</a>
+
+    {% endblock %}
+
+    {% block css %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <!-- bxSlider Javascript file -->
+        <script src="../static/js/jquery.bxslider.min.js"></script>
+        <script src="../static/js/jquery.bxslider.js"></script>
+        <!-- bxSlider CSS file -->
+        <link href="../static/css/jquery.bxslider.css" rel="stylesheet" />
+        <link href="../static/css/carouse.css" rel="stylesheet" />
+        <script>
+        $(document).ready(function(){
+            $('.bxslider').bxSlider({
+                adaptiveHeight: true,
+                mode: 'fade',
+                auto: true,
+                autoControls: true,
+
+            });
+        });
+        </script>
     {% endblock %}
     
     {% block ruta %}
         <a href="/" class="active">Inicio</a> <span class="divider">/</span>
-        <a href="/login/" class="active">Login</a> <span class="divider">/</span>
+        <a href="/login/" class="active">Perfil</a> <span class="divider">/</span>
+        
     {% endblock ruta %}
 
     {% block contenido %}
-
         {% load gravatar %}
-   
-        <div>
-            <div class="col-sm-1 col-md-2">
-                <img src="{% gravatar_url user.email 100 %}"
-                alt="" class="img-rounded img-responsive" />
+        <div class="container">
+	        <div class="row">
+                <div class="col-sm-2 col-md-2">
+                    <img src="{% gravatar_url user.email 100 %}"
+                        alt="" class="img-rounded img-responsive"/>
+                </div>
+                <div class="col-md-4">
+                    <blockquote>
+                        <h3>Hola, {{ user.username }}!</h3> 
+                    </blockquote>
+                        <p> <i class="glyphicon glyphicon-envelope"></i> {{ user.email }}</p>
+                </div>
             </div>
-            <div class="col-sm-2 col-md-4">
-                <blockquote>
-                    <p>{{ user.username }}</p> 
-                </blockquote>
-                <p> <i class="glyphicon glyphicon-envelope"></i> {{ user.email }}
-                </p>
+            <div class="row clearfix">
+                <div class="col-md-6 column">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h4>FOTOS </h4>
+
+
+                    <div class="row-fluid">
+                        <div class="span9">
+                            <ul class="bxslider">
+                              {%for i in rutas %}
+                                  <li><img {{ i }} height="80%" width="80%"/></li>
+                              {% endfor %}
+                            </ul>
+                        </div>
+                    </div>  
+
+                    {% for i in fotos %}
+                        <h4><b>Sendero: </b>{{ i.sendero }}</h4> 
+                        <h4><b>Foto: </b></h4><h5>{{ i.Imagen }}</h5>  
+                        <a  class="btn btn-default" href="/foto_borrar/{{ i.id }}/">Borrar Foto</a>
+                    {% endfor %}
+
+                </div>
+
+                
+                <div class="col-md-6 column">
+                    <h2>COMENTARIOS</h2>
+                    {% for i in comentarios %} 
+                        <div class="container-fluid well span6"> 
+                            <h4><b>Sendero: </b></h4><h5>{{ i.sendero }}</h5>  
+                            <h4><b>Comentario: </b></h4><h5>{{ i }}</h5>
+                            <a  class="btn btn-default" href="/comentarios_borrar/{{ i.id }}/">Borrar Comentario</a>
+                        </div>
+                    {% endfor %}
+                    <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/municipio.jpg">
+                        <div class="caption">
+                            <h3>
+                                <a href="/municipios/">Municipios</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/senderismo%20teide.jpg">
+                        <div class="caption">
+                            <h3>
+                            <a href="/senderos/">Senderos</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/actividades.jpg">
+                        <div class="caption">
+                            <h3>
+                                <a href="/actividades/">Actividades</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+    		    </div>
             </div>
         </div>
-
-        
+      
     {% endblock %}
-    <!--<a href="{% url 'socialauth_disconnect' 'google-oauth2' %}">Disconnect</a>-->
