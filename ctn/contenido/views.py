@@ -114,15 +114,10 @@ def comentarios(request, sid):
         if form_comen.is_valid():
             print "Formulario Valido"
             comentario = Comentarios()
-            print "error"
             comentario.coment = form_comen.cleaned_data['Coment']
-            print "comentario"
             comentario.sendero_id = sid
-            print "id"
             comentario.usuario_id = request.user.id
-            print "usuario"
             comentario.save()
-            print "error guardar"
             return HttpResponseRedirect('/')
         else:
             form_comen = Coment()
@@ -226,6 +221,21 @@ def fotos(request, sid):
             print "esto se va "
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+def ver(request):
+    bbdd = Fotos.objects.all()
+    bbdd2 = Comentarios.objects.all()
+    fotos = []
+    comentarios = []
+    usu_autenticado = request.user.is_authenticated()
+    
+    for i in bbdd:
+        fotos.append(i)
+
+    for i in bbdd2:
+        comentarios.append(i)
+
+    context = {'fotos':fotos, 'comentarios':comentarios, 'usu_autenticado':usu_autenticado}
+    return render_to_response('perfil.html', context)
     
 def borrar_fotos(request,foto_id):
     foto = Fotos.objects.get(id = foto_id)
