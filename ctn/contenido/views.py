@@ -83,11 +83,39 @@ def senderos(request, n_sendero):
     form_comen = Coment(request.POST)
     form_foto = Foto(request.POST, request.FILES)
 
+
+
+    bbdd = Fotos.objects.all()
+    bbdd2 = Comentarios.objects.all()
+    fotos = []
     comentarios = []
-    Senderos.objects.get(sende=id_comentario)
+    rutas = []
+
+    for i in range(0, len(bbdd)):
+        print bbdd[i].sendero.Nombre
+        print Senderos.objects.get(id=n_sendero)
+        if(bbdd[i].sendero.Nombre == Senderos.objects.get(id=n_sendero).Nombre):
+            fotos.append(bbdd[i])
+        else:
+            print "distintos"
 
 
-    context = {'usu_autenticado':usu_autenticado,'form_foto': form_foto,'form_comen': form_comen, 'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
+    for i in range(0, len(bbdd2)):
+        print bbdd2[i].sendero.Nombre
+        print Senderos.objects.get(id=n_sendero)
+        if(bbdd2[i].sendero.Nombre == Senderos.objects.get(id=n_sendero).Nombre):
+            comentarios.append(bbdd2[i])
+        else:
+            print "distinto"
+
+        
+
+    for i in fotos:
+        rutas.append('src=../../%s' %i.Imagen)
+        
+
+
+    context = {'fotos':fotos, 'comentarios':comentarios, 'rutas':rutas,'usu_autenticado':usu_autenticado,'form_foto': form_foto,'form_comen': form_comen, 'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
 
     
     return render_to_response('senderos/senderos_info.html', context, RequestContext(request))
@@ -128,19 +156,6 @@ def comentarios(request, sid):
     else:
         print "No funciona"
         return HttpResponseRedirect('/')
-
-
-def ver_comentarios(request):
-    if request.user.is_authenticated():
-        if request.method == 'POST':
-            form_comen = Coment(request.POST)
-            if form_comen.is_valid():
-                return HttpResponseRedirect('/comentarios/')
-        else:
-            return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
-    else:
-        print "Error de autenticacion"
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER')) 
 
 def borrar_comentarios(request, comentario_id):
     comen = Comentarios.objects.get(id = comentario_id)
@@ -211,12 +226,24 @@ def perfil(request):
     rutas = []
     nombre_imagen = []
 
-    for i in bbdd:
-        fotos.append(i)
+    for i in range(0, len(bbdd)):
+        print bbdd[i].usuario.username
+        print User.objects.get(id=request.user.id)
+        if(bbdd[i].usuario.username == User.objects.get(id=request.user.id).username):
+            fotos.append(bbdd[i])
+        else:
+            print "distintos"
 
-    for i in bbdd2:
-        comentarios.append(i)
 
+    for i in range(0, len(bbdd2)):
+        print bbdd2[i].usuario.username
+        print User.objects.get(id=request.user.id)
+        if(bbdd2[i].usuario.username == User.objects.get(id=request.user.id).username):
+            comentarios.append(bbdd2[i])
+        else:
+            print "distintos"
+
+    
     for i in fotos:
         rutas.append('src=../%s' %i.Imagen)
 

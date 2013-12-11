@@ -46,15 +46,44 @@
                     </blockquote>
                         <p> <i class="glyphicon glyphicon-envelope"></i> {{ user.email }}</p>
                 </div>
+                <div id="links" style="width:600px;height:200px;">
+                    <br>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/municipio.jpg">
+                            <div class="caption">
+                                <h3>
+                                    <a href="/municipios/">Municipios</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/senderismo%20teide.jpg">
+                            <div class="caption">
+                                <h3>
+                                <a href="/senderos/">Senderos</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/actividades.jpg">
+                            <div class="caption">
+                                <h3>
+                                    <a href="/actividades/">Actividades</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row clearfix">
                 <div class="col-md-6 column">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+
                     <h2>FOTOS </h2>
 
 
@@ -67,55 +96,32 @@
                             </ul>
                         </div>
                     </div>  
-                    
-                    {% for i in fotos %}
-                        <h4><b>Sendero: </b>{{ i.sendero }}</h4> 
-                        <a  class="btn btn-default" href="/foto_borrar/{{ i.id }}/">Borrar Foto</a>
-                    {% endfor %}
+                    {% if fotos %}
+                        {% for i in fotos %}
+                            <h4><b>Sendero: </b>{{ i.sendero }}</h4> 
+                            <a  class="btn btn-default" href="/foto_borrar/{{ i.id }}/">Borrar Foto</a>
+                        {% endfor %}
+                    {% else %}
+                        <h5> Suba una foto </h5>
+                    {% endif %}
 
                 </div>
 
                 
                 <div class="col-md-6 column">
                     <h2>COMENTARIOS</h2>
-                    {% for i in comentarios %} 
-                        <div class="container-fluid well span6"> 
-                            <h4><b>Sendero: </b></h4><h5>{{ i.sendero }}</h5>  
-                            <h4><b>Comentario: </b></h4><h5>{{ i }}</h5>
-                            <a  class="btn btn-default" href="/comentarios_borrar/{{ i.id }}/">Borrar Comentario</a>
-                        </div>
-                    {% endfor %}
-                    <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/municipio.jpg">
-                        <div class="caption">
-                            <h3>
-                                <a href="/municipios/">Municipios</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/senderismo%20teide.jpg">
-                        <div class="caption">
-                            <h3>
-                            <a href="/senderos/">Senderos</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img alt="300x200" src="http://banot.etsii.ull.es/alu4079/STYW/CTN/actividades.jpg">
-                        <div class="caption">
-                            <h3>
-                                <a href="/actividades/">Actividades</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
+                    {% if comentarios %}
+                        {% for i in comentarios %} 
+                            <div class="container-fluid well span6"> 
+                                <h4><b>Sendero: </b></h4><h5>{{ i.sendero }}</h5>  
+                                <h4><b>Comentario: </b></h4><h5>{{ i }}</h5>
+                                <a  class="btn btn-default" href="/comentarios_borrar/{{ i.id }}/">Borrar Comentario</a>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <h5>Suba un comentario</h5>
+                    {% endif %}
+                    
     		    </div>
             </div>
         </div>
