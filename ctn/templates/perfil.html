@@ -55,7 +55,7 @@
                     <br>
                     <br>
                     <br>
-                    <h4>FOTOS </h4>
+                    <h2>FOTOS </h2>
 
 
                     <div class="row-fluid">
@@ -67,10 +67,9 @@
                             </ul>
                         </div>
                     </div>  
-
+                    
                     {% for i in fotos %}
                         <h4><b>Sendero: </b>{{ i.sendero }}</h4> 
-                        <h4><b>Foto: </b></h4><h5>{{ i.Imagen }}</h5>  
                         <a  class="btn btn-default" href="/foto_borrar/{{ i.id }}/">Borrar Foto</a>
                     {% endfor %}
 

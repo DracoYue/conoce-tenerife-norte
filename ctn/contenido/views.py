@@ -206,6 +206,7 @@ def perfil(request):
     fotos = []
     comentarios = []
     rutas = []
+    nombre_imagen = []
 
     for i in bbdd:
         fotos.append(i)
@@ -215,6 +216,8 @@ def perfil(request):
 
     for i in fotos:
         rutas.append('src=../%s' %i.Imagen)
+
+
 
     return render_to_response('perfil.html', {'rutas':rutas, 'usu_autenticado':usu_autenticado, 'user':user, 'fotos':fotos, 'comentarios':comentarios})
 
