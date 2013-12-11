@@ -83,6 +83,9 @@ def senderos(request, n_sendero):
     form_comen = Coment(request.POST)
     form_foto = Foto(request.POST, request.FILES)
 
+    comentarios = []
+    Senderos.objects.get(sende=id_comentario)
+
 
     context = {'usu_autenticado':usu_autenticado,'form_foto': form_foto,'form_comen': form_comen, 'mensaje':mensaje,'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'municipio':municipio, 'puntos':puntos, 'coordenadas':coordenadas}
 

@@ -64,7 +64,7 @@ class Fotos(models.Model):
         ordering = ['-fecha']
 
     def __unicode__(self):
-        return self.usuario
+        return "%s: %s" % (self.Imagen, self.sendero)
 
 
     
