@@ -44,12 +44,12 @@ Versión 1.8
 - 23/11/2013 - Añadiendo mapas de cada sendero.
 - 30/11/2013 - Terminando BBDD
 - 03/12/2013 - Añadiendo rutas a los senderos.
-             - Añadiendo página Municipios
+	- Añadiendo página Municipios
 - 04/12/2013 - Añadiendo puntucuación.
-             - Añadiendo Actividades
-             - Añadiendo Municipios.
+	- Añadiendo Actividades
+	- Añadiendo Municipios.
 - 05/12/2013 - Añadiendo comentarios
-             - Fotos carrusel
+	- Fotos carrusel
 - 07/12/2013 - Añadiendo rutas a la BBDD
 - 08/12/2013 - Añadiendo rutas a la BBDD
     - Subir fotos
@@ -69,6 +69,7 @@ Versión 1.8
             \password username
         - Se ha de crear la base de datos: createdb ctn
         - sudo apt-get install python-psycopg2
+- 11/12/2013 - Modificación mapas en los senderos.
 
 ###Chicas al poder! =)
 
