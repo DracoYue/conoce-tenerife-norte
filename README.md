@@ -70,8 +70,5 @@ Versión 1.8
         -Se ha de crear la base de datos: createdb ctn
         -sudo apt-get install python-psycopg2
 
-
-
-
 ###Chicas al poder! =)
 
