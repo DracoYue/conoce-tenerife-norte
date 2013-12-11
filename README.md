@@ -52,23 +52,23 @@ Versión 1.8
              - Fotos carrusel
 - 07/12/2013 - Añadiendo rutas a la BBDD
 - 08/12/2013 - Añadiendo rutas a la BBDD
-             - Subir fotos
-             - Borrar fotos. 
+    - Subir fotos
+    - Borrar fotos. 
 - 09/12/2013 - Primer intento despliegue Heroku. 
-             - Modificando el diseño. 
-             - Terminado Comentarios.
+    - Modificando el diseño. 
+    - Terminado Comentarios.
 - 10/12/2013 - Modificando perfil
     - Migración de sqlite3 a Postgres
         - Guardar bbdd de sqlite: sqlite database .dump > sqlite-dumpfile.sql
         - Insertarla en Postgres: psql -d ctn -U user -W < sqlite-dumpfile.sql
     - Se ha instalado:
-        -sudo apt-get install postgresql
-        -sudo apt-get install pgadmin3
-        -sudo -u postgres createuser --superuser username
-        -sudo -u postgres psql
+        - sudo apt-get install postgresql
+        - sudo apt-get install pgadmin3
+        - sudo -u postgres createuser --superuser username
+        - sudo -u postgres psql
             \password username
-        -Se ha de crear la base de datos: createdb ctn
-        -sudo apt-get install python-psycopg2
+        - Se ha de crear la base de datos: createdb ctn
+        - sudo apt-get install python-psycopg2
 
 ###Chicas al poder! =)
 
