@@ -57,11 +57,11 @@ Versión 1.8
 - 09/12/2013 - Primer intento despliegue Heroku. 
              - Modificando el diseño. 
              - Terminado Comentarios
--10/12/2013 - Modificando perfil
-            - Migración de sqlite3 a Postgres
+- 10/12/2013 - Modificando perfil
+             - Migración de sqlite3 a Postgres
                 -Guardar bbdd de sqlite: sqlite database .dump > sqlite-dumpfile.sql
                 -Insertarla en Postgres: psql -d ctn -U user -W < sqlite-dumpfile.sql
-            -Se ha instalado:
+             -Se ha instalado:
                 -sudo apt-get install postgresql
                 -sudo apt-get install pgadmin3
                 -sudo -u postgres createuser --superuser username
