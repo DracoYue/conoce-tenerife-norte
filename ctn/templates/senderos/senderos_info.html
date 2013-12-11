@@ -10,7 +10,16 @@
             <a href="/login/">Login</a>
         {% endif %}
     {% endblock %}
+
     {% block css%}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <!-- bxSlider Javascript file -->
+        <script src="../../static/js/jquery.bxslider.min.js"></script>
+        <script src="../../static/js/jquery.bxslider.js"></script>
+        <!-- bxSlider CSS file -->
+        <link href="../../static/css/jquery.bxslider.css" rel="stylesheet" />
+        <link href="../../static/css/carouse.css" rel="stylesheet" 
+
         <link rel="stylesheet" type="text/css" href="../static/css/style.css">
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript" src="../../static/js/gmaps.js"></script>
@@ -25,6 +34,7 @@
 
     var map;
     $(document).ready(function(){
+
         var nombre = "{{ nombre }}";
         var latitud = {{ latitud }};
         var longitud = {{ longitud }};
@@ -78,6 +88,14 @@
         $("img#foto").click(function(event) {
             alert("Tu votos se están enviando")
         });
+
+        $('.bxslider').bxSlider({
+                adaptiveHeight: true,
+                mode: 'fade',
+                auto: true,
+                autoControls: true,
+
+            });       
     
 });
 </script>
@@ -97,6 +115,34 @@
                 <div class="row clearfix">
                     <div class="col-md-4 column">
                         <div id="mimapa" style="width:600px;height:600px;"></div>
+                        {% if usu_autenticado == True %}
+                        <h2>COMENTARIOS</h2>
+                            {% if comentarios %}
+                                {% for i in comentarios %} 
+                                    <div class="container-fluid well "> 
+                                        <h4><b>Sendero: </b></h4><h5>{{ i.sendero }}</h5>  
+                                        <h4><b>Comentario: </b></h4><h5>{{ i }}</h5>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <h5>Sea el primero en comentar </h5>
+                            {% endif %}
+                        <br>
+                        <h2>FOTOS </h2>
+                            {% if fotos %}
+                                <ul class="bxslider">
+                                  {%for i in rutas %}
+                                      <li><img {{ i }} height="80%" width="80%"/></li>
+                                  {% endfor %}
+                                </ul>
+                                {% else %}
+                                    <h5> Sea el primero en subir una foto </h5>
+                                {% endif %}
+                            {% else %}
+                                <br>
+                                <h5>Si desea ver fotos y comentarios registrese</h5>
+                            {% endif %}
+      
                     </div>
                     <div class="col-md-4 col-md-offset-3">
                         <div class="panel-group" id="panel-386779">
