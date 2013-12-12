@@ -7,7 +7,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/var/lib/stickshift/529e9572e0b8cd11040000be/app-root/data/700750/ctn/venv"
+setenv VIRTUAL_ENV "/home/angela/Escritorio/conoce-tenerife/conoce-tenerife-norte/ctn/venv"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"
