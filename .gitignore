@@ -1,4 +1,4 @@
 *.pyc
 *.html~
 *.py~
-venv
+ctn/venv
