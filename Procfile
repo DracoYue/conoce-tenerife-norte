@@ -1,1 +1,2 @@
-web: gunicorn --pythonpath ctn ctn.wsgi
+#web: gunicorn --pythonpath ctn ctn.wsgi
+web: python manage.py runserver 0.0.0.0:$PORT --noreload
