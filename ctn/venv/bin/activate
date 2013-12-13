@@ -39,9 +39,8 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-
 VIRTUAL_ENV="/home/angela/Escritorio/conoce-tenerife/conoce-tenerife-norte/ctn/venv"
-
+export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
 PATH="$VIRTUAL_ENV/bin:$PATH"

@@ -32,7 +32,6 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-
 set -gx VIRTUAL_ENV "/home/angela/Escritorio/conoce-tenerife/conoce-tenerife-norte/ctn/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
