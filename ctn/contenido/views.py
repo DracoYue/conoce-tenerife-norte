@@ -25,7 +25,9 @@ def municipio(request):
 
 def municipio2(request):
     bbdd = Municipio.objects.all()
+    
     municipio2 = []
+    
     usu_autenticado = request.user.is_authenticated()
     for i in bbdd:
         municipio2.append(i)
@@ -35,6 +37,7 @@ def municipio2(request):
 
 def municipio3(request, n_municipio):
     
+    bbdd = LugaresInteres.objects.all()
     municipio = Municipio.objects.get(id=n_municipio)
     usu_autenticado = request.user.is_authenticated()
     nid = n_municipio
@@ -42,8 +45,16 @@ def municipio3(request, n_municipio):
     latitud = municipio.Latitud
     longitud = municipio.Longitud
     telefono = municipio.TlfA
+    lugar = []
 
-    context = {'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'tlfa':telefono,'usu_autenticado':usu_autenticado}
+
+    for i in bbdd:
+        if i.MuNom_id == int(nid):
+            lugar.append(i)
+    print lugar
+            
+
+    context = {'nid':nid,'nombre':nombre, 'latitud':latitud, 'longitud':longitud, 'tlfa':telefono, 'lugar':lugar, 'usu_autenticado':usu_autenticado}
     
     return render_to_response('municipios/municipios_info.html', context)
     
@@ -143,13 +154,12 @@ def comentarios(request, sid):
     if request.method == 'POST':
         form_comen = Coment(request.POST)
         if form_comen.is_valid():
-            print "Formulario Valido"
             comentario = Comentarios()
             comentario.coment = form_comen.cleaned_data['Coment']
             comentario.sendero_id = sid
             comentario.usuario_id = request.user.id
             comentario.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/senderos')
         else:
             form_comen = Coment()
             return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
@@ -271,7 +281,7 @@ def fotos(request, sid):
                 imagen.save()
 
             print request.META.get('HTTP_REFERER')
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/senderos')
         else:
             print "esto se va "
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

@@ -37,7 +37,6 @@
 			                    <thead>
 			                        <tr>
 			                            <th>
-                                            <p>
                                                 <h3>{{ nombre }}</h3>
                                         </th>
                                     </tr>
@@ -114,6 +113,59 @@
                             {% if nombre == 'La Victoria de Acentejo' %}   
                                 <img src="http://banot.etsii.ull.es/alu4103/STW/La-Victoria-de-Acentejo.jpg" alt"La Victoria de Acentejo">
                             {% endif %}
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                        <h2> Puedes visitar </h2>
+                            {% for i in lugar%}
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                    <h3>{{ i }}</h3>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                {% if i.Tipo == 'MU' %}
+                                                <h3>Tipo:</h3> Museo
+                                                {% endif %}
+                                                {% if i.Tipo == 'PL' %}
+                                                <h3>Tipo:</h3> Playa
+                                                {% endif %}
+                                                {% if i.Tipo == 'TE' %}
+                                                <h3>Tipo:</h3> Teatro
+                                                {% endif %}
+                                                {% if i.Tipo == 'CI' %}
+                                                <h3>Tipo:</h3> Cine
+                                                {% endif %}
+                                                {% if i.Tipo == 'NA' %}
+                                                <h3>Tipo:</h3> Naturaleza
+                                                {% endif %}
+                                                {% if i.Tipo == 'ED' %}
+                                                <h3>Tipo:</h3> Edificios
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                           <tr>
+                                            <td>
+                                                <h3>Direccion: </h3> {{ i.Direccion }}
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                                {% if i.Tlf != 0 %}
+                                                    <h3>Telefono: </h3> {{ i.Tlf }}
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            {% endfor %}
+                        </div>
                         </div>
                     </div>
                 </div>
