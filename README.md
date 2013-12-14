@@ -72,4 +72,5 @@ Versión 1.8
 - 11/12/2013 - Modificación mapas en los senderos.
 
 ###Chicas al poder! =)
+exportar bbdd psql => pg_dump ctn -U angela > dump.sql
 
