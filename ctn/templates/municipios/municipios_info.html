@@ -123,57 +123,94 @@
 
                         <h2> Puedes visitar </h2>
                  <div class="container">   
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <!-- Nav tabs category -->
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <!-- Nav tabs category -->
 
-            <ul class="nav nav-tabs faq-cat-tabs">
-
-                {% for i in lugar%}
-
-                <!--<li class="active"><a href="#faq-cat-1" data-toggle="tab">Category #1</a></li>-->
-                
-                <li><a href="#faq-{{i.Eleccion}}" data-toggle="tab">{{i.Eleccion}}</a></li>
-                {% endfor %}
-            </ul>
+                            <ul class="nav nav-tabs faq-cat-tabs">
+                                {% for i in lugar%}
+                                    {% if i.Eleccion == 'MU' %}
+                                        <li><a href="#faq-{{i.Eleccion}}" data-toggle="tab">Museo</a></li>
+                                    {% endif %}
+                                    {% if i.Eleccion == 'PL' %}
+                                        <li><a href="#faq-{{i.Eleccion}}" data-toggle="tab">Playa</a></li>
+                                    {% endif %}
+                                    {% if i.Eleccion == 'TE' %}
+                                        <li><a href="#faq-{{i.Eleccion}}" data-toggle="tab">Teatro</a></li>
+                                    {% endif %}
+                                    {% if i.Eleccion == 'CI' %}
+                                        <li><a href="#faq-{{i.Eleccion}}" data-toggle="tab">Cine</a></li>
+                                    {% endif %}
+                                    {% if i.Eleccion == 'NA' %}
+                                        <li><a href="#faq-{{i.Eleccion}}" data-toggle="tab">Naturaleza</a></li>
+                                    {% endif %}
+                                    {% if i.Eleccion == 'ED' %}
+                                        <li><a href="#faq-{{i.Eleccion}}" data-toggle="tab">Edificios</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
     
-            <!-- Tab panes -->
-            <div class="tab-content faq-cat-content">
-                <div class="tab-pane active in fade" id="faq-cat-1">
-                    <div class="panel-group" id="accordion-cat-1">
-                        <div class="panel panel-default panel-faq">
-                            <div class="panel-heading">
-                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-1-sub-1">
-                                    <h4 class="panel-title">
-                                        FAQ Item Category #1
-                                        <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
-                                    </h4>
-                                </a>
-                            </div>
-                            <div id="faq-cat-1-sub-1" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            <!-- Tab panes -->
+                            <div class="tab-content faq-cat-content">
+                                <div class="tab-pane active in fade" id="faq-cat-1">
+                                    <div class="panel-group" id="accordion-cat-1">
+                                        {% for i in lugar %}
+                                        <div class="panel panel-default panel-faq">
+                                            <div class="panel-heading">
+                                                <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-{{i.id}}">
+                                                    <h4 class="panel-title">
+                                                        {{ i }}
+                                                        <span class="pull-right"><i class="glyphicon glyphicon-plus"></i></span>
+                                                    </h4>
+                                                </a>
+                                            </div>
+                                            <div id="faq-cat-{{i.id}}" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                        <h3>{{ i }}</h3>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <h3>Direccion: </h3> {{ i.Direccion }}
+                                                                </td>
+                                                            </tr>
+                                                             <tr>
+                                                                <td>
+                                                                    {% if i.Tlf != 0 %}
+                                                                        <h3>Telefono de contacto: </h3> {{ i.Tlf }}
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
                                 </div>
                             </div>
+                          </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
-    </div>  <script type="text/javascript">
-    $(document).ready(function() {
-    $('.collapse').on('show.bs.collapse', function() {
-        var id = $(this).attr('id');
-        $('a[href="#' + id + '"]').closest('.panel-heading').addClass('active-faq');
-        $('a[href="#' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-minus"></i>');
-    });
-    $('.collapse').on('hide.bs.collapse', function() {
-        var id = $(this).attr('id');
-        $('a[href="#' + id + '"]').closest('.panel-heading').removeClass('active-faq');
-        $('a[href="#' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-plus"></i>');
-    });
-}); </script>
+                    </div>  <script type="text/javascript">
+                    $(document).ready(function() {
+                    $('.collapse').on('show.bs.collapse', function() {
+                        var id = $(this).attr('id');
+                        $('a[href="#' + id + '"]').closest('.panel-heading').addClass('active-faq');
+                        $('a[href="#' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-minus"></i>');
+                    });
+                    $('.collapse').on('hide.bs.collapse', function() {
+                        var id = $(this).attr('id');
+                        $('a[href="#' + id + '"]').closest('.panel-heading').removeClass('active-faq');
+                        $('a[href="#' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-plus"></i>');
+                    });
+                }); </script>
 
 
                             {% for i in lugar%}
