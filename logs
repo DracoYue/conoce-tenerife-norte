@@ -1,101 +1,61 @@
-2013-12-15T00:05:24.786861+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
-2013-12-15T00:05:24.786861+00:00 app[web.1]:     __import__(module)
-2013-12-15T00:05:24.787307+00:00 app[web.1]:   File "/app/ctn/ctn/wsgi.py", line 30, in <module>
-2013-12-15T00:05:24.787307+00:00 app[web.1]:     from dj_static import Cling
-2013-12-15T00:05:24.787307+00:00 app[web.1]: ImportError: No module named dj_static
-2013-12-15T00:05:24.787307+00:00 app[web.1]: 2013-12-15 00:05:24 [7] [INFO] Worker exiting (pid: 7)
-2013-12-15T00:05:24.989532+00:00 app[web.1]: 2013-12-15 00:05:24 [2] [INFO] Shutting down: Master
-2013-12-15T00:05:24.989993+00:00 app[web.1]: 2013-12-15 00:05:24 [2] [INFO] Reason: Worker failed to boot.
-2013-12-15T00:05:26.450981+00:00 heroku[web.1]: State changed from starting to crashed
-2013-12-15T00:05:26.429379+00:00 heroku[web.1]: Process exited with status 3
-2013-12-15T00:05:28.080550+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
-2013-12-15T00:05:28.635180+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
-2013-12-15T00:09:34+00:00 heroku[slug-compiler]: Slug compilation started
-2013-12-15T00:10:16.649043+00:00 heroku[api]: Deploy eab7123 by angelahdezd@gmail.com
-2013-12-15T00:10:16.694596+00:00 heroku[api]: Release v6 created by angelahdezd@gmail.com
-2013-12-15T00:10:16+00:00 heroku[slug-compiler]: Slug compilation finished
-2013-12-15T00:10:18.271802+00:00 heroku[web.1]: State changed from crashed to starting
-2013-12-15T00:10:24.216811+00:00 heroku[web.1]: Starting process with command `gunicorn --pythonpath ctn ctn.wsgi`
-2013-12-15T00:10:26.478568+00:00 app[web.1]: 2013-12-15 00:10:26 [2] [INFO] Starting gunicorn 18.0
-2013-12-15T00:10:26.479160+00:00 app[web.1]: 2013-12-15 00:10:26 [2] [INFO] Listening at: http://0.0.0.0:40129 (2)
-2013-12-15T00:10:26.479255+00:00 app[web.1]: 2013-12-15 00:10:26 [2] [INFO] Using worker: sync
-2013-12-15T00:10:26.492558+00:00 app[web.1]: 2013-12-15 00:10:26 [7] [INFO] Booting worker with pid: 7
-2013-12-15T00:10:26.731234+00:00 app[web.1]: Traceback (most recent call last):
-2013-12-15T00:10:26.731234+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
-2013-12-15T00:10:26.731234+00:00 app[web.1]:     worker.init_process()
-2013-12-15T00:10:26.731234+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
-2013-12-15T00:10:26.731234+00:00 app[web.1]: 2013-12-15 00:10:26 [7] [ERROR] Exception in worker process:
-2013-12-15T00:10:26.731234+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
-2013-12-15T00:10:26.731234+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
-2013-12-15T00:10:26.731234+00:00 app[web.1]:     self.callable = self.load()
-2013-12-15T00:10:26.731234+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
-2013-12-15T00:10:26.731234+00:00 app[web.1]:     return self.load_wsgiapp()
-2013-12-15T00:10:26.731452+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
-2013-12-15T00:10:26.731452+00:00 app[web.1]:     return util.import_app(self.app_uri)
-2013-12-15T00:10:26.731452+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
-2013-12-15T00:10:26.731452+00:00 app[web.1]:     __import__(module)
-2013-12-15T00:10:26.731452+00:00 app[web.1]:   File "/app/ctn/ctn/wsgi.py", line 30, in <module>
-2013-12-15T00:10:26.731452+00:00 app[web.1]:     from dj_static import Cling
-2013-12-15T00:10:26.731452+00:00 app[web.1]: ImportError: No module named dj_static
-2013-12-15T00:10:26.731452+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
-2013-12-15T00:10:26.731452+00:00 app[web.1]:     worker.init_process()
-2013-12-15T00:10:26.731613+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
-2013-12-15T00:10:26.731613+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
-2013-12-15T00:10:26.731613+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
-2013-12-15T00:10:26.731613+00:00 app[web.1]:     self.callable = self.load()
-2013-12-15T00:10:26.731452+00:00 app[web.1]: Traceback (most recent call last):
-2013-12-15T00:10:26.731613+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
-2013-12-15T00:10:26.731613+00:00 app[web.1]:     return self.load_wsgiapp()
-2013-12-15T00:10:26.731613+00:00 app[web.1]:     return util.import_app(self.app_uri)
-2013-12-15T00:10:26.731613+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
-2013-12-15T00:10:26.731613+00:00 app[web.1]:     __import__(module)
-2013-12-15T00:10:26.732080+00:00 app[web.1]:   File "/app/ctn/ctn/wsgi.py", line 30, in <module>
-2013-12-15T00:10:26.732080+00:00 app[web.1]:     from dj_static import Cling
-2013-12-15T00:10:26.732080+00:00 app[web.1]: ImportError: No module named dj_static
-2013-12-15T00:10:26.731613+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
-2013-12-15T00:10:26.732080+00:00 app[web.1]: 2013-12-15 00:10:26 [7] [INFO] Worker exiting (pid: 7)
-2013-12-15T00:10:26.871109+00:00 app[web.1]: 2013-12-15 00:10:26 [2] [INFO] Shutting down: Master
-2013-12-15T00:10:26.871232+00:00 app[web.1]: 2013-12-15 00:10:26 [2] [INFO] Reason: Worker failed to boot.
-2013-12-15T00:10:28.506509+00:00 heroku[web.1]: Process exited with status 3
-2013-12-15T00:10:28.503574+00:00 heroku[web.1]: State changed from starting to crashed
-2013-12-15T00:10:56.493089+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
-2013-12-15T00:10:56.782507+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
-2013-12-15T00:21:21.372148+00:00 heroku[api]: Scale to web=1 by angelahdezd@gmail.com
-2013-12-15T00:25:52+00:00 heroku[slug-compiler]: Slug compilation started
-2013-12-15T00:26:33.830177+00:00 heroku[api]: Deploy deccfc2 by angelahdezd@gmail.com
-2013-12-15T00:26:33.912090+00:00 heroku[api]: Release v7 created by angelahdezd@gmail.com
-2013-12-15T00:26:34+00:00 heroku[slug-compiler]: Slug compilation finished
-2013-12-15T00:26:35.457785+00:00 heroku[web.1]: State changed from crashed to starting
-2013-12-15T00:26:41.536326+00:00 heroku[web.1]: Starting process with command `gunicorn --pythonpath ctn ctn.wsgi`
-2013-12-15T00:26:43.607671+00:00 app[web.1]: 2013-12-15 00:26:43 [2] [INFO] Starting gunicorn 18.0
-2013-12-15T00:26:43.607974+00:00 app[web.1]: 2013-12-15 00:26:43 [2] [INFO] Listening at: http://0.0.0.0:15827 (2)
-2013-12-15T00:26:43.608171+00:00 app[web.1]: 2013-12-15 00:26:43 [2] [INFO] Using worker: sync
-2013-12-15T00:26:43.630896+00:00 app[web.1]: 2013-12-15 00:26:43 [7] [INFO] Booting worker with pid: 7
-2013-12-15T00:26:43.989762+00:00 heroku[web.1]: State changed from starting to up
-2013-12-15T00:27:01.326852+00:00 heroku[api]: Scale to web=1 by angelahdezd@gmail.com
-2013-12-15T00:27:24.463238+00:00 heroku[api]: Starting process with command `python manage.py syncdb` by angelahdezd@gmail.com
-2013-12-15T00:27:30.845270+00:00 heroku[run.5905]: State changed from starting to up
-2013-12-15T00:27:30.850383+00:00 heroku[run.5905]: Awaiting client
-2013-12-15T00:27:30.926101+00:00 heroku[run.5905]: Starting process with command `python manage.py syncdb`
-2013-12-15T00:27:32.750695+00:00 heroku[run.5905]: Process exited with status 2
-2013-12-15T00:27:32.760258+00:00 heroku[run.5905]: State changed from up to complete
-2013-12-15T00:28:37.141899+00:00 heroku[api]: Starting process with command `python manage.py syncdb` by angelahdezd@gmail.com
-2013-12-15T00:28:43.962766+00:00 heroku[run.2144]: State changed from starting to up
-2013-12-15T00:28:44.149563+00:00 heroku[run.2144]: Awaiting client
-2013-12-15T00:28:44.183568+00:00 heroku[run.2144]: Starting process with command `python manage.py syncdb`
-2013-12-15T00:28:46.011156+00:00 heroku[run.2144]: State changed from up to complete
-2013-12-15T00:28:45.990927+00:00 heroku[run.2144]: Process exited with status 2
-2013-12-15T00:29:40.970486+00:00 heroku[api]: Starting process with command `python manage.py syncdb` by angelahdezd@gmail.com
-2013-12-15T00:29:46.537087+00:00 heroku[run.2662]: Awaiting client
-2013-12-15T00:29:46.628700+00:00 heroku[run.2662]: Starting process with command `python manage.py syncdb`
-2013-12-15T00:29:46.698556+00:00 heroku[run.2662]: State changed from starting to up
-2013-12-15T00:29:48.161799+00:00 heroku[run.2662]: Process exited with status 2
-2013-12-15T00:29:48.198702+00:00 heroku[run.2662]: State changed from up to complete
-2013-12-15T00:31:08.906554+00:00 heroku[api]: Starting process with command `python ctn/manage.py syncdb` by angelahdezd@gmail.com
-2013-12-15T00:31:14.765182+00:00 heroku[run.9653]: Awaiting client
-2013-12-15T00:31:14.811059+00:00 heroku[run.9653]: Starting process with command `python ctn/manage.py syncdb`
-2013-12-15T00:31:14.839644+00:00 heroku[run.9653]: State changed from starting to up
-2013-12-15T00:31:59.550737+00:00 heroku[run.9653]: Process exited with status 0
-2013-12-15T00:31:59.550908+00:00 heroku[run.9653]: State changed from up to complete
-2013-12-15T00:32:36.161170+00:00 heroku[router]: at=info method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=1ms service=841ms status=400 bytes=37
-2013-12-15T00:32:36.421417+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=2ms service=8ms status=400 bytes=37
+2013-12-15T01:56:24.488445+00:00 heroku[api]: Enable Logplex by angelahdezd@gmail.com
+2013-12-15T01:56:24.516820+00:00 heroku[api]: Release v2 created by angelahdezd@gmail.com
+2013-12-15T01:58:45+00:00 heroku[slug-compiler]: Slug compilation started
+2013-12-15T01:59:58.947308+00:00 heroku[api]: Scale to web=1 by angelahdezd@gmail.com
+2013-12-15T02:00:04.984503+00:00 heroku[api]: Attach HEROKU_POSTGRESQL_NAVY resource by angelahdezd@gmail.com
+2013-12-15T02:00:05.010332+00:00 heroku[api]: Release v3 created by angelahdezd@gmail.com
+2013-12-15T02:00:05.110106+00:00 heroku[api]: Add DATABASE_URL config by angelahdezd@gmail.com
+2013-12-15T02:00:05.132321+00:00 heroku[api]: Release v4 created by angelahdezd@gmail.com
+2013-12-15T02:00:05.216257+00:00 heroku[api]: Deploy 4eb6ccf by angelahdezd@gmail.com
+2013-12-15T02:00:05.234406+00:00 heroku[api]: Release v5 created by angelahdezd@gmail.com
+2013-12-15T02:00:05+00:00 heroku[slug-compiler]: Slug compilation finished
+2013-12-15T02:00:12.672686+00:00 heroku[web.1]: Starting process with command `python ctn/manage.py runserver 0.0.0.0:8000 --noreload`
+2013-12-15T02:00:12.925419+00:00 heroku[web.1]: Starting process with command `python ctn/manage.py runserver 0.0.0.0:8000 --noreload`
+2013-12-15T02:00:15.346472+00:00 app[web.1]: Validating models...
+2013-12-15T02:00:15.346472+00:00 app[web.1]: 
+2013-12-15T02:00:15.507328+00:00 app[web.1]: 0 errors found
+2013-12-15T02:00:15.508650+00:00 app[web.1]: December 14, 2013 - 20:00:15
+2013-12-15T02:00:15.508650+00:00 app[web.1]: Django version 1.6.1, using settings 'ctn.settings'
+2013-12-15T02:00:15.508650+00:00 app[web.1]: Starting development server at http://0.0.0.0:8000/
+2013-12-15T02:00:15.508650+00:00 app[web.1]: Quit the server with CONTROL-C.
+2013-12-15T02:00:15.532296+00:00 app[web.1]: Validating models...
+2013-12-15T02:00:15.532296+00:00 app[web.1]: 
+2013-12-15T02:00:15.837985+00:00 app[web.1]: 0 errors found
+2013-12-15T02:00:15.883205+00:00 app[web.1]: Django version 1.6.1, using settings 'ctn.settings'
+2013-12-15T02:00:15.883205+00:00 app[web.1]: December 14, 2013 - 20:00:15
+2013-12-15T02:00:15.883205+00:00 app[web.1]: Starting development server at http://0.0.0.0:8000/
+2013-12-15T02:00:15.883205+00:00 app[web.1]: Quit the server with CONTROL-C.
+2013-12-15T02:01:13.195935+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
+2013-12-15T02:01:13.196145+00:00 heroku[web.1]: Stopping process with SIGKILL
+2013-12-15T02:01:13.518875+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
+2013-12-15T02:01:13.518875+00:00 heroku[web.1]: Stopping process with SIGKILL
+2013-12-15T02:01:14.805926+00:00 heroku[web.1]: Process exited with status 137
+2013-12-15T02:01:14.816750+00:00 heroku[web.1]: State changed from starting to crashed
+2013-12-15T02:01:14.818275+00:00 heroku[web.1]: State changed from crashed to starting
+2013-12-15T02:01:14.995438+00:00 heroku[web.1]: Process exited with status 137
+2013-12-15T02:01:20.622835+00:00 heroku[web.1]: Starting process with command `python ctn/manage.py runserver 0.0.0.0:8000 --noreload`
+2013-12-15T02:01:22.059057+00:00 app[web.1]: 
+2013-12-15T02:01:22.059057+00:00 app[web.1]: Validating models...
+2013-12-15T02:01:22.112584+00:00 app[web.1]: Django version 1.6.1, using settings 'ctn.settings'
+2013-12-15T02:01:22.112584+00:00 app[web.1]: 0 errors found
+2013-12-15T02:01:22.112584+00:00 app[web.1]: December 14, 2013 - 20:01:22
+2013-12-15T02:01:22.112584+00:00 app[web.1]: Starting development server at http://0.0.0.0:8000/
+2013-12-15T02:01:22.112584+00:00 app[web.1]: Quit the server with CONTROL-C.
+2013-12-15T02:01:29.752165+00:00 heroku[router]: at=error code=H20 desc="App boot timeout" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
+2013-12-15T02:02:21.178833+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
+2013-12-15T02:02:21.179419+00:00 heroku[web.1]: Stopping process with SIGKILL
+2013-12-15T02:02:22.421598+00:00 heroku[web.1]: Process exited with status 137
+2013-12-15T02:02:22.438612+00:00 heroku[web.1]: State changed from starting to crashed
+2013-12-15T02:02:23.412272+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
+2013-12-15T02:02:23.731498+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
+2013-12-15T02:02:23.755520+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
+2013-12-15T02:02:36.747399+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
+2013-12-15T02:02:37.969951+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
+2013-12-15T02:03:10.482514+00:00 heroku[api]: Starting process with command `python ctn/manage.py syncdb` by angelahdezd@gmail.com
+2013-12-15T02:03:17.186215+00:00 heroku[run.5500]: State changed from starting to up
+2013-12-15T02:03:17.249929+00:00 heroku[run.5500]: Awaiting client
+2013-12-15T02:03:17.289149+00:00 heroku[run.5500]: Starting process with command `python ctn/manage.py syncdb`
+2013-12-15T02:03:37.948421+00:00 heroku[run.5500]: State changed from up to complete
+2013-12-15T02:03:37.923888+00:00 heroku[run.5500]: Process exited with status 0
+2013-12-15T02:03:41.352184+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
+2013-12-15T02:03:41.677141+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
