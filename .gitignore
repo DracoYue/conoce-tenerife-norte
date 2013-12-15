@@ -2,3 +2,4 @@
 *.html~
 *.py~
 venv
+ctn/venv

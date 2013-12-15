@@ -159,7 +159,7 @@ def comentarios(request, sid):
             comentario.sendero_id = sid
             comentario.usuario_id = request.user.id
             comentario.save()
-            return HttpResponseRedirect('/senderos')
+            return HttpResponseRedirect('/senderos/'+sid+'/')
         else:
             form_comen = Coment()
             return render_to_response('senderos_info.html', {'form_comen':form_comen}, RequestContext(request))
@@ -281,7 +281,7 @@ def fotos(request, sid):
                 imagen.save()
 
             print request.META.get('HTTP_REFERER')
-            return HttpResponseRedirect('/senderos')
+            return HttpResponseRedirect('/senderos/'+sid+'/')
         else:
             print "esto se va "
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
