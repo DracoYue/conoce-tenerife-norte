@@ -1,61 +1,102 @@
-2013-12-15T01:56:24.488445+00:00 heroku[api]: Enable Logplex by angelahdezd@gmail.com
-2013-12-15T01:56:24.516820+00:00 heroku[api]: Release v2 created by angelahdezd@gmail.com
-2013-12-15T01:58:45+00:00 heroku[slug-compiler]: Slug compilation started
-2013-12-15T01:59:58.947308+00:00 heroku[api]: Scale to web=1 by angelahdezd@gmail.com
-2013-12-15T02:00:04.984503+00:00 heroku[api]: Attach HEROKU_POSTGRESQL_NAVY resource by angelahdezd@gmail.com
-2013-12-15T02:00:05.010332+00:00 heroku[api]: Release v3 created by angelahdezd@gmail.com
-2013-12-15T02:00:05.110106+00:00 heroku[api]: Add DATABASE_URL config by angelahdezd@gmail.com
-2013-12-15T02:00:05.132321+00:00 heroku[api]: Release v4 created by angelahdezd@gmail.com
-2013-12-15T02:00:05.216257+00:00 heroku[api]: Deploy 4eb6ccf by angelahdezd@gmail.com
-2013-12-15T02:00:05.234406+00:00 heroku[api]: Release v5 created by angelahdezd@gmail.com
-2013-12-15T02:00:05+00:00 heroku[slug-compiler]: Slug compilation finished
-2013-12-15T02:00:12.672686+00:00 heroku[web.1]: Starting process with command `python ctn/manage.py runserver 0.0.0.0:8000 --noreload`
-2013-12-15T02:00:12.925419+00:00 heroku[web.1]: Starting process with command `python ctn/manage.py runserver 0.0.0.0:8000 --noreload`
-2013-12-15T02:00:15.346472+00:00 app[web.1]: Validating models...
-2013-12-15T02:00:15.346472+00:00 app[web.1]: 
-2013-12-15T02:00:15.507328+00:00 app[web.1]: 0 errors found
-2013-12-15T02:00:15.508650+00:00 app[web.1]: December 14, 2013 - 20:00:15
-2013-12-15T02:00:15.508650+00:00 app[web.1]: Django version 1.6.1, using settings 'ctn.settings'
-2013-12-15T02:00:15.508650+00:00 app[web.1]: Starting development server at http://0.0.0.0:8000/
-2013-12-15T02:00:15.508650+00:00 app[web.1]: Quit the server with CONTROL-C.
-2013-12-15T02:00:15.532296+00:00 app[web.1]: Validating models...
-2013-12-15T02:00:15.532296+00:00 app[web.1]: 
-2013-12-15T02:00:15.837985+00:00 app[web.1]: 0 errors found
-2013-12-15T02:00:15.883205+00:00 app[web.1]: Django version 1.6.1, using settings 'ctn.settings'
-2013-12-15T02:00:15.883205+00:00 app[web.1]: December 14, 2013 - 20:00:15
-2013-12-15T02:00:15.883205+00:00 app[web.1]: Starting development server at http://0.0.0.0:8000/
-2013-12-15T02:00:15.883205+00:00 app[web.1]: Quit the server with CONTROL-C.
-2013-12-15T02:01:13.195935+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
-2013-12-15T02:01:13.196145+00:00 heroku[web.1]: Stopping process with SIGKILL
-2013-12-15T02:01:13.518875+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
-2013-12-15T02:01:13.518875+00:00 heroku[web.1]: Stopping process with SIGKILL
-2013-12-15T02:01:14.805926+00:00 heroku[web.1]: Process exited with status 137
-2013-12-15T02:01:14.816750+00:00 heroku[web.1]: State changed from starting to crashed
-2013-12-15T02:01:14.818275+00:00 heroku[web.1]: State changed from crashed to starting
-2013-12-15T02:01:14.995438+00:00 heroku[web.1]: Process exited with status 137
-2013-12-15T02:01:20.622835+00:00 heroku[web.1]: Starting process with command `python ctn/manage.py runserver 0.0.0.0:8000 --noreload`
-2013-12-15T02:01:22.059057+00:00 app[web.1]: 
-2013-12-15T02:01:22.059057+00:00 app[web.1]: Validating models...
-2013-12-15T02:01:22.112584+00:00 app[web.1]: Django version 1.6.1, using settings 'ctn.settings'
-2013-12-15T02:01:22.112584+00:00 app[web.1]: 0 errors found
-2013-12-15T02:01:22.112584+00:00 app[web.1]: December 14, 2013 - 20:01:22
-2013-12-15T02:01:22.112584+00:00 app[web.1]: Starting development server at http://0.0.0.0:8000/
-2013-12-15T02:01:22.112584+00:00 app[web.1]: Quit the server with CONTROL-C.
-2013-12-15T02:01:29.752165+00:00 heroku[router]: at=error code=H20 desc="App boot timeout" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
-2013-12-15T02:02:21.178833+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
-2013-12-15T02:02:21.179419+00:00 heroku[web.1]: Stopping process with SIGKILL
-2013-12-15T02:02:22.421598+00:00 heroku[web.1]: Process exited with status 137
-2013-12-15T02:02:22.438612+00:00 heroku[web.1]: State changed from starting to crashed
-2013-12-15T02:02:23.412272+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
-2013-12-15T02:02:23.731498+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
-2013-12-15T02:02:23.755520+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
-2013-12-15T02:02:36.747399+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
-2013-12-15T02:02:37.969951+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
-2013-12-15T02:03:10.482514+00:00 heroku[api]: Starting process with command `python ctn/manage.py syncdb` by angelahdezd@gmail.com
-2013-12-15T02:03:17.186215+00:00 heroku[run.5500]: State changed from starting to up
-2013-12-15T02:03:17.249929+00:00 heroku[run.5500]: Awaiting client
-2013-12-15T02:03:17.289149+00:00 heroku[run.5500]: Starting process with command `python ctn/manage.py syncdb`
-2013-12-15T02:03:37.948421+00:00 heroku[run.5500]: State changed from up to complete
-2013-12-15T02:03:37.923888+00:00 heroku[run.5500]: Process exited with status 0
-2013-12-15T02:03:41.352184+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
-2013-12-15T02:03:41.677141+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
+2013-12-15T15:04:26+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:26+00:00 app[pgbackups]: CREATE INDEX auth_user_groups_group_id ON auth_user_groups USING btree (group_id);
+2013-12-15T15:04:26+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:26+00:00 app[pgbackups]: CREATE INDEX auth_user_groups_user_id ON auth_user_groups USING btree (user_id);
+2013-12-15T15:04:26+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX auth_user_user_permissions_permission_id ON auth_user_user_permissions USING btree (permission_id);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX auth_user_user_permissions_user_id ON auth_user_user_permissions USING btree (user_id);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX auth_user_username_like ON auth_user USING btree (username varchar_pattern_ops);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX "contenido_actividades_MuNom_id" ON contenido_actividades USING btree ("MuNom_id");
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX "contenido_lugaresinteres_MuNom_id" ON contenido_lugaresinteres USING btree ("MuNom_id");
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX "contenido_senderos_MuNom_id" ON contenido_senderos USING btree ("MuNom_id");
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX django_admin_log_content_type_id ON django_admin_log USING btree (content_type_id);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX django_admin_log_user_id ON django_admin_log USING btree (user_id);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX django_session_expire_date ON django_session USING btree (expire_date);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX contenido_comentarios_sendero_id ON contenido_comentarios USING btree (sendero_id);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX django_session_session_key_like ON django_session USING btree (session_key varchar_pattern_ops);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX contenido_comentarios_usuario_id ON contenido_comentarios USING btree (usuario_id);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX contenido_fotos_usuario_id ON contenido_fotos USING btree (usuario_id);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX contenido_fotos_sendero_id ON contenido_fotos USING btree (sendero_id);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:0
+0 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX social_auth_association_issued ON social_auth_association USING btree (issued);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX social_auth_nonce_timestamp ON social_auth_nonce USING btree ("timestamp");
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX social_auth_usersocialauth_user_id ON social_auth_usersocialauth USING btree (user_id);
+2013-12-15T15:04:27+00:00 app[pgbackups]: CREATE INDEX
+2013-12-15T15:04:27+00:00 app[pgbackups]: ALTER TABLE ONLY auth_group_permissions
+2013-12-15T15:04:27+00:00 app[pgbackups]:     ADD CONSTRAINT auth_group_permissions_permission_id_fkey FOREIGN KEY (permission_id) REFERENCES auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY contenido_actividades
+2013-12-15T15:04:27+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT auth_user_user_permissions_permission_id_fkey FOREIGN KEY (permission_id) REFERENCES auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY auth_user_groups
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT auth_user_groups_group_id_fkey FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY auth_user_user_permissions
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT "contenido_actividades_MuNom_id_fkey" FOREIGN KEY ("MuNom_id") REFERENCES contenido_municipio(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT contenido_comentarios_sendero_id_fkey FOREIGN KEY (sendero_id) REFERENCES contenido_senderos(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY contenido_comentarios
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY contenido_comentarios
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT contenido_comentarios_usuario_id_fkey FOREIGN KEY (usuario_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY contenido_fotos
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY contenido_fotos
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT contenido_fotos_usuario_id_fkey FOREIGN KEY (usuario_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT contenido_fotos_sendero_id_fkey FOREIGN KEY (sendero_id) REFERENCES contenido_senderos(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT "contenido_lugaresinteres_MuNom_id_fkey" FOREIGN KEY ("MuNom_id") REFERENCES contenido_municipio(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY contenido_senderos
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY contenido_lugaresinteres
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT "contenido_senderos_MuNom_id_fkey" FOREIGN KEY ("MuNom_id") REFERENCES contenido_municipio(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY auth_permission
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT content_type_id_refs_id_d043b34a FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY django_admin_log
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT django_admin_log_content_type_id_fkey FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE ONLY django_admin_log
+2013-12-15T15:04:28+00:00 app[pgbackups]:     ADD CONSTRAINT django_admin_log_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:28+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:29+00:00 app[pgbackups]: ALTER TABLE ONLY auth_group_permissions
+2013-12-15T15:04:29+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:29+00:00 app[pgbackups]: ALTER TABLE ONLY social_auth_usersocialauth
+2013-12-15T15:04:29+00:00 app[pgbackups]:     ADD CONSTRAINT group_id_refs_id_f4b32aac FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:29+00:00 app[pgbackups]:     ADD CONSTRAINT social_auth_usersocialauth_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:29+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:29+00:00 app[pgbackups]: ALTER TABLE ONLY auth_user_groups
+2013-12-15T15:04:29+00:00 app[pgbackups]:     ADD CONSTRAINT user_id_refs_id_4dc23c39 FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:29+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:29+00:00 app[pgbackups]: REVOKE ALL ON SCHEMA public FROM PUBLIC;
+2013-12-15T15:04:29+00:00 app[pgbackups]: GRANT
+2013-12-15T15:04:29+00:00 app[pgbackups]: GRANT ALL ON SCHEMA public TO PUBLIC;
+2013-12-15T15:04:29+00:00 app[pgbackups]: GRANT
+2013-12-15T15:04:29+00:00 app[pgbackups]:     ADD CONSTRAINT user_id_refs_id_40c41112 FOREIGN KEY (user_id) REFERENCES auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+2013-12-15T15:04:29+00:00 app[pgbackups]: ALTER TABLE
+2013-12-15T15:04:29+00:00 app[pgbackups]: REVOKE
+2013-12-15T15:04:29+00:00 app[pgbackups]: GRANT ALL ON SCHEMA public TO postgres;
+2013-12-15T15:04:29+00:00 app[pgbackups]: ALTER TABLE ONLY auth_user_user_permissions
+2013-12-15T15:04:29+00:00 app[pgbackups]: REVOKE
+2013-12-15T15:04:29+00:00 app[pgbackups]: REVOKE ALL ON SCHEMA public FROM postgres;
+2013-12-15T15:06:15+00:00 app[pgbackups]: 	Is the server running on host "ec2-50-19-219-235.compute-1.amazonaws.com" (10.239.12.100) and accepting
+2013-12-15T15:06:15+00:00 app[pgbackups]: load_progress: error
+2013-12-15T15:06:15+00:00 app[pgbackups]: 	TCP/IP connections on port  5432?
