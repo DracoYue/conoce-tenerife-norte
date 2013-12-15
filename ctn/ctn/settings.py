@@ -2,8 +2,8 @@
 import os
 import django
 
-#DEBUG = True #foreman start
-DEBUG = False #gunicorn 
+DEBUG = True #foreman start
+#DEBUG = False #gunicorn 
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
