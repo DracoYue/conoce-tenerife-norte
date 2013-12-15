@@ -152,9 +152,10 @@
     
                             <!-- Tab panes -->
                             <div class="tab-content faq-cat-content">
-                                <div class="tab-pane active in fade" id="faq-{{i.Eleccion}}">
+                                {% for i in lugar %}
+                                <div class="tab-pane in fade" id="faq-{{i.Eleccion}}">
                                     <div class="panel-group" id="accordion-cat-1">
-                                        {% for i in lugar %}
+                                        
                                         <div class="panel panel-default panel-faq">
                                             <div class="panel-heading">
                                                 <a data-toggle="collapse" data-parent="#accordion-cat-1" href="#faq-cat-{{i.id}}">
