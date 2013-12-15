@@ -1,104 +1,101 @@
-2013-12-14T23:29:48.932430+00:00 app[web.1]:     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
-2013-12-14T23:29:48.932621+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/core/handlers/base.py", line 238, in handle_uncaught_exception
-2013-12-14T23:29:48.932621+00:00 app[web.1]:     return callback(request, **param_dict)
-2013-12-14T23:29:48.932621+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
-2013-12-14T23:29:48.932621+00:00 app[web.1]:     response = view_func(request, *args, **kwargs)
-2013-12-14T23:29:48.932621+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/views/defaults.py", line 46, in server_error
-2013-12-14T23:29:48.932621+00:00 app[web.1]:     return http.HttpResponseServerError(template.render(Context({})))
-2013-12-14T23:29:48.932621+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 140, in render
-2013-12-14T23:29:48.932621+00:00 app[web.1]:     return self._render(context)
-2013-12-14T23:29:48.932621+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
-2013-12-14T23:29:48.932621+00:00 app[web.1]:     return self.nodelist.render(context)
-2013-12-14T23:29:48.932765+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 840, in render
-2013-12-14T23:29:48.932765+00:00 app[web.1]:     bit = self.render_node(node, context)
-2013-12-14T23:29:48.932765+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 854, in render_node
-2013-12-14T23:29:48.932765+00:00 app[web.1]:     return node.render(context)
-2013-12-14T23:29:48.932765+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader_tags.py", line 101, in render
-2013-12-14T23:29:48.932765+00:00 app[web.1]:     compiled_parent = self.get_parent(context)
-2013-12-14T23:29:48.932765+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader_tags.py", line 98, in get_parent
-2013-12-14T23:29:48.932765+00:00 app[web.1]:     return get_template(parent)
-2013-12-14T23:29:48.932765+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader.py", line 138, in get_template
-2013-12-14T23:29:48.932765+00:00 app[web.1]:     template, origin = find_template(template_name)
-2013-12-14T23:29:48.933309+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader.py", line 131, in find_template
-2013-12-14T23:29:48.933309+00:00 app[web.1]:     raise TemplateDoesNotExist(name)
-2013-12-14T23:29:48.933309+00:00 app[web.1]: TemplateDoesNotExist: base.html
-2013-12-14T23:31:45.538349+00:00 heroku[api]: Scale to web=1 by angelahdezd@gmail.com
-2013-12-14T23:32:26.134831+00:00 heroku[router]: at=info method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=1ms service=19ms status=200 bytes=6029
-2013-12-14T23:32:26.439253+00:00 heroku[r
-outer]: at=info method=GET path=/static/js/jquery.min.js host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=1ms service=38ms status=404 bytes=23
-2013-12-14T23:32:26.446238+00:00 heroku[router]: at=info method=GET path=/static/js/scripts.js host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=1ms service=35ms status=404 bytes=23
-2013-12-14T23:32:26.470774+00:00 heroku[router]: at=info method=GET path=/static/js/bootstrap.min.js host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=8ms service=66ms status=404 bytes=23
-2013-12-14T23:32:26.613757+00:00 heroku[router]: at=info method=GET path=/static/css/style.css host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=3ms service=5ms status=404 bytes=23
-2013-12-14T23:32:27.048956+00:00 heroku[router]: at=info method=GET path=/static/img/logo2.png host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=2ms service=11ms status=404 bytes=23
-2013-12-14T23:32:26.407040+00:00 heroku[router]: at=info method=GET path=/static/css/bootstrap.min.css host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=2ms service=19ms status=404 bytes=23
-2013-12-14T23:32:31.900937+00:00 heroku[router]: at=info method=GET path=/senderos/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=1ms service=68ms status=500 bytes=135
-2013-12-14T23:32:31.899488+00:00 app[web.1]: 2013-12-14 17:32:31 [7] [ERROR] Error handling request
-2013-12-14T23:32:31.899488+00:00 app[web.1]: Traceback (most recent call last):
-2013-12-14T23:32:31.899488+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 131, in handle_request
-2013-12-14T23:32:31.899488+00:00 app[web.1]:     respiter = self.wsgi(environ, resp.start_response)
-2013-12-14T23:32:31.899488+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/dj_static.py", line 59, in __call__
-2013-12-14T23:32:31.899488+00:00 app[web.1]:     return self.application(environ, start_response)
-2013-12-14T23:32:31.899488+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/core/handlers/wsgi.py", line 206, in __call__
-2013-12-14T23:32:31.899488+00:00 app[web.1]:     response = self.get_response(request)
-2013-12-14T23:32:31.899488+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/core/handlers/base.py", line 196, in get_response
-2013-12-14T23:32:31.899488+00:00 app[web.1]:     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
-2013-12-14T23:32:31.899773+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/core/handlers/base.py", line 238, in handle_uncaught_exception
-2013-12-14T23:32:31.899773+00:00 app[web.1]:     return callback(request, **param_dict)
-2013-1
-2-14T23:32:31.899773+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
-2013-12-14T23:32:31.899773+00:00 app[web.1]:     response = view_func(request, *args, **kwargs)
-2013-12-14T23:32:31.899773+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/views/defaults.py", line 46, in server_error
-2013-12-14T23:32:31.899773+00:00 app[web.1]:     return http.HttpResponseServerError(template.render(Context({})))
-2013-12-14T23:32:31.899773+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 140, in render
-2013-12-14T23:32:31.899773+00:00 app[web.1]:     return self._render(context)
-2013-12-14T23:32:31.899773+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
-2013-12-14T23:32:31.899773+00:00 app[web.1]:     return self.nodelist.render(context)
-2013-12-14T23:32:31.900012+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 840, in render
-2013-12-14T23:32:31.900012+00:00 app[web.1]:     bit = self.render_node(node, context)
-2013-12-14T23:32:31.900012+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 854, in render_node
-2013-12-14T23:32:31.900012+00:00 app[web.1]:     return node.render(context)
-2013-12-14T23:32:31.900012+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader_tags.py", line 101, in render
-2013-12-14T23:32:31.900012+00:00 app[web.1]:     compiled_parent = self.get_parent(context)
-2013-12-14T23:32:31.900012+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader_tags.py", line 98, in get_parent
-2013-12-14T23:32:31.900012+00:00 app[web.1]:     return get_template(parent)
-2013-12-14T23:32:31.900012+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader.py", line 138, in get_template
-2013-12-14T23:32:31.900012+00:00 app[web.1]:     template, origin = find_template(template_name)
-2013-12-14T23:32:31.900637+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader.py", line 131, in find_template
-2013-12-14T23:32:31.900637+00:00 app[web.1]:     raise TemplateDoesNotExist(name)
-2013-12-14T23:32:31.900637+00:00 app[web.1]: TemplateDoesNotExist: base.html
-2013-12-14T23:32:32.184400+00:00 app[web.1]: 2013-12-14 17:32:32 [7] [ERROR] Error handling request
-2013-12-14T23:32:32.184400+00:00 app[web.1]: Traceback (most recent call last):
-2013-12-14T23:32:32.184400+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 131, in handle_request
-2013-12-14T23:32:32.184400+00:00 app[web.1]:     respiter = self.wsgi(environ, resp.start_response)
-2013-12-14T23:32:32.184400+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/dj_static.py", line 59, in __call__
-2013-12-14T23:32:32.184400+00:00 app[web.1]:     return self.application(environ, start_response)
-2013-12-14T23:32:32.184400+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/core/handlers/wsgi.py", line 206, in __call__
-2013-12-14T23:32:32.184400+00:00 app[web.1]:     response = self.get_response(request)
-2013-12-14T23:32:32.184400+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/core/handlers/base.py", line 155, in get_response
-2013-12-14T23:32:32.184400+00:00 app[web.1]:     response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
-2013-12-14T23:32:32.184752+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/core/handlers/base.py", line 238, in handle_uncaught_exception
-2013-12-14T23:32:32.184752+00:00 app[web.1]:     return callback(request, **param_dict)
-2013-12-14T23:32:32.184752+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/utils/decorators.py", line 99, in _wrapped_view
-2013-12-14T23:32:32.184752+00:00 app[web.1]:     response = view_func(request, *args, **kwargs)
-2013-12-14T23:32:32.184752+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/views/defaults.py", line 46, in server_error
-2
-013-12-14T23:32:32.198231+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=1ms service=51ms status=500 bytes=135
-2013-12-14T23:32:32.184752+00:00 app[web.1]:     return http.HttpResponseServerError(template.render(Context({})))
-2013-12-14T23:32:32.184752+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 140, in render
-2013-12-14T23:32:32.184752+00:00 app[web.1]:     return self._render(context)
-2013-12-14T23:32:32.184752+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 134, in _render
-2013-12-14T23:32:32.184752+00:00 app[web.1]:     return self.nodelist.render(context)
-2013-12-14T23:32:32.185082+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 840, in render
-2013-12-14T23:32:32.185082+00:00 app[web.1]:     bit = self.render_node(node, context)
-2013-12-14T23:32:32.185082+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/base.py", line 854, in render_node
-2013-12-14T23:32:32.185082+00:00 app[web.1]:     return node.render(context)
-2013-12-14T23:32:32.185082+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader_tags.py", line 101, in render
-2013-12-14T23:32:32.185082+00:00 app[web.1]:     compiled_parent = self.get_parent(context)
-2013-12-14T23:32:32.185082+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader_tags.py", line 98, in get_parent
-2013-12-14T23:32:32.185082+00:00 app[web.1]:     return get_template(parent)
-2013-12-14T23:32:32.185082+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader.py", line 138, in get_template
-2013-12-14T23:32:32.185082+00:00 app[web.1]:     template, origin = find_template(template_name)
-2013-12-14T23:32:32.185823+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/django/template/loader.py", line 131, in find_template
-2013-12-14T23:32:32.185823+00:00 app[web.1]:     raise TemplateDoesNotExist(name)
-2013-12-14T23:32:32.185823+00:00 app[web.1]: TemplateDoesNotExist: base.html
-2013-12-14T23:32:33.595544+00:00 heroku[router]: at=info method=GET path=/static/img/logo2.png host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno=web.1 connect=5ms service=32ms status=404 bytes=23
+2013-12-15T00:05:17.873473+00:00 app[web.1]:     from dj_static import Cling
+2013-12-15T00:05:17.872998+00:00 app[web.1]:     return self.load_wsgiapp()
+2013-12-15T00:05:17.873473+00:00 app[web.1]: 2013-12-15 00:05:17 [7] [INFO] Worker exiting (pid: 7)
+2013-12-15T00:05:18.012935+00:00 app[web.1]: 2013-12-15 00:05:18 [2] [INFO] Shutting down: Master
+2013-12-15T00:05:18.013238+00:00 app[web.1]: 2013-12-15 00:05:18 [2] [INFO] Reason: Worker failed to boot.
+2013-12-15T00:05:20.092637+00:00 heroku[web.1]: Process exited with status 3
+2013-12-15T00:05:23.287565+00:00 heroku[web.1]: Starting process with command `gunicorn --pythonpath ctn ctn.wsgi`
+2013-12-15T00:05:24.502338+00:00 app[web.1]: 2013-12-15 00:05:24 [2] [INFO] Starting gunicorn 18.0
+2013-12-15T00:05:24.502915+00:00 app[web.1]: 2013-12-15 00:05:24 [2] [INFO] Listening at: http://0.0.0.0:10128 (2)
+2013-12-15T00:05:24.503034+00:00 app[web.1]: 2013-12-15 00:05:24 [2] [INFO] Using worker: sync
+2013-12-15T00:05:24.515636+00:00 app[web.1]: 2013-12-15 00:05:24 [7] [INFO] Booting worker with pid: 7
+2013-12-15T00:05:24.786518+00:00 app[web.1]: Traceback (most recent call last):
+2013-12-15T00:05:24.786518+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+2013-12-15T00:05:24.786518+00:00 app[web.1]: 2013-12-15 00:05:24 [7] [ERROR] Exception in worker process:
+2013-12-15T00:05:24.786518+00:00 app[web.1]:     self.callable = self.load()
+2013-12-15T00:05:24.786518+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+2013-12-15T00:05:24.786518+00:00 app[web.1]:     return self.load_wsgiapp()
+2013-12-15T00:05:24.786710+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+2013-12-15T00:05:24.786710+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2013-12-15T00:05:24.786710+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+2013-12-15T00:05:24.786518+00:00 app[web.1]:     worker.init_process()
+2013-12-15T00:05:24.786518+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+2013-12-15T00:05:24.786518+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2013-12-15T00:05:24.786518+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+2013-12-15T00:05:24.786710+00:00 app[web.1]:     __import__(module)
+2013-12-15T00:05:24.786710+00:00 app[web.1]:   File "/app/ctn/ctn/wsgi.py", line 30, in <module>
+2013-12-15T00:05:24.786710+00:00 app[web.1]:     from dj_static import Cling
+2013-12-15T00:05:24.786710+00:00 app[web.1]:     worker.init_process()
+2013-12-15T00:05:24.786861+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+2013-12-15T00:05:24.786861+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2013-12-15T00:05:24.786710+00:00 app[web.1]: ImportError: No module named dj_static
+2013-12-15T00:05:24.786710+00:00 app[web.1]: Traceback (most recent call last):
+2013-12-15T00:05:24.786710+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+2013-12-15T00:05:24.786861+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+2013-12-15T00:05:24.786861+00:00 app[web.1]:     self.callable = self.load()
+2013-12-15T00:05:24.786861+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+2013-12-15T00:05:24.786861+00:00 app[web.1]:     return self.load_wsgiapp()
+2013-12-15T00:05:24.786861+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+2013-12-15T00:05:24.786861+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2013-12-15T00:05:24.786861+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+2013-12-15T00:05:24.786861+00:00 app[web.1]:     __import__(module)
+2013-12-15T00:05:24.787307+00:00 app[web.1]:   File "/app/ctn/ctn/wsgi.py", line 30, in <module>
+2013-12-15T00:05:24.787307+00:00 app[web.1]:     from dj_static import Cling
+2013-12-15T00:05:24.787307+00:00 app[web.1]: ImportError: No module named dj_static
+2013-12-15T00:05:24.787307+00:00 app[web.1]: 2013-12-15 00:05:24 [7] [INFO] Worker exiting (pid: 7)
+2013-12-15T00:05:24.989532+00:00 app[web.1]: 2013-12-15 00:05:24 [2] [INFO] Shutting down: Master
+2013-12-15T00:05:24.989993+00:00 app[web.1]: 2013-12-15 00:05:24 [2] [INFO] Reason: Worker failed to boot.
+2013-12-15T00:05:26.450981+00:00 heroku[web.1]: State changed from starting to crashed
+2013-12-15T00:05:26.429379+00:00 heroku[web.1]: Process exited with status 3
+2013-12-15T00:05:28.080550+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
+2013-12-15T00:05:28.635180+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
+2013-12-15T00:09:34+00:00 heroku[slug-compiler]: Slug compilation started
+2013-12-15T00:10:16.649043+00:00 heroku[api]: Deploy eab7123 by angelahdezd@gmail.com
+2013-12-15T00:10:16.694596+00:00 heroku[api]: Release v6 created by angelahdezd@gmail.com
+2013-12-15T00:10:16+00:00 heroku[slug-compiler]: Slug compilation finished
+2013-12-15T00:10:18.271802+00:00 heroku[web.1]: State changed from crashed to starting
+2013-12-15T00:10:24.216811+00:00 heroku[web.1]: Starting process with command `gunicorn --pythonpath ctn ctn.wsgi`
+2013-12-15T00:10:26.478568+00:00 app[web.1]: 2013-12-15 00:10:26 [2] [INFO] Starting gunicorn 18.0
+2013-12-15T00:10:26.479160+00:00 app[web.1]: 2013-12-15 00:10:26 [2] [INFO] Listening at: http://0.0.0.0:40129 (2)
+2013-12-15T00:10:26.479255+00:00 app[web.1]: 2013-12-15 00:10:26 [2] [INFO] Using worker: sync
+2013-12-15T00:10:26.492558+00:00 app[web.1]: 2013-12-15 00:10:26 [7] [INFO] Booting worker with pid: 7
+2013-12-15T00:10:26.731234+00:00 app[web.1]: Traceback (most recent call last):
+2013-12-15T00:10:26.731234+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+2013-12-15T00:10:26.731234+00:00 app[web.1]:     worker.init_process()
+2013-12-15T00:10:26.731234+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+2013-12-15T00:10:26.731234+00:00 app[web.1]: 2013-12-15 00:10:26 [7] [ERROR] Exception in worker process:
+2013-12-15T00:10:26.731234+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2013-12-15T00:10:26.731234+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+2013-12-15T00:10:26.731234+00:00 app[web.1]:     self.callable = self.load()
+2013-12-15T00:10:26.731234+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+2013-12-15T00:10:26.731234+00:00 app[web.1]:     return self.load_wsgiapp()
+2013-12-15T00:10:26.731452+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+2013-12-15T00:10:26.731452+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2013-12-15T00:10:26.731452+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+2013-12-15T00:10:26.731452+00:00 app[web.1]:     __import__(module)
+2013-12-15T00:10:26.731452+00:00 app[web.1]:   File "/app/ctn/ctn/wsgi.py", line 30, in <module>
+2013-12-15T00:10:26.731452+00:00 app[web.1]:     from dj_static import Cling
+2013-12-15T00:10:26.731452+00:00 app[web.1]: ImportError: No module named dj_static
+2013-12-15T00:10:26.731452+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+2013-12-15T00:10:26.731452+00:00 app[web.1]:     worker.init_process()
+2013-12-15T00:10:26.731613+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+2013-12-15T00:10:26.731613+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2013-12-15T00:10:26.731613+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+2013-12-15T00:10:26.731613+00:00 app[web.1]:     self.callable = self.load()
+2013-12-15T00:10:26.731452+00:00 app[web.1]: Traceback (most recent call last):
+2013-12-15T00:10:26.731613+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 62, in load
+2013-12-15T00:10:26.731613+00:00 app[web.1]:     return self.load_wsgiapp()
+2013-12-15T00:10:26.731613+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2013-12-15T00:10:26.731613+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+2013-12-15T00:10:26.731613+00:00 app[web.1]:     __import__(module)
+2013-12-15T00:10:26.732080+00:00 app[web.1]:   File "/app/ctn/ctn/wsgi.py", line 30, in <module>
+2013-12-15T00:10:26.732080+00:00 app[web.1]:     from dj_static import Cling
+2013-12-15T00:10:26.732080+00:00 app[web.1]: ImportError: No module named dj_static
+2013-12-15T00:10:26.731613+00:00 app[web.1]:   File "/app/.heroku/python/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 49, in load_wsgiapp
+2013-12-15T00:10:26.732080+00:00 app[web.1]: 2013-12-15 00:10:26 [7] [INFO] Worker exiting (pid: 7)
+2013-12-15T00:10:26.871109+00:00 app[web.1]: 2013-12-15 00:10:26 [2] [INFO] Shutting down: Master
+2013-12-15T00:10:26.871232+00:00 app[web.1]: 2013-12-15 00:10:26 [2] [INFO] Reason: Worker failed to boot.
+2013-12-15T00:10:28.506509+00:00 heroku[web.1]: Process exited with status 3
+2013-12-15T00:10:28.503574+00:00 heroku[web.1]: State changed from starting to crashed
+2013-12-15T00:10:56.493089+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
+2013-12-15T00:10:56.782507+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=conocetenerifenorte2.herokuapp.com fwd="83.53.129.40" dyno= connect= service= status=503 bytes=
