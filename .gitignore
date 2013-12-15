@@ -3,3 +3,6 @@
 *.py~
 venv
 ctn/venv
+history_bbd.txt
+history_funciona_foreman.txt
+logs
