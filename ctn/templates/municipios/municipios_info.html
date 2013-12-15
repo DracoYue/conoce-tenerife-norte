@@ -215,53 +215,6 @@
                 }); </script>
 
 
-                            {% for i in lugar%}
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                    <h3>{{ i }}</h3>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                {% if i.Eleccion == 'MU' %}
-                                                <h3>Tipo:</h3> Museo
-                                                {% endif %}
-                                                {% if i.Eleccion == 'PL' %}
-                                                <h3>Tipo:</h3> Playa
-                                                {% endif %}
-                                                {% if i.Eleccion == 'TE' %}
-                                                <h3>Tipo:</h3> Teatro
-                                                {% endif %}
-                                                {% if i.Eleccion == 'CI' %}
-                                                <h3>Tipo:</h3> Cine
-                                                {% endif %}
-                                                {% if i.Eleccion == 'NA' %}
-                                                <h3>Tipo:</h3> Naturaleza
-                                                {% endif %}
-                                                {% if i.Eleccion == 'ED' %}
-                                                <h3>Tipo:</h3> Edificios
-                                                {% endif %}
-                                            </td>
-                                        </tr>
-                                           <tr>
-                                            <td>
-                                                <h3>Direccion: </h3> {{ i.Direccion }}
-                                            </td>
-                                        </tr>
-                                         <tr>
-                                            <td>
-                                                {% if i.Tlf != 0 %}
-                                                    <h3>Telefono de contacto: </h3> {{ i.Tlf }}
-                                                {% endif %}
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            {% endfor %}
                         </div>
                         </div>
                     </div>
