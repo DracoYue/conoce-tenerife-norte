@@ -1,59 +1,3 @@
-  947  psql user
-  948  psql ctn
-  949  python manage.py shell
-  950  ls
-  951  cd ..
-  952  s
-  953  ls
-  954  cd ..
-  955  ls
-  956  cd var/lib/
-  957  ls
-  958  cd postgresql/
-  959  ls
-  960  cd 9.1/
-  961  ls
-  962  cd main/
-  963  sudo -s
-  964  cd
-  965  pg_dump ctn -U user > dump.sql
-  966  pg_dump ctn -U postgres > dump.sql
-  967  pg_dump ctn -U angela > dump.sql
-  968  ls
-  969  cd Escritorio/conoce-tenerife/conoce-tenerife-norte/ctn/
-  970  python manage.py runserver 8000
-  971  python manage.py syncdb
-  972  python manage.py runserver 8000
-  973  python manage.py syncdb
-  974  python manage.py runserver 8000
-  975  git add .
-  976  git push origin desarrollo
-  977  python manage.py syncdb
-  978  python manage.py runserver 8000
-  979  python manage.py syncdb
-  980  python manage.py runserver 8000
-  981  git add .
-  982  git commit -m "mostrando fotos y comentarios"
-  983  git push origin desarrollo 
-  984  python manage.py runserver 8000
-  985  git checkout desarrollo 
-  986  python manage.py runserver 8000
-  987  pip install dj_database_url
-  988  sudo pip install dj_database_url
-  989  python manage.py runserver 8000
-  990  foreman start
-  991  cd ..
-  992  foreman start
-  993  python manage.py runserver 8000
-  994  cd ctn/
-  995  python manage.py runserver 8000
-  996  foreman start
-  997  ls
-  998  cd ..
-  999  foreman start
- 1000  heroku open
- 1001  ls
- 1002  cd ctn/
  1003  ls
  1004  git rm -r gmapi/
  1005  cd ..
@@ -998,3 +942,59 @@
  1944  heroku run python manage.py shell
  1945  heroku run python ctn/manage.py shell
  1946  history > history_bbd.txt
+ 1947  foreman start
+ 1948  git add .
+ 1949  git commit -m "puerto 8000"
+ 1950  git push origin master 
+ 1951  git push heroku master
+ 1952  heroku open
+ 1953  foreman start
+ 1954  heroku logs
+ 1955  heroku logs > logs 
+ 1956  ls
+ 1957  heroku pgbackups:restore DATABASE 'http://banot.etsii.ull.es/alu4079/STYW/CTN/mydb.dump'
+ 1958  heroku addons:add pgbackups
+ 1959  heroku pgbackups:restore DATABASE 'http://banot.etsii.ull.es/alu4079/STYW/CTN/mydb.dump'
+ 1960  heroku open
+ 1961  foreman start
+ 1962  heroku run python ctn/manage.py syncdb
+ 1963  foreman start
+ 1964  heroku pgbackups:restore DATABASE 'http://banot.etsii.ull.es/alu4079/STYW/CTN/mydb.dump'
+ 1965  heroku open
+ 1966  heroku logs
+ 1967  heroku logs > logs 
+ 1968  heroku run python ctn/manage.py syncdb
+ 1969  heroku open
+ 1970  heroku logs
+ 1971  git push heroku master
+ 1972  heroku open
+ 1973  heroku create --stack cedar conocetenerifenorte2
+ 1974  git push heroku master
+ 1975  heroku open
+ 1976  heroku run python ctn/manage.py syncdb
+ 1977  heroku open
+ 1978  heroku logs
+ 1979  heroku logs > logs 
+ 1980  git add .
+ 1981  git commit -m "fallo"
+ 1982  git push origin master 
+ 1983  git push heroku master
+ 1984  heroku open
+ 1985  python ctn/manage.py dumpdata > db.sql
+ 1986  ls
+ 1987  git rm mydb.dump
+ 1988  git add .
+ 1989  git commit -m "probando"
+ 1990  git push origin master 
+ 1991  git push heroku master 
+ 1992  heroku run python ctn/manage.py syncdb
+ 1993  heroku run python ctn/manage.py loaddata < db.sql
+ 1994  heroku open
+ 1995  heroku run python ctn/manage.py loaddata < db.sql
+ 1996  heroku addons:add pgbackups
+ 1997  heroku pgbackups:capture http://banot.etsii.ull.es/alu4079/STYW/CTN/mydb.dump
+ 1998  heroku pgbackups:capture
+ 1999  heroku pgbackups:restore DATABASE_URL http://banot.etsii.ull.es/alu4079/STYW/CTN/mydb.dump
+ 2000  heroku open
+ 2001  git add .
+ 2002  history > history_bbd.txt 
