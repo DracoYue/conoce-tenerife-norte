@@ -34,7 +34,8 @@ DATABASES = {
 #heroku
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config(default='postgres://user:1234@localhost/ctn')
+DATABASES['default'] =  dj_database_url.config()
+#default='postgres://user:1234@localhost/ctn'
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -165,6 +166,7 @@ INSTALLED_APPS = (
     'usuario',
     'contenido',
     'django_gravatar',
+    'gunicorn',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     
