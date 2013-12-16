@@ -69,11 +69,8 @@ Versión 1.8
             \password username
         - Se ha de crear la base de datos: createdb ctn
         - sudo apt-get install python-psycopg2
-<<<<<<< HEAD
-- 13/12/2013 - Añadido lugares de interes
-=======
 - 11/12/2013 - Modificación mapas en los senderos.
->>>>>>> 593021b90c32314cc0b04fd2f99d4d95361e9735
+- 13/12/2013 - Añadido lugares de interes
 
 ###Chicas al poder! =)
 
