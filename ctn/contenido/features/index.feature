@@ -55,6 +55,16 @@ Feature: Validating User Model
                 Then I see the second link "Ayuda"
                 Then I see the third link "Contacto"
                 Then I see the fourth link "Nosotros"
+                Then I see the first h4 "Desarrolladores:"
+                Then I see the first span "HTML5/CSS3"
+                Then I see the second span "Google"
+                Then I see the third span "Django"
+                Then I see the fourth span "Python"
+                Then I see the fifth span "Github"
+                Then I see the sixth span "Javascript"
+                Then I see the seventh span "PostgreSQL"
+                Then I see the eighth span "Trello"
+
 
         Scenario: Page Municipios has content
                 Given I access the url "/municipios/"
@@ -78,6 +88,17 @@ Feature: Validating User Model
                 Then I see the first link "CTN"
                 Then I see the header "CTN"
                 Then I see h1 " SENDEROS "
+                Then I see the second link "Ayuda"
+                Then I see the third link "Contacto"
+                Then I see the fourth link "Nosotros"
+                Then I see the first h3 "Municipio:"
+                Then I see the first h5 "La Orotava"
+
+        Scenario: Page Actividades has content
+                Given I access the url "/actividades/"
+                Then I see the first link "CTN"
+                Then I see the header "CTN"
+                Then I see h1 " ACTIVIDADES "
                 Then I see the second link "Ayuda"
                 Then I see the third link "Contacto"
                 Then I see the fourth link "Nosotros"

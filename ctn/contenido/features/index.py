@@ -112,9 +112,50 @@ def see_header(step, text):
     header = world.dom.cssselect("a")[14]
     assert header.text == text
 
+
 ###################################################
 #Scenario: Probar el acceso a senderos
 @step(r'Then I see the first h3 "(.*)"')
 def see_header(step, text):
     header = world.dom.cssselect("h3")[0]
+    assert header.text == text
+
+@step(r'Then I see the first span "(.*)"')
+def see_header(step, text):
+    header = world.dom.cssselect("span")[6]
+    assert header.text == text
+
+@step(r'Then I see the second span "(.*)"')
+def see_header(step, text):
+    header = world.dom.cssselect("span")[7]
+    assert header.text == text
+
+@step(r'Then I see the third span "(.*)"')
+def see_header(step, text):
+    header = world.dom.cssselect("span")[8]
+    assert header.text == text
+
+@step(r'Then I see the fourth span "(.*)"')
+def see_header(step, text):
+    header = world.dom.cssselect("span")[9]
+    assert header.text == text
+
+@step(r'Then I see the fifth span "(.*)"')
+def see_header(step, text):
+    header = world.dom.cssselect("span")[10]
+    assert header.text == text
+
+@step(r'Then I see the sixth span "(.*)"')
+def see_header(step, text):
+    header = world.dom.cssselect("span")[11]
+    assert header.text == text
+
+@step(r'Then I see the seventh span "(.*)"')
+def see_header(step, text):
+    header = world.dom.cssselect("span")[12]
+    assert header.text == text
+
+@step(r'Then I see the eighth span "(.*)"')
+def see_header(step, text):
+    header = world.dom.cssselect("span")[13]
     assert header.text == text
