@@ -22,8 +22,9 @@ Versión 2.3
 **- 05/10/2013** - Empezando Proyecto
 
 **- 06/10/2013** - Definición de usuarios
-	 - pip install django-social-auth
-    	 - cloud9: easy_install django-social-auth
+
+ - pip install django-social-auth
+ - cloud9: easy_install django-social-auth
     
 **- 06/10/2013** - Definición BBDD
 
