@@ -23,34 +23,34 @@ Versión 2.3
 
 **- 06/10/2013** - Definición de usuarios
 
-    - pip install django-social-auth
-    - cloud9: easy_install django-social-auth
+	 - pip install django-social-auth
+    	 - cloud9: easy_install django-social-auth
     
 **- 06/10/2013** - Definición BBDD
 
 **- 08/10/2013** - Foto Perfil
 
-    - pip install django-simple-gravatar
-    - cloud9: easy_install django-simple-gravatar
+	 - pip install django-simple-gravatar
+	 - cloud9: easy_install django-simple-gravatar
     
 **- 08/10/2013** - Rellenar BBDD
 
 **- 11/10/2013** - Añadiendo Páginas Estáticas
 
-    - about us
-    - contact
-    - help
+	 - about us
+    	 - contact
+    	 - help
     
 **- 18/11/2013** - Añadida Página Senderos
 
-    - El Sauzal => Sendero 1 => Sendero 2 => Sendero 3
-    - La Matanza => Sendero 1 => Sendero 2
-    - La Victoria => Sendero 1
-    - La Orotava => Sendero 1
-    - Los Realejos => Sendero 1 => Sendero 2
-    - Santa Úrsula
-    - Tacoronte => Sendero 1 => Sendero 2
-    - Puerto de la Cruz => Sendero 1 => Sendero 2
+    	- El Sauzal => Sendero 1 => Sendero 2 => Sendero 3
+    	- La Matanza => Sendero 1 => Sendero 2
+    	- La Victoria => Sendero 1
+    	- La Orotava => Sendero 1
+    	- Los Realejos => Sendero 1 => Sendero 2
+    	- Santa Úrsula
+    	- Tacoronte => Sendero 1 => Sendero 2
+    	- Puerto de la Cruz => Sendero 1 => Sendero 2
     
 **- 18/11/2013** - Añadido mapa personalizado => Página Mapa
 
@@ -60,43 +60,43 @@ Versión 2.3
 
 **- 03/12/2013** - Añadiendo rutas a los senderos.
 
-	- Añadiendo página Municipios
+		- Añadiendo página Municipios
 	
 **- 04/12/2013** - Añadiendo puntucuación.
 
-	- Añadiendo Actividades
-	- Añadiendo Municipios.
+		- Añadiendo Actividades
+		- Añadiendo Municipios.
 	
 **- 05/12/2013** - Añadiendo comentarios
 
-	- Fotos carrusel
+		- Fotos carrusel
 	
 **- 07/12/2013** - Añadiendo rutas a la BBDD
 
 **- 08/12/2013** - Añadiendo rutas a la BBDD
 
-    - Subir fotos
-    - Borrar fotos. 
+	 - Subir fotos
+    	 - Borrar fotos. 
     
 **- 09/12/2013** - Primer intento despliegue Heroku. 
 
-    - Modificando el diseño. 
-    - Terminado Comentarios.
+     	- Modificando el diseño. 
+     	- Terminado Comentarios.
     
 **- 10/12/2013** - Modificando perfil
 
-    - Migración de sqlite3 a Postgres
-        - Guardar bbdd de sqlite: sqlite database .dump > sqlite-dumpfile.sql
-        - Insertarla en Postgres: psql -d ctn -U user -W < sqlite-dumpfile.sql
-    - Se ha instalado:
-        - sudo apt-get install postgresql
-        - sudo apt-get install pgadmin3
-        - sudo -u postgres createuser --superuser username
-        - sudo -u postgres psql
-            \password username
-        - Se ha de crear la base de datos: createdb ctn
-        - sudo apt-get install python-psycopg2
-        - Exportar bbdd: pg_dump ctn -U usuario > dump.sql
+	 - Migración de sqlite3 a Postgres
+        	- Guardar bbdd de sqlite: sqlite database .dump > sqlite-dumpfile.sql
+        	- Insertarla en Postgres: psql -d ctn -U user -W < sqlite-dumpfile.sql
+    	 - Se ha instalado:
+        	- sudo apt-get install postgresql
+        	- sudo apt-get install pgadmin3
+        	- sudo -u postgres createuser --superuser username
+        	- sudo -u postgres psql
+            	\password username
+        	- Se ha de crear la base de datos: createdb ctn
+        	- sudo apt-get install python-psycopg2
+        	- Exportar bbdd: pg_dump ctn -U usuario > dump.sql
         
 **- 11/12/2013** - Modificación mapas en los senderos.
 
