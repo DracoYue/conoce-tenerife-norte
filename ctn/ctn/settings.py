@@ -2,10 +2,8 @@
 import os
 import django
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
-
-DEBUG = True
+DEBUG = True #foreman start
+#DEBUG = False #gunicorn 
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -23,7 +21,7 @@ GRAVATAR_SECURE = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',#'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'ctn',                      # Or path to database file if using sqlite3.
+        'NAME': 'usuario',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'user',
         'PASSWORD': '1234',
@@ -31,6 +29,32 @@ DATABASES = {
         'PORT': '5432',                      # Set to empty string for default.
     }
 }
+
+
+#heroku
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config(default='postgres://user:1234@localhost/ctn')
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
+
+# Static asset configuration
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = ''
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, '../static'),
+)
+
+
+#
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -137,14 +161,19 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'gunicorn',
     'social_auth',
     'usuario',
     'contenido',
     'django_gravatar',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+<<<<<<< HEAD
     'gunicorn',
     'lettuce.django',
+=======
+    
+>>>>>>> fcf928d56645f5609cf54ca61a1a3c15e7b86199
 )
 
 
@@ -257,3 +286,4 @@ SOCIAL_AUTH_PIPELINE = (
 )
 
 SOCIAL_AUTH_FORCE_POST_DISCONNECT = True
+

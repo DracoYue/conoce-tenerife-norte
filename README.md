@@ -70,7 +70,12 @@ Versión 1.8
         - Se ha de crear la base de datos: createdb ctn
         - sudo apt-get install python-psycopg2
 - 11/12/2013 - Modificación mapas en los senderos.
+<<<<<<< HEAD
 - 13/12/2013 - Añadido lugares de interes
+=======
+- 15/12/2013 - Aplicación en heroku : http://conocetenerifenorte2.herokuapp.com/
+>>>>>>> fcf928d56645f5609cf54ca61a1a3c15e7b86199
 
 ###Chicas al poder! =)
+exportar bbdd psql => pg_dump ctn -U angela > dump.sql
 

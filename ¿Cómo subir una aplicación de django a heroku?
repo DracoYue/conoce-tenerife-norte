@@ -1,0 +1,98 @@
+¿Cómo pasar de bbdd de sqlite3 a postgres?
+
+	- Migración de sqlite3 a Postgres
+        - Guardar bbdd de sqlite: sqlite database .dump > sqlite-dumpfile.sql
+        - Insertarla en Postgres: psql -d ctn -U user -W < sqlite-dumpfile.sql
+    - Se ha instalado:
+        - sudo apt-get install postgresql
+        - sudo apt-get install pgadmin3
+        - sudo -u postgres createuser --superuser username
+        - sudo -u postgres psql
+            \password username
+        - Se ha de crear la base de datos: createdb ctn
+        - sudo apt-get install python-psycopg2
+
+¿Cómo subir una aplicación de django a heroku?
+0. En settings.py
+	DEBUG = True #foreman start
+	DATABASES = {
+	    'default': {
+	        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+	        'NAME': 'ctn',                      # Or path to database file if using sqlite3.
+	        # The following settings are not used with sqlite3:
+	        'USER': 'user',
+	        'PASSWORD': '*****',
+	        'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+	        'PORT': '5432',                      # Set to empty string for default.
+	    }
+	}
+
+
+	#heroku
+	# Parse database configuration from $DATABASE_URL
+	import dj_database_url
+	DATABASES['default'] =  dj_database_url.config()
+
+	# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+	SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+	# Allow all host headers
+	ALLOWED_HOSTS = ['*']
+
+	# Static asset configuration
+	import os
+	BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+	STATIC_ROOT = ''
+	STATIC_URL = '/static/'
+
+	STATICFILES_DIRS = (
+	    os.path.join(BASE_DIR, '../static'),
+	)
+	
+1. Instalar
+	sudo apt-get install python-dev
+
+2. Crear el entorno
+	virtualenv venv --distribute -p python2.7
+
+3. Modificar ficheros para poder instalar dependencias
+	cd etc/apt/
+	vi sources.list
+	Añadir
+		deb-src http://archive.ubuntu.com/ubuntu/ precise main restricted
+		deb-src http://archive.ubuntu.com/ubuntu/ precise-updates main restricted
+
+4. Crear usuario y contraseña en psql
+	sudo su postgres
+	psql
+	Definimos un password: \password postgres
+	postgres=# CREATE USER testadmin WITH CREATEDB PASSWORD 'testing';
+		CREATE ROLE
+	postgres=# CREATE DATABASE django_testdb OWNER testadmin;
+		CREATE DATABASE
+	postgres=# \q
+
+5.Usar entorno
+	source venv/bin/activate
+	pip install Django psycopg2 dj-database-url
+	pip install -r requirements.txt
+	python ctn/manage.py syncdb (con esto funciona el esquema de la bbdd y bootstrap)
+
+6. Base de datos importar y exportarla
+	Importamos la bbdd en local con: 
+	Exportamos la bbdd : PGPASSWORD=mypassword pg_dump -Fc --no-acl --no-owner -h localhost -U myuser mydb > mydb.dump
+	Subimos a una pagina web como banot
+
+7. Sincronizar esquema de la bbdd con heroku 
+	heroku run python manage.py syncdb --app conocetenerifenorte2
+
+8. Añadir bbdd creada a heroku 
+	 heroku addons:add pgbackups
+	 subimos nuestra bbdd a internet
+ 	heroku pgbackups:restore DATABASE 'http://banot.etsii.ull.es/alu4079/STYW/CTN/mydb.dump'
+
+9. Arrancar heroku
+	heroku open
+
+
+

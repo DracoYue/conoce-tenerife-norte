@@ -1,20 +1,17 @@
-  .bx-wrapper .bx-pager {
-    bottom: -95px;
-  }
-  
-  .bx-wrapper .bx-pager a {
-    border: solid #ccc 1px;
-    display: block;
-    margin: 0 5px;
-    padding: 3px;
-  }
-  
-  .bx-wrapper .bx-pager a:hover,
-  .bx-wrapper .bx-pager a.active {
-    border: solid #5280DD 1px;
-  }
-  
-  .bx-wrapper {
-    margin-bottom: 120px;
-  }
+#foto:hover
+{
+  width:490px;
+  height: 490px;
+}
+
+div#img
+{
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #0000ff;
+  height: auto;
+  width: auto;
+  float: left;
+  text-align: center;
+} 
 
