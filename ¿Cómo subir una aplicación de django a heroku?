@@ -53,7 +53,7 @@
 	sudo apt-get install python-dev
 
 2. Crear el entorno
-	virtualenv venv --distribute
+	virtualenv venv --distribute -p python2.7
 
 3. Modificar ficheros para poder instalar dependencias
 	cd etc/apt/
