@@ -161,8 +161,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    #'gunicorn',
-    #'lettuce.django',
     'social_auth',
     'usuario',
     'contenido',
