@@ -21,9 +21,9 @@ GRAVATAR_SECURE = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',#'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'ctn',                      # Or path to database file if using sqlite3.
+        'NAME': 'usuario',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'angela',
+        'USER': 'user',
         'PASSWORD': '1234',
         'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
@@ -34,7 +34,7 @@ DATABASES = {
 #heroku
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.config(default='postgres://user:1234@localhost/ctn')
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
