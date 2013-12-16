@@ -18,7 +18,7 @@ Feature: Validating User Model
                 Then I see the fourth link "Nosotros"
 
 
-        Scenario: Page register has content 
+        Scenario: Page Register has content 
                 Given I access the url "/login/"
                 Then I see the first link "CTN"
                 Then I see the header "CTN"
@@ -27,7 +27,7 @@ Feature: Validating User Model
                 Then I see the fourth link "Nosotros"
                 
                 
-        Scenario: Page help has content
+        Scenario: Page Help has content
                 Given I access the url "/help/"
                 Then I see the header "CTN"
                 Then I see the first link "CTN"
@@ -38,11 +38,20 @@ Feature: Validating User Model
                 Then I see the third link "Contacto"
                 Then I see the fourth link "Nosotros"
 
-        Scenario: Page contact has content
+        Scenario: Page Contact has content
                 Given I access the url "/contact/"
                 Then I see the header "CTN"
                 Then I see the first link "CTN"
                 Then I see the first p "Si desea contactar con nosotros, puede hacerlo mediante la siguiente informaciÃ³n:"
+                Then I see the second link "Ayuda"
+                Then I see the third link "Contacto"
+                Then I see the fourth link "Nosotros"
+
+        Scenario: Page About has content
+                Given I access the url "/about/"
+                Then I see the first link "CTN"
+                Then I see the header "CTN"
+                Then I see h1 " NOSOTROS "
                 Then I see the second link "Ayuda"
                 Then I see the third link "Contacto"
                 Then I see the fourth link "Nosotros"
@@ -74,3 +83,4 @@ Feature: Validating User Model
                 Then I see the fourth link "Nosotros"
                 Then I see the first h3 "Municipio:"
                 Then I see the first h5 "La Orotava"
+
