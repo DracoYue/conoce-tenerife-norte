@@ -3,7 +3,7 @@
 SISTEMAS Y TECNOLOGÍAS WEB
 ============================
 
-Versión 1.8
+Versión 2.3
 
 ![](http://banot.etsii.ull.es/alu4103/STW/informacion.png)
 ============================
@@ -73,6 +73,15 @@ Versión 1.8
 - 11/12/2013 - Modificación mapas en los senderos.
 - 15/12/2013 - Aplicación en heroku : http://conocetenerifenorte2.herokuapp.com/
 - 16/12/2013 - Test
+
+![](http://banot.etsii.ull.es/alu4103/STW/presentacion.png)
+============================
+1. Presentación Proyecto
+2. Framework 
+3. BBDD
+4. Tecnologías
+5. Mecanismos
+6. Demostración
 
 ###Chicas al poder! =)
 
