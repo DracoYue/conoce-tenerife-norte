@@ -161,19 +161,14 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    'gunicorn',
     'social_auth',
     'usuario',
     'contenido',
     'django_gravatar',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-<<<<<<< HEAD
-    'gunicorn',
     'lettuce.django',
-=======
-    
->>>>>>> fcf928d56645f5609cf54ca61a1a3c15e7b86199
+
 )
 
 
