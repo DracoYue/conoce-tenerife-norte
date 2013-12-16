@@ -69,6 +69,7 @@ Versión 1.8
             \password username
         - Se ha de crear la base de datos: createdb ctn
         - sudo apt-get install python-psycopg2
+- 13/12/2013 - Añadido lugares de interes
 
 ###Chicas al poder! =)
 
