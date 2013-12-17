@@ -117,95 +117,86 @@
                             {% endif %}
                         <br>
                         <h2>FOTOS </h2>
-                        <div class="row">
-                          <div class="col-sm-6 col-md-3">
-                            {% if fotos %}
-                                  {%for i in rutas %}
-                                    <div id="img">
-                                      <a href="#img"><img {{ i }} height="110px" width="110px" id="foto" /></a>
-                                    </div>
-                                  {% endfor %}
-                                {% else %}
-                                    <h5> Sea el primero en subir una foto </h5>
-                                {% endif %}
+                        {% if fotos %}
+                              {%for i in rutas %}
+                                <div id="img">
+                                  <a href="#img"><img {{ i }} height="110px" width="110px" id="foto" /></a>
+                                </div>
+                              {% endfor %}
                             {% else %}
-                                <br>
-                                <h5>Si desea ver fotos y comentarios registrese</h5>
+                                <h5> Sea el primero en subir una foto </h5>
                             {% endif %}
-                          </div>
-                          
-                        </div>
-                            
-      
+                        {% else %}
+                            <br>
+                            <h5>Si desea ver fotos y comentarios registrese</h5>
+                        {% endif %}
+
+                        <table class="table table-striped">
+    	                    <thead>
+    	                        <tr>
+    	                            <th>
+                                        <h3>{{ nombre }}</h3>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h3>Localizacion</h3> {{ longitud }}, {{ latitud }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3>Municipio</h3> {{ municipio }}
+                                </tr>
+                                    </td>
+                                <tr>
+                                    <td>
+                                        {% if puntos == 'MB' %}
+                                            <h3>Nuestra Opinión</h3> Muy Bien
+                                        {% endif %}
+                                        {% if puntos == 'B' %}
+                                            <h3>Nuestra Opinión</h3>Bien
+                                        {% endif %}
+                                        {% if puntos == 'R' %}
+                                            <h3>Nuestra Opinión</h3> Regular
+                                        {% endif %}
+                                        {% if puntos == 'NR' %}
+                                            <h3>Nuestra Opinión</h3> No Recomendable
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3> Puntuación Usuarios </h3>
+                                        {% if usu_autenticado == True %}
+                                            <h5>{{ mensaje }}</h5>
+                                            <ul class='star-rating'>
+                                                <li style="display:inline;" class="star"><a href='/votos/1/{{ nid }}' title='No Recomendable' class='one-star'><img  class="hov" src="../../static/img/sendero.png" ></a></li>
+                                                <li style="display:inline;" class="star"><a href='/votos/2/{{ nid }}' title='Regular' class='two-stars'><img class="hov" src="../../static/img/sendero.png"></a></li>
+                                                <li style="display:inline;" class="star"><a href='/votos/3/{{ nid }}' title='Bien' class='three-stars'><img class="hov" src="../../static/img/sendero.png"></a></li>
+                                                <li style="display:inline;" class="star"><a href='/votos/4/{{ nid }}' title='MuyBien' class='four-stars'><img class="hov" src="../../static/img/sendero.png"></a></li>
+                                            </ul>
+                                            <h3>Comenta</h3>
+                                            <form action="/comentarios/{{ nid }}/" method="POST" class="form-signin">
+                                                {% csrf_token %}
+                                                {{ form_comen.as_p }}
+                                                <button id="boton" type="submit" class="btn btn-inverse" value="POST">Enviar</button>
+                                            </form>
+                                            <h3>Sube tu imagen</h3>
+                                            <form action="/fotos/{{ nid }}/" method="POST" class="form-signin" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                {{ form_foto.as_p }}
+                                                <button id="boton" type="submit" class="btn btn-inverse" value="POST">Enviar</button>
+                                            </form>
+                                       {% else %}
+                                            <h5>{{ mensaje }}</h5>
+                                        {% endif %}
+                                </tr>
+                                    </td>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col-md-4 col-md-offset-3">
-                        <div class="panel-group" id="panel-386779">
-                            <table class="table table-striped">
-			                    <thead>
-			                        <tr>
-			                            <th>
-                                            <h3>{{ nombre }}</h3>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <h3>Localizacion</h3> {{ longitud }}, {{ latitud }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3>Municipio</h3> {{ municipio }}
-                                    </tr>
-                                        </td>
-                                    <tr>
-                                        <td>
-                                            {% if puntos == 'MB' %}
-                                                <h3>Nuestra Opinión</h3> Muy Bien
-                                            {% endif %}
-                                            {% if puntos == 'B' %}
-                                                <h3>Nuestra Opinión</h3>Bien
-                                            {% endif %}
-                                            {% if puntos == 'R' %}
-                                                <h3>Nuestra Opinión</h3> Regular
-                                            {% endif %}
-                                            {% if puntos == 'NR' %}
-                                                <h3>Nuestra Opinión</h3> No Recomendable
-                                            {% endif %}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3> Puntuación Usuarios </h3>
-                                            {% if usu_autenticado == True %}
-                                                <h5>{{ mensaje }}</h5>
-                                                <ul class='star-rating'>
-                                                    <li style="display:inline;" class="star"><a href='/votos/1/{{ nid }}' title='No Recomendable' class='one-star'><img id="foto" class="hov" src="../../static/img/sendero.png" ></a></li>
-                                                    <li style="display:inline;" class="star"><a href='/votos/2/{{ nid }}' title='Regular' class='two-stars'><img id="foto" class="hov" src="../../static/img/sendero.png"></a></li>
-                                                    <li style="display:inline;" class="star"><a href='/votos/3/{{ nid }}' title='Bien' class='three-stars'><img id="foto" class="hov" src="../../static/img/sendero.png"></a></li>
-                                                    <li style="display:inline;" class="star"><a href='/votos/4/{{ nid }}' title='MuyBien' class='four-stars'><img id="foto" class="hov" src="../../static/img/sendero.png"></a></li>
-                                                </ul>
-                                                <h3>Comenta</h3>
-                                                <form action="/comentarios/{{ nid }}/" method="POST" class="form-signin">
-                                                    {% csrf_token %}
-                                                    {{ form_comen.as_p }}
-                                                    <button id="boton" type="submit" class="btn btn-inverse" value="POST">Enviar</button>
-                                                </form>
-                                                <h3>Sube tu imagen</h3>
-                                                <form action="/fotos/{{ nid }}/" method="POST" class="form-signin" enctype="multipart/form-data">
-                                                    {% csrf_token %}
-                                                    {{ form_foto.as_p }}
-                                                    <button id="boton" type="submit" class="btn btn-inverse" value="POST">Enviar</button>
-                                                </form>
-                                           {% else %}
-                                                <h5>{{ mensaje }}</h5>
-                                            {% endif %}
-                                    </tr>
-                                        </td>
-                                </tbody>
-                        </div>
-                    </div> 
                 </div>
             </div>
        </div>
